@@ -1,2 +1,0 @@
-# FrogRider.github.io
-Резюме
