@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=K2D');
+
 a {			display: block; 
 			text-align: center;
 			font-size: 100%;
@@ -33,7 +35,7 @@ a.button:active { background: rgb(152,15,0); }*/
 .flex-container {
   display: flex;
   justify-content: center;
-  margin-top: 1px;
+  margin: 1px;
   }
 
 .file {
@@ -43,6 +45,7 @@ a.button:active { background: rgb(152,15,0); }*/
 
 body {
 	background-color: #E2D9D2FF;
+	font-family: 'Roboto', sans-serif;
 }
 
 #map {
