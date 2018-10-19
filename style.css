@@ -57,6 +57,12 @@ body {
 	background: none;
 }
 
-/*.elem_7{
-	align-items: center;
-}*/
+#inviz {
+	/*visibility: visible;*/
+	
+}
+
+#viz {
+	/*visibility: visible;*/
+	
+}
