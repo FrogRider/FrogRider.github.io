@@ -22,8 +22,9 @@ a {			display: block;
 			box-shadow: 0 -3px #458B67FF inset;
 }
 img {
-			border-radius: 5px;
-		}
+		border-radius: 5px;
+
+}
 /*div.map {
     		text-align: center;
     		width: 100%;
@@ -57,12 +58,3 @@ body {
 	background: none;
 }
 
-#inviz {
-	/*visibility: visible;*/
-	
-}
-
-#viz {
-	/*visibility: visible;*/
-	
-}
