@@ -1,21 +1,25 @@
 header {
 	width: 100%;
+
+
 }
 
-/*body {
-	background-image: url(bg.png);
-	height: 10000px;
-}*/
+body {
+	/*background-image: url(bg.png);
+	height: 10000px;*/
+}
 
 .header {
 /*	margin-top: 3%;
 	padding-bottom: 3%;*/
 
+
 }
 
 .about {
-	text-align: left;
-	margin-top: 2.18%;
+	text-align: right;
+	margin-top: 3%;
+	/*width: 10%;*/
 }
 
 /*.about:hover {
@@ -89,5 +93,8 @@ body {
 	display: none;
 }
 
+.col-xs-12 {
+	/*text-align: left;*/
+}
 /*___________*/
 

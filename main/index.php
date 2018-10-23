@@ -36,19 +36,19 @@
 					<div class="col-xs-12 col-md-4 logo">
 						<h1> <a class = "text" href="#">Мастер грумер</a></h1>
 					</div>
-					<div class="col-xs-0 col-md-4">
+					<!-- <div class="col-xs-0 col-md-4">
 							
-					</div>
-					<div class="col-xs-12 col-md-1 about">
+					</div> -->
+					<div class="col-xs-12 col-md-2 about">
 						<a class="text" href="#">Контакты</a>
 					</div>
-					<div class="col-xs-12 col-md-1 about">
+					<div class="col-xs-12 col-md-2 about">
 						<a class="text" href="#">Машинки</a>
 					</div>
-					<div class="col-xs-12 col-md-1 about">
+					<div class="col-xs-12 col-md-2 about">
 						<a class="text" href="#">Инструменты</a>
 					</div>
-					<div class="col-xs-12 col-md-1 about">
+					<div class="col-xs-12 col-md-2 about">
 						<a class="text" href="#">Аксесуары</a>
 					</div>
 				</form>
@@ -56,7 +56,8 @@
 		</header>
 
 		<div class="gallery">
-			<script src = "product-grid.js"></script>
+			<script src = "js/product-grid.json"></script>
+			<script src = "js/product-grid.js"></script>
 		</div>
 	</div>
 
