@@ -1,0 +1,92 @@
+header {
+	
+}
+
+body {
+	background-image: url(bg.png);
+	height: 10000px;
+}
+
+.header {
+	margin-top: 3%;
+	padding-bottom: 3%;
+
+
+
+}
+
+.about {
+	text-align: left;
+	margin-top: 2.18%;
+}
+
+/*.about:hover {
+	background-color: black;
+	border-radius: 5px;
+}*/
+
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text {
+  text-decoration: none;
+  color: #666;
+}
+
+body {
+	background: #9BC1BC;
+}
+
+
+
+.gallery {
+	padding: .5vw;
+	font-size: 0;
+	flex-wrap: wrap;
+	flex-direction: column;
+	flex-flow: row wrap;
+	display: flex;
+	/*margin-top: 10%;*/
+}
+
+.gallery div {
+	flex: auto;
+	width: 237px;
+	margin: .5vw;
+}
+
+.gallery div img {
+	width: 100%;
+	height: auto;
+	/*border-radius: 3px;*/
+}
+
+.gallery div img:hover {
+	/*border-radius: 10px;*/
+}
+
+.imgtext {
+    display:inline-block;   
+    position:relative;
+ 
+}
+
+.imgtext:hover span {
+    display:inline-block;
+    position:absolute;
+    top:30px;   
+    left:0px;
+     
+    /* Оформление текста */
+    color:#FFF;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px; 
+     
+    /* Фон */
+    background-color:rgba(0,0,0,.4);
+    padding:10px 30px;
+    opacity: 0.6;
+}
+
+.inviz {
+	display: none;
+}
