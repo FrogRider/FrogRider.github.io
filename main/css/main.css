@@ -1,17 +1,15 @@
 header {
-	
+	width: 100%;
 }
 
-body {
+/*body {
 	background-image: url(bg.png);
 	height: 10000px;
-}
+}*/
 
 .header {
-	margin-top: 3%;
-	padding-bottom: 3%;
-
-
+/*	margin-top: 3%;
+	padding-bottom: 3%;*/
 
 }
 
@@ -90,3 +88,6 @@ body {
 .inviz {
 	display: none;
 }
+
+/*___________*/
+

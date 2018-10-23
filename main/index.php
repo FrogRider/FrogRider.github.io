@@ -28,9 +28,9 @@
 </head>
 
 <body>
-	<?php session_start(); ?>
 
-	<div class="container-fluid">
+	<div class="container">
+		<header>
 			<div class="row header">
 				<form action="tovar.php" method = "_POST">
 					<div class="col-xs-12 col-md-4 logo">
@@ -40,64 +40,28 @@
 							
 					</div>
 					<div class="col-xs-12 col-md-1 about">
-						<a class="text" href="test.html">Контакты</a>
+						<a class="text" href="#">Контакты</a>
 					</div>
 					<div class="col-xs-12 col-md-1 about">
-						<a class="text" href="tovar.php">Машинки</a>
+						<a class="text" href="#">Машинки</a>
 					</div>
 					<div class="col-xs-12 col-md-1 about">
-						<a class="text" href="tovvar.php">Инструменты</a>
+						<a class="text" href="#">Инструменты</a>
 					</div>
 					<div class="col-xs-12 col-md-1 about">
 						<a class="text" href="#">Аксесуары</a>
 					</div>
 				</form>
 			</div>
+		</header>
 
 		<div class="gallery">
-			<div class = "imgtext">
-				<div><img src="img/1.jpg" alt="alt"></div><!-- что бы сделать спан в ширину картинки- убрать обертку дива у имг -->
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div><img src="img/2.jpg" alt="alt"></div>
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div><a href="test.html?id=5"><img src="img/3.jpg" alt="alt"></a></div>
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div><img src="img/4.jpg" alt="alt"></div>
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div><img src="img/5.jpg" alt="alt"></div>
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div><img src="img/5.jpg" alt="alt"></div>
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div><img src="img/5.jpg" alt="alt"></div>
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div><img src="img/5.jpg" alt="alt"></div> <!-- что бы сделать спан в ширину картинки- убрать обертку дива у имг -->
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore.</span>
-			</div>
-			<div class="imgtext">
-				<div class = "inviz"><img src="img/5.jpg" alt="alt"></div>
-			</div>
-			<div class="imgtext">
-				<div class = "inviz"><img src="img/5.jpg" alt="alt"></div>
-			</div>
+			<script src = "product-grid.js"></script>
 		</div>
 	</div>
 
 	
-
+	<div class="hidden"></div>
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
