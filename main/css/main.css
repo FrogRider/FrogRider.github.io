@@ -12,8 +12,11 @@ body {
 .header {
 /*	margin-top: 3%;
 	padding-bottom: 3%;*/
+}
 
-
+h3{
+	text-align: center;
+	color: #666;
 }
 
 .about {
