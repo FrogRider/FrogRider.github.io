@@ -62,7 +62,7 @@
 	</div>
 
 	
-	<div class="hidden"></div>
+	<h3>Demo version. Only exterier</h3>
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>

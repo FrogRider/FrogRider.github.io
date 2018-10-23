@@ -38,7 +38,7 @@ a.text {
 }
 
 body {
-	background: #9BC1BC;
+	background: #EDF2F4;
 }
 
 
@@ -50,6 +50,7 @@ body {
 	flex-direction: column;
 	flex-flow: row wrap;
 	display: flex;
+	background: #E0E7E7FF;
 	/*margin-top: 10%;*/
 }
 
@@ -62,7 +63,7 @@ body {
 .gallery div img {
 	width: 100%;
 	height: auto;
-	/*border-radius: 3px;*/
+	border-radius: 5px;
 }
 
 .gallery div img:hover {
