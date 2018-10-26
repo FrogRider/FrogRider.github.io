@@ -1,17 +1,14 @@
 header {
 	width: 100%;
-
-
 }
 
 body {
-	/*background-image: url(bg.png);
-	height: 10000px;*/
+	background: #EDF2F4;
 }
 
 .header {
-/*	margin-top: 3%;
-	padding-bottom: 3%;*/
+margin-top: 3%;
+
 }
 
 h3{
@@ -21,7 +18,7 @@ h3{
 
 .about {
 	text-align: right;
-	margin-top: 3%;
+	margin-top: 1.5%;
 	/*width: 10%;*/
 }
 
@@ -31,17 +28,26 @@ h3{
 }*/
 
 a.text:active, /* активная/посещенная ссылка */
-a.text:hover,  /* при наведении */
 a.text {
   text-decoration: none;
   color: #666;
 }
-
-body {
-	background: #EDF2F4;
+a.text:hover {
+	color: #2B2D42;
 }
 
+.here {
+	opacity: .5;
+}
 
+.here:hover {
+	color: #666;
+	opacity: .5;
+}
+
+a {
+	text-decoration: none;
+}
 
 .gallery {
 	padding: .5vw;
@@ -50,8 +56,9 @@ body {
 	flex-direction: column;
 	flex-flow: row wrap;
 	display: flex;
-	background: #E0E7E7FF;
-	/*margin-top: 10%;*/
+	background: #DEE7E6FF;
+	margin-top: 5%;
+	/*margin-bottom: 10%;*/
 }
 
 .gallery div {
@@ -81,6 +88,7 @@ body {
     position:absolute;
     top:30px;   
     left:0px;
+    transition: 0.3s;
      
     /* Оформление текста */
     color:#FFF;
@@ -100,5 +108,22 @@ body {
 .col-xs-12 {
 	/*text-align: left;*/
 }
-/*___________*/
 
+.copyright {
+	margin-bottom: 2%;
+}
+
+/*_____________________*/
+
+h6 {
+    text-align: left;
+}
+
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.texter {
+  margin-top: 10%;
+}

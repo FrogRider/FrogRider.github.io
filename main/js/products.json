@@ -32,4 +32,8 @@ var products = [{
 	img: "img/8.jpg",
 	name: "Lorem ipsum.",
 	id: "8"
+}, {
+	img: "img/9.jpg",
+	name: "Ну и че ты тут забыл?",
+	id: "9"
 }]

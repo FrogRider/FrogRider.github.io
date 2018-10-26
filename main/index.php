@@ -11,12 +11,7 @@
 	<title>Заголовок</title>
 	<meta content="" name="description" />
 
-	<!-- <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon" /> -->
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png" />
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
@@ -32,7 +27,7 @@
 	<div class="container">
 		<header>
 			<div class="row header">
-				<form action="tovar.php" method = "_POST">
+
 					<div class="col-xs-12 col-md-4 logo">
 						<h1> <a class = "text" href="#">Мастер грумер</a></h1>
 					</div>
@@ -40,10 +35,10 @@
 							
 					</div> -->
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="#">Контакты</a>
+						<a class="text" href="contacts.html">Контакты</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="#">Машинки</a>
+						<a class="text here" href="#">Техника</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
 						<a class="text" href="#">Инструменты</a>
@@ -51,7 +46,7 @@
 					<div class="col-xs-12 col-md-2 about">
 						<a class="text" href="#">Аксесуары</a>
 					</div>
-				</form>
+
 			</div>
 		</header>
 
@@ -59,30 +54,26 @@
 			<script src = "js/product-grid.json"></script>
 			<script src = "js/product-grid.js"></script>
 		</div>
-	</div>
 
+		<footer>
+			<hr>
+			<div class="row">
+				<div class="col-md-2 about copyright ">
+					<h6>©2018 MasterGroomer</h6>
+				</div>
+				<div class="col-md-6">
+					<a class="text" href="#"></a>
+				</div>
+				<div class="col-md-2 about">
+					<a class="text" href="pay.html">Оплата</a>
+				</div>
+				<div class="col-md-2 about">
+					<a class="text" href="#">Доставка</a>
+				</div>
+			</div>
+		</footer>
 	
-	<h3>Demo version. Only exterier</h3>
-
-	<!--[if lt IE 9]>
-	<script src="libs/html5shiv/es5-shim.min.js"></script>
-	<script src="libs/html5shiv/html5shiv.min.js"></script>
-	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
-	<script src="libs/respond/respond.min.js"></script>
-	<![endif]-->
-
-	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
-	<script src="libs/modernizr/modernizr.js"></script>
-	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
-	<script src="libs/waypoints/waypoints.min.js"></script>
-	<script src="libs/plugins-scroll/plugins-scroll.js"></script>
-	<script src="libs/animate/animate-css.js"></script>
-
-	<script src="libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
-	<script src="libs/imagefill/jquery-imagefill.js"></script>
-	<script src="libs/masonry/masonry.pkgd.min.js"></script>
-	
-	<script src="js/common.js"></script>
+	<!-- <script src="js/common.js"></script> -->
 	
 </body>
 </html>
