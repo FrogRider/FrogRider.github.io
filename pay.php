@@ -9,17 +9,15 @@
 
     <meta charset="utf-8" />
 
-    <title>Заголовок</title>
+    <title>Master groomer</title>
     <meta content="" name="description" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="libs/animate/animate.css" />
-
+    <?php include ('font.php') ?>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/media.css" />
     <link rel="stylesheet" href="css/pay.css" />
 
 </head>
@@ -27,30 +25,7 @@
 <body>
 
     <div class="container">
-        <header>
-            <div class="row header" style = "margine-top: 2%">
-
-                    <div class="col-xs-12 col-md-4 logo">
-                        <h1> <a class = "text" href="index.php">Мастер грумер</a></h1>
-                    </div>
-                    <!-- <div class="col-xs-0 col-md-4">
-                            
-                    </div> -->
-                    <div class="col-xs-12 col-md-2 about">
-                        <a class="text" href="#">Контакты</a>
-                    </div>
-                    <div class="col-xs-12 col-md-2 about">
-                        <a class="text" href="index.php">Техника</a>
-                    </div>
-                    <div class="col-xs-12 col-md-2 about">
-                        <a class="text" href="#">Инструменты</a>
-                    </div>
-                    <div class="col-xs-12 col-md-2 about">
-                        <a class="text" href="#">Аксесуары</a>
-                    </div>
-
-            </div>
-        </header>
+        <?php include ('header.php'); ?>
 
         <div class="conatiner">
         <div class="pay">
@@ -72,25 +47,7 @@
 
         
     </div>
-<!--     <div class="container">
-    <footer>
-            <hr>
-            <div class="row">
-                <div class="col-md-2 about copyright ">
-                    <h6>©2018 MasterGroomer</h5>
-                </div>
-                <div class="col-md-6">
-                    <a class="text" href="#"></a>
-                </div>
-                <div class="col-md-2 about">
-                    <a class="text" href="pay.html">Оплата</a>
-                </div>
-                <div class="col-md-2 about">
-                    <a class="text" href="#">Доставка</a>
-                </div>
-            </div>
-    </footer>
-    </div> -->
+
     
     <script src="js/pay.js"></script>
     

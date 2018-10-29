@@ -8,7 +8,7 @@
 
 	<meta charset="utf-8" />
 
-	<title>Заголовок</title>
+	<title>Master groomer</title>
 	<meta content="" name="description" />
 
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
@@ -16,37 +16,49 @@
 
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="libs/animate/animate.css" />
-
+	<?php include ('font.php') ?>
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/media.css" />
 
 </head>
+
 <body>
+
 	<div class="container">
 		<header>
 			<div class="row header">
 
 					<div class="col-xs-12 col-md-4 logo">
-						<h1> <a class = "text" href="index.php">Мастер грумер</a></h1>
+						<h1> <a class = "text" href="index.php">Master groomer</a></h1>
 					</div>
 					<!-- <div class="col-xs-0 col-md-4">
 							
 					</div> -->
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text here" href="#">Контакты</a>
+
 					</div>
 					<div class="col-xs-12 col-md-2 about">
 						<a class="text" href="index.php">Техника</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="#">Инструменты</a>
+						<a class="text" href="tools.php">Инструменты</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="#">Аксесуары</a>
+						<a class="text here" href="#">Аксесуары</a>
 					</div>
 
 			</div>
 		</header>
-	<h1 style = "text-align: center">Тут будут твои кнтакты</h1>
-</div>
+
+		<div class="gallery">
+			<script src = "js/accessories-grid.json"></script>
+			<script src = "js/accessories-grid.js"></script>
+		</div>
+
+	<?php include ('footer.php') ?>
+	</div>
+	
+	<!-- <script src="js/common.js"></script> -->
+	
 </body>
+</html>

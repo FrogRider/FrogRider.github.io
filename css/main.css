@@ -2,6 +2,11 @@ header {
 	width: 100%;
 }
 
+h1 {
+	font-family: 'Baloo Bhaijaan', cursive;
+	/*color: #a9acad;*/
+}
+
 body {
 	background: #EDF2F4;
 }
@@ -19,7 +24,7 @@ h3{
 .about {
 	text-align: right;
 	margin-top: 1.5%;
-	/*width: 10%;*/
+	padding-bottom: 0;
 }
 
 /*.about:hover {
@@ -127,3 +132,9 @@ h6 {
 .texter {
   margin-top: 10%;
 }
+
+.foott {
+	margin-bottom: 0;
+}
+
+

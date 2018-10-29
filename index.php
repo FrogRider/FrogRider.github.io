@@ -5,73 +5,45 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 
 <head>
-
 	<meta charset="utf-8" />
-
-	<title>Заголовок</title>
+	<title>Master groomer</title>
 	<meta content="" name="description" />
-
-	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="libs/animate/animate.css" />
-
+	<?php include ('font.php') ?>
 	<link rel="stylesheet" href="css/main.css" />
-	<link rel="stylesheet" href="css/media.css" />
-
 </head>
 
 <body>
-
 	<div class="container">
-		<header>
+	<header>
 			<div class="row header">
-
 					<div class="col-xs-12 col-md-4 logo">
-						<h1> <a class = "text" href="#">Мастер грумер</a></h1>
-					</div>
-					<!-- <div class="col-xs-0 col-md-4">
-							
-					</div> -->
-					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="contacts.html">Контакты</a>
+						<h1> Master groomer</h1>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text here" href="#">Техника</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="#">Инструменты</a>
+						<a class="text here" href="index.php">Техника</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="#">Аксесуары</a>
+						<a class="text" href="tools.php">Инструменты</a>
+					</div>
+					<div class="col-xs-12 col-md-2 about">
+						<a class="text" href="accessories.php">Аксесуары</a>
 					</div>
 
 			</div>
-		</header>
+	</header>
 
 		<div class="gallery">
 			<script src = "js/product-grid.json"></script>
 			<script src = "js/product-grid.js"></script>
 		</div>
 
-		<footer>
-			<hr>
-			<div class="row">
-				<div class="col-md-2 about copyright ">
-					<h6>©2018 MasterGroomer</h6>
-				</div>
-				<div class="col-md-6">
-					<a class="text" href="#"></a>
-				</div>
-				<div class="col-md-2 about">
-					<a class="text" href="pay.html">Оплата</a>
-				</div>
-				<div class="col-md-2 about">
-					<a class="text" href="#">Доставка</a>
-				</div>
-			</div>
-		</footer>
+		<?php include ('footer.php') ?>
+	</div>
 	
 	<!-- <script src="js/common.js"></script> -->
 	

@@ -1,0 +1,18 @@
+//тут массив с машинками и феном
+var products = [{
+    img: "img/1.jpg",
+    img2:"img/1.jpg",
+    img3:"img/1.jpg",
+    name: "first",
+    description: "",
+    price: "111",
+    id: "1_1",
+}, {
+    img: "img/2.jpg",
+    img2:"img/1.jpg",
+    img3:"img/1.jpg",
+    name: "first",
+    description: "",
+    price: "111",
+    id: "1_2",
+},]

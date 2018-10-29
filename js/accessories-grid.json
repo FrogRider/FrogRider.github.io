@@ -1,0 +1,7 @@
+var products_accessories = [{
+    img: "img/9.jpg",
+    name: "fan",
+    description: "111",
+    price: "1",
+    id: "3_1",
+},]

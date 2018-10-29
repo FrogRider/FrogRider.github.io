@@ -1,0 +1,8 @@
+var products_tools = [{
+    img: "img/5.jpg",
+    name: "t",
+    description: "",
+    price: "1",
+    id: "2_1",
+    type: "tech"
+},]
