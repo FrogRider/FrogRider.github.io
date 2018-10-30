@@ -5971,8 +5971,9 @@ button.close {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: transparent no-repeat center center;
+  background: #666666FF no-repeat center center;
   background-size: 100% 100%;
+  border-radius: 0px;
 }
 
 .carousel-control-prev-icon {
