@@ -43,16 +43,16 @@
 
 			</div>
 		</header>
-<h1 style = "text-align: center; color: red; margin-top: 50px;">Страница находится в разработке и будет доступна ближайшее время.</h1>
+<h1 style = "text-align: center; color: red; margin-top: 50px">Страница находится в разработке и будет доступна ближайшее время.</h1>
 		<!-- <div class="gallery">
 			<script src = "js/accessories-grid.json"></script>
 			<script src = "js/accessories-grid.js"></script>
 		</div> -->
 
-	<?php include ('footer.php') ?>
+	<div style = "margin-top: 33%"><?php include ('footer.php') ?></div>
 	</div>
 
-	<!-- <script src="js/common.js"></script> -->
+
 	
 </body>
 </html>

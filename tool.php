@@ -93,6 +93,9 @@ var img1 = "img/no-image.gif";
          document.write('<p class = "product_price"><b>Цена:</b>'+ price + '</p><hr>');
          document.write('<p class = "product_description">'+ description + '</p>');
          document.write('</div>');
+         document.write('<form action = "buy.php" method = "_GET">');
+         document.write('<a href = "buy.php?id=' + id + '">Купить</a>');
+         document.write('</form>')
      } else {
      	document.write('<img src = "' + img1 + '">');
      }
