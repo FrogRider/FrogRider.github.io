@@ -40,7 +40,7 @@ var img1 = "img/no-image.gif";
   var name = "Название временно отсутствует."
   var description = "На данный момент описание отсутствует. Просим прощения за неудобство.";
   var id = "<?php echo $id ?>";
-  console.log(id.charAt(0));
+  console.log(id);
   if (id.charAt(0)) {
  id: for (var i = 0; i < products.length; i++) {
      if (id === products[i].id) {
@@ -91,7 +91,7 @@ var img1 = "img/no-image.gif";
 
          document.write('<div class = "name_price_descr">')
          document.write('<p class = "product_name" style = "text-align: center;">'+ name + '</p>');
-         document.write('<p class = "product_price">'+ price + '</p>');
+         document.write('<p class = "product_price"><b>Цена:</b> '+ price + '</p><hr>');
          document.write('<p class = "product_description">'+ description + '</p>');
          document.write('</div>');
      } else {

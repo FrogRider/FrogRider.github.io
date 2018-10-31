@@ -90,7 +90,7 @@ var img1 = "img/no-image.gif";
 
          document.write('<div class = "name_price_descr">')
          document.write('<p class = "product_name" style = "text-align: center;">'+ name + '</p>');
-         document.write('<p class = "product_price">'+ price + '</p>');
+         document.write('<p class = "product_price"><b>Цена:</b>'+ price + '</p><hr>');
          document.write('<p class = "product_description">'+ description + '</p>');
          document.write('</div>');
      } else {

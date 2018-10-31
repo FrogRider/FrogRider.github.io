@@ -10,10 +10,7 @@
 
 	<title>Master groomer</title>
 	<meta content="" name="description" />
-
-	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="libs/animate/animate.css" />
 	<?php include ('font.php') ?>
@@ -31,9 +28,6 @@
 					<div class="col-xs-12 col-md-4 logo">
 						<h1> <a class = "text" href="index.php">Master groomer</a></h1>
 					</div>
-					<!-- <div class="col-xs-0 col-md-4">
-							
-					</div> -->
 					<div class="col-xs-12 col-md-2 about">
 
 					</div>
@@ -49,15 +43,15 @@
 
 			</div>
 		</header>
-
-		<div class="gallery">
+<h1 style = "text-align: center; color: red; margin-top: 50px;">Страница находится в разработке и будет доступна ближайшее время.</h1>
+		<!-- <div class="gallery">
 			<script src = "js/accessories-grid.json"></script>
 			<script src = "js/accessories-grid.js"></script>
-		</div>
+		</div> -->
 
 	<?php include ('footer.php') ?>
 	</div>
-	
+
 	<!-- <script src="js/common.js"></script> -->
 	
 </body>

@@ -25,7 +25,7 @@
 	<div class="container">
 		<?php include ('header.php') ?>
 		<div class = "phone_number" style = "padding-top: 5%;">
-		<h3 style = "text-align: center; background: #DBE7E5FF; border-radius: 3px">Связаться с нами Вы можете по номеру телефона 0938582186, либо при помощи формы обратной связи:</h3>
+		<h3 style = "text-align: center; background: #DBE7E5FF; border-radius: 3px">Связаться с нами Вы можете по номеру телефона 0970337784, либо при помощи формы обратной связи:</h3>
 		</div>
 		<div class="forma">
 			<form action="contacts.php" method="post" style = "margin-top: 4%;">

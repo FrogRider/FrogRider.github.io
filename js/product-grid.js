@@ -23,6 +23,7 @@ function emptys(a){//рисует пустые дивы, которыми доз
           if ((products[i-1].img) !== ""){
             img = products[i-1].img
           }
+          console.log(i);
           document.write('<div class = "imgtext">');
           document.write('<form action = "product.php" method = "_GET">');
           document.write('<a href = "product.php?id=' + products[i-1].id + '"><img src ="' + img + '"></a>');
