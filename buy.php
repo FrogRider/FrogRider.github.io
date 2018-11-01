@@ -26,9 +26,9 @@
 <body>
 	<div class="container">
 		<?php include ('header.php') ?>
-
+		<?php $id = $_GET['id'] ?>
 		<div class = "phone_number" style = "padding-top: 5%;">
-		<h3 style = "text-align: center; background: #DBE7E5FF; border-radius: 3px">Для заказа товара заполните поля ниже, нажмите на кнопку 'Отправить' и ждите звонка менеджера</h3>
+		<h3 style = "text-align: center; background: #DBE7E5FF; border-radius: 3px">Для заказа товара заполните поля ниже, нажмите на кнопку 'Отправить' и ожидайте звонок для подтверждения заказа!</h3>
 		</div>
 		<div class="forma">
 			<form action="buy.php" method="post" style = "margin-top: 4%;">
@@ -37,9 +37,46 @@
 				<label for="lname"></label>
 				<input type="text" id = "lname" name="name" placeholder = "Укажите Ваше имя"  style = "text-align: center;"/>
 				<label for="fname"></label>
-				<input type="text" id = "fname" name="phone" placeholder = "Укажите Ваш номер телефона" pattern="\d*" style = "text-align: center;"/>
+				<input type="text" id = "fname" name="phone" placeholder = "Укажите Ваш номер телефона" pattern="\d\d\d\d\d\d\d\d\d\d*" style = "text-align: center;"/>
 				<label for="lname"></label>
-				<input type="submit" value = "Отправить"/>
+				<script src = "js/product-grid.json"></script>
+				<script src = "js/tools-grid.json"></script>
+				<script src = "js/accessories-grid.json"></script>
+				<script>
+					var name = '';
+					var price = 0;
+					var id = "<?php echo $id ?>";
+
+					if(id.charAt(0) == 1){
+						console.log('1');
+						for (var i = 0; i < products.length; i++){
+							if(products[i].id === id){
+								tovar = products[i].name;
+								price = products[i].price;
+							}
+						}
+					}
+					if(id.charAt(0) == 2){
+						console.log('2');
+						for (var i = 0; i < products_tools.length; i++){
+							if(products_tools[i].id === id){
+								tovar = products_tools[i].name;
+								price = products_tools[i].price;
+							}
+						}
+					}
+					if(id.charAt(0) == 2){
+						console.log('3');
+						for (var i = 0; i < products_accessories.length; i++){
+							if(products_accessories[i].id === id){
+								tovar = products_accessories[i].name;
+								price = products_accessories[i].price;
+							}
+						}
+					}
+					document.write('<input type="hidden" name="tovar"  value = "' + tovar + '">');
+				</script>
+				<input type="submit" value = "Отправить">
 			</form>
 		</div>
 
@@ -63,54 +100,16 @@
 				</div>
 			</div>
 		</footer>
-
-
-<script src = "js/product-grid.json"></script>
-<script src = "js/tools-grid.json"></script>
-<script src = "js/accessories-grid.json"></script>
-<script> 
-var name = '';
-var price = 0;
-var id = "<?php echo $id ?>";
-if(id.charAt(0) == 1){
-	console.log('+');
-	for (var i = 0; i < products.length; i++){
-		if(products[i].id === id){
-			tovar = products[i].name;
-			price = products[i].price;
-		}
-	}
-}
-if(id.charAt(0) == 2){
-	for (var i = 0; i < products_tools.length; i++){
-		if(products_tools[i].id === id){
-			tovar = products_tools[i].name;
-			price = products_tools[i].price;
-		}
-	}
-}
-if(id.charAt(0) == 2){
-	for (var i = 0; i < products_accessories.length; i++){
-		if(products_accessories[i].id === id){
-			tovar = products_accessories[i].name;
-			price = products_accessories[i].price;
-		}
-	}
-}
-
-</script>
-
 </div>
 <?php
 			$token = "789463521:AAF7Dpt3vt9kAqqx4C-M2k9IMPu5xpxWeoM";
 			$chatid = "453482080"; 
 			$phone = $_POST['phone'];
 			$name =  $_POST['name'];
-			$price = $_POST['price'];
 			$tovar = $_POST['tovar'];
-			if (!empty($_POST['phone']) && !empty($_POST['msg'])  && !empty($_POST['price']) && !empty($_POST['tovar'])) {//сюда из js передать название и цену
+			if (!empty($_POST['phone']) && !empty($_POST['name'])  && !empty($_POST['tovar'])) {//сюда из js передать название и цену
 
-			$tbot = file_get_contents("https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chatid."&text=".urlencode($name . "\n" .$phone . "\n" . "\n" . $msg)); 
+			$tbot = file_get_contents("https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chatid."&text=".urlencode($name . "\n" .$phone . "\n" . "Хочет заказать " . $tovar)); 
 			}
 		?>
 </body>

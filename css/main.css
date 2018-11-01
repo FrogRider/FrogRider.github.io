@@ -137,4 +137,15 @@ h6 {
 	margin-bottom: 0;
 }
 
+a.buy_btn {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+}
 
+a.buy_btn:hover {
+	background: #00B072FF;
+}

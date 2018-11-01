@@ -29,9 +29,6 @@
 
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 			</ol>
 		<div class="carousel-inner">
 <?php $id = $_GET['id'] ?>
@@ -91,9 +88,12 @@ var img1 = "img/no-image.gif";
 
          document.write('<div class = "name_price_descr">')
          document.write('<p class = "product_name" style = "text-align: center;">'+ name + '</p>');
-         document.write('<p class = "product_price">'+ price + '</p>');
+         document.write('<p class = "product_price" style = "padding-top:30px">'+ price + '</p>');
          document.write('<p class = "product_description">'+ description + '</p>');
          document.write('</div>');
+         document.write('<form action = "buy.php" method = "_GET">');
+         document.write('<a class = "buy_btn" href = "buy.php?id=' + id + '">Купить</a>');
+         document.write('</form>')
      } else {
      	document.write('<img src = "' + img1 + '">');
      }
