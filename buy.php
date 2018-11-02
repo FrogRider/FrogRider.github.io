@@ -41,7 +41,9 @@
 				<label for="lname"></label>
 				<script src = "js/product-grid.json"></script>
 				<script src = "js/tools-grid.json"></script>
-				<script src = "js/accessories-grid.json"></script>
+				<script src = "js/caps-grid.json"></script>
+				<script src = "js/knifes-grid.json"></script>
+				<script src = "js/other-grid.json"></script>
 				<script>
 					var name = '';
 					var price = 0;
@@ -65,16 +67,43 @@
 							}
 						}
 					}
-					if(id.charAt(0) == 2){
-						console.log('3');
-						for (var i = 0; i < products_accessories.length; i++){
-							if(products_accessories[i].id === id){
-								tovar = products_accessories[i].name;
-								price = products_accessories[i].price;
+					// if(id.charAt(0) == 3){
+					// 	console.log('3');
+					// 	for (var i = 0; i < products_accessories.length; i++){
+					// 		if(products_accessories[i].id === id){
+					// 			tovar = products_accessories[i].name;
+					// 			price = products_accessories[i].price;
+					// 		}
+					// 	}
+					// }
+					if(id.charAt(0) == 3 && id.charAt(2) == 1){
+						console.log(31);
+						for (var i = 0; i < caps.length; i++){
+							if(caps[i].id === id){
+								tovar = caps[i].name;
+								price = caps[i].price;
+							}
+						}
+					}
+					if(id.charAt(0) == 3 && id.charAt(2) == 2){
+						for (var i = 0; i < knifes.length; i++){
+							if(knifes[i].id === id){
+								tovar = knifes[i].name;
+								price = knifes[i].price;
+							}
+						}
+					}
+					if(id.charAt(0) == 3 && id.charAt(2) == 3){
+						for (var i = 0; i < other.length; i++){
+							if(other[i].id === id){
+								tovar = other[i].name;
+								price = other[i].price;
 							}
 						}
 					}
 					document.write('<input type="hidden" name="tovar"  value = "' + tovar + '">');
+					document.write('<input type="hidden" name="price"  value = "' + price + '">');
+
 				</script>
 				<input type="submit" value = "Отправить">
 			</form>
@@ -103,13 +132,20 @@
 </div>
 <?php
 			$token = "789463521:AAF7Dpt3vt9kAqqx4C-M2k9IMPu5xpxWeoM";
-			$chatid = "453482080"; 
+			$chatidZheka = "224635215"; 
+			$chatidVadim = "453482080";
 			$phone = $_POST['phone'];
 			$name =  $_POST['name'];
 			$tovar = $_POST['tovar'];
+			$price = $_POST['price'];
+			$ogon = "\xF0\x9F\x94\xA5 \xF0\x9F\x94\xA5 \xF0\x9F\x94\xA5 \xF0\x9F\x8D\xBB \xF0\x9F\x94\xA5 \xF0\x9F\x94\xA5 \xF0\x9F\x94\xA5";
+			if ($price == ""){
+				$price = "НЕ УКАЗАНО! ПНИ ЖЕКУ ЧТО БЫ ДОПИЛИЛ";
+			}
 			if (!empty($_POST['phone']) && !empty($_POST['name'])  && !empty($_POST['tovar'])) {//сюда из js передать название и цену
 
-			$tbot = file_get_contents("https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chatid."&text=".urlencode($name . "\n" .$phone . "\n" . "Хочет заказать " . $tovar)); 
+			$tbot = file_get_contents("https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chatidVadim."&text=".urlencode($ogon . "\n". "\n"  .$name . "\n" .$phone . "\n" . "Хочет заказать " . $tovar. "\n" . "Цена на этот товар на сайте = " . $price ));
+			$tbot = file_get_contents("https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$chatidZheka."&text=".urlencode($name . "\n" .$phone . "\n" . "Хочет заказать " . $tovar. "\n" . "Цена на этот товар на сайте = " . $price));
 			}
 		?>
 </body>

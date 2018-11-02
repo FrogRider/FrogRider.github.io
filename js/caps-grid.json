@@ -1,0 +1,8 @@
+var caps = [{
+    img: "img/cap.jpg",
+    name: "Насадки",
+    id: "3_1_1",
+    description: "",
+    price: ""
+},]
+

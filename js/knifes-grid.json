@@ -1,0 +1,13 @@
+var knifes = [{
+    img: "img/knife.jpg",
+    name: "Нож1",
+    id: "3_2_1",
+    description: "",
+    price: ""
+},{
+    img: "img/1_10.jpg",
+    name: "Нож2",
+    id: "3_2_2",
+    description: "",
+    price: ""
+},]

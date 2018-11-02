@@ -19,7 +19,6 @@
 	<?php include ('font.php') ?>
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/slider.css" />
-
 </head>
 
 <body>
@@ -32,7 +31,9 @@
 			</ol>
 		<div class="carousel-inner">
 <?php $id = $_GET['id'] ?>
-<script src = "js/accessories-grid.json"></script>
+<script src = "js/caps-grid.json"></script>
+<script src = "js/knifes-grid.json"></script>
+<script src = "js/other-grid.json"></script>
 <!-- <script src = "js/tools-grid.json"></script> -->
 <script> 
 
@@ -43,62 +44,141 @@ var img1 = "img/no-image.gif";
   var name = "Название временно отсутствует."
   var description = "На данный момент описание отсутствует. Просим прощения за неудобство.";
   var id = "<?php echo $id ?>";
-  console.log(id.charAt(0));
-  if (id.charAt(0)) {
- id: for (var i = 0; i < products_accessories.length; i++) {
-     if (id === products_accessories[i].id) {
+  console.log(id.charAt(2)); //отображает один товар в зависимости от второй цифры айдишника (после _ которая)
+  if (id.charAt(2) == 1) {
+ id: for (var i = 0; i < caps.length; i++) {
+     if (id === caps[i].id) {
 
-      if (products_accessories[i].img !== ""){
-	      img1 = products_accessories[i].img; 
+      if (caps[i].img !== ""){
+	      img1 = caps[i].img; 
 	  }
-	  if (products_accessories[i].description !== ""){
-	      description = products_accessories[i].description; 
+	  if (caps[i].description !== ""){
+	      description = caps[i].description; 
 	  }
-	  if (products_accessories[i].name !== ""){
-	      name = products_accessories[i].name; 
+	  if (caps[i].name !== ""){
+	      name = caps[i].name; 
 	  }
-	  if (products_accessories[i].price !== ""){
-	      price = products_accessories[i].price; 
+	  if (caps[i].price !== ""){
+	      price = caps[i].price; 
 	  }
          break id;
      }
  }
 
- 	if (products_accessories[i].id !== ""){
+ 	if (caps[i].id !== ""){
          document.write('<div class = "image__wrapper" style = "text-align: center; margin-top: 30px;">');
          document.write('<img class = "minimized" src = "' + img1 + '"alt = "First slide" style="width: 400px; margin: 0 auto">');
          document.write('</div>');
-         // document.write('<div class = "carousel-item">');
-         // document.write('<img class = "d-block w-70" src = "' + img2 + '"alt = "Second slide" style="width: 400px; margin: 0 auto">');
-         // document.write('</div>');
-         // document.write('<div class = "carousel-item">');
-         // document.write('<img class = "d-block w-70" src = "' + img3 + '"alt = "Third slide" style="width: 400px; margin: 0 auto">');
-         // document.write('</div>');
-         document.write('</div>');
-         // document.write('<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">');
-         // document.write('<span class="carousel-control-prev-icon" aria-hidden="true"></span>');
-         // document.write('<span class="sr-only">Previous</span>');
-         // document.write('</a>');
 
-         // document.write('<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">');
-         // document.write('<span class="carousel-control-next-icon" aria-hidden="true"></span>');
-         // document.write('<span class="sr-only">Next</span>');
-         // document.write('</a>');
-         // document.write('</div>');
+         document.write('</div>');
 
          document.write('<div class = "name_price_descr">')
          document.write('<p class = "product_name" style = "text-align: center;">'+ name + '</p>');
-         document.write('<p class = "product_price" style = "padding-top:30px">'+ price + '</p>');
-         document.write('<p class = "product_description">'+ description + '</p>');
-         document.write('</div>');
+
+        document.write('<div style = "text-align:center;">')
          document.write('<form action = "buy.php" method = "_GET">');
          document.write('<a class = "buy_btn" href = "buy.php?id=' + id + '">Купить</a>');
          document.write('</form>')
+         document.write('</div>')
+
+         document.write('<p class = "product_price" style = "padding-top:30px">'+ price + '</p>');
+         document.write('<p class = "product_description">'+ description + '</p>');
+         document.write('</div>');
+
      } else {
      	document.write('<img src = "' + img1 + '">');
      }
 }
  
+ if (id.charAt(2) == 2) {
+ id: for (var i = 0; i < knifes.length; i++) {
+     if (id === knifes[i].id) {
+
+      if (knifes[i].img !== ""){
+        img1 = knifes[i].img; 
+    }
+    if (knifes[i].description !== ""){
+        description = knifes[i].description; 
+    }
+    if (knifes[i].name !== ""){
+        name = knifes[i].name; 
+    }
+    if (knifes[i].price !== ""){
+        price = knifes[i].price; 
+    }
+         break id;
+     }
+ }
+
+  if (knifes[i].id !== ""){
+         document.write('<div class = "image__wrapper" style = "text-align: center; margin-top: 30px;">');
+         document.write('<img class = "minimized" src = "' + img1 + '"alt = "First slide" style="width: 400px; margin: 0 auto">');
+         document.write('</div>');
+
+         document.write('</div>');
+
+         document.write('<div class = "name_price_descr">')
+         document.write('<p class = "product_name" style = "text-align: center;">'+ name + '</p>');
+
+        document.write('<div style = "text-align:center;">')
+         document.write('<form action = "buy.php" method = "_GET">');
+         document.write('<a class = "buy_btn" href = "buy.php?id=' + id + '">Купить</a>');
+         document.write('</form>')
+         document.write('</div>')
+
+         document.write('<p class = "product_price" style = "padding-top:30px">'+ price + '</p>');
+         document.write('<p class = "product_description">'+ description + '</p>');
+         document.write('</div>');
+
+     } else {
+      document.write('<img src = "' + img1 + '">');
+     }
+}
+
+ if (id.charAt(2) == 3) {
+ id: for (var i = 0; i < other.length; i++) {
+     if (id === other[i].id) {
+
+      if (other[i].img !== ""){
+        img1 = other[i].img; 
+    }
+    if (other[i].description !== ""){
+        description = other[i].description; 
+    }
+    if (other[i].name !== ""){
+        name = other[i].name; 
+    }
+    if (other[i].price !== ""){
+        price = other[i].price; 
+    }
+         break id;
+     }
+ }
+
+  if (other[i].id !== ""){
+         document.write('<div class = "image__wrapper" style = "text-align: center; margin-top: 30px;">');
+         document.write('<img class = "minimized" src = "' + img1 + '"alt = "First slide" style="width: 400px; margin: 0 auto">');
+         document.write('</div>');
+
+         document.write('</div>');
+
+         document.write('<div class = "name_price_descr">')
+         document.write('<p class = "product_name" style = "text-align: center;">'+ name + '</p>');
+
+        document.write('<div style = "text-align:center;">')
+         document.write('<form action = "buy.php" method = "_GET">');
+         document.write('<a class = "buy_btn" href = "buy.php?id=' + id + '">Купить</a>');
+         document.write('</form>')
+         document.write('</div>')
+
+         document.write('<p class = "product_price" style = "padding-top:30px">'+ price + '</p>');
+         document.write('<p class = "product_description">'+ description + '</p>');
+         document.write('</div>');
+
+     } else {
+      document.write('<img src = "' + img1 + '">');
+     }
+}
  </script>
 
 </div>

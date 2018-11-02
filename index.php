@@ -31,7 +31,7 @@
 						<a class="text" href="tools.php">Инструменты</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="accessories.php">Аксесуары</a>
+						<a class="text" href="accessories-categories.php">Аксесуары</a>
 					</div>
 
 			</div>

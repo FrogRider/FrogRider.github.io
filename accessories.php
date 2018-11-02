@@ -20,36 +20,92 @@
 </head>
 
 <body>
-
+<?php $id = $_GET['id'] ?>
 	<div class="container">
-		<header>
-			<div class="row header">
+		<?php include ('header.php') ?>
+		<?php $id = $_GET['id'] ?>
+		<div class="gallery">
+			<script src = "js/caps-grid.json"></script>
+			<script src = "js/knifes-grid.json"></script>
+			<script src = "js/other-grid.json"></script>
+			<script>
+				
+				var img = "img/no-image.gif";
+				var name = "null";
 
-					<div class="col-xs-12 col-md-4 logo">
-						<h1> <a class = "text" href="index.php">Master groomer</a></h1>
-					</div>
-					<div class="col-xs-12 col-md-2 about">
+				  var id = "<?php echo $id ?>";
 
-					</div>
-					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="index.php">Техника</a>
-					</div>
-					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="tools.php">Инструменты</a>
-					</div>
-					<div class="col-xs-12 col-md-2 about">
-						<a class="text here" href="#">Аксесуары</a>
-					</div>
+				 function count(obj) { //сколько товаров не хватает до полной строки
+				          var count = 0; 
+				          for(var i in obj) 
+				          { 
+				                   if(obj.hasOwnProperty(i)) count++;
+				    	  } 
+				          return 4-(count %4); 
+				}
+				function emptys(a){//рисует пустые дивы, которыми дозаполняется ряд
+					for ( var empty_box = 0; empty_box < a; empty_box++){
+						document.write('<div class = "imgtext"></div>');
+					}
+				}
+				if ( id == "cap") {
+				    console.log("cap");
+				  for (var i = 1; i <= caps.length; i++) {//заполняет сттраницу всеми товарами из массива
+				          if ((caps[i-1].img) !== ""){
+				            img = caps[i-1].img
+				          }
+				          document.write('<div class = "imgtext">');
+				          document.write('<form action = "accessory.php" method = "_GET">');
+				          document.write('<a href = "accessory.php?id=' + caps[i-1].id + '"><img src ="' + img + '"></a>');
+				          document.write('</form>');
+				          document.write('<span>' + caps[i-1].name + '</span>');
+				          document.write('</div>');
+				  }
+				  if (count(caps) === 3) emptys(3);
+				  if (count(caps) === 2) emptys(2);
+				  if (count(caps) === 1) emptys(1);
+				}
 
-			</div>
-		</header>
-<h1 style = "text-align: center; color: red; margin-top: 50px">Страница находится в разработке и будет доступна ближайшее время.</h1>
-		<!-- <div class="gallery">
-			<script src = "js/accessories-grid.json"></script>
-			<script src = "js/accessories-grid.js"></script>
-		</div> -->
+				if ( id == "knife") {
+				  console.log("knife");
+				  for (var i = 1; i <= knifes.length; i++) {//заполняет сттраницу всеми товарами из массива
+				          if ((knifes[i-1].img) !== ""){
+				            img = knifes[i-1].img
+				          }
+				          document.write('<div class = "imgtext">');
+				          document.write('<form action = "accessory.php" method = "_GET">');
+				          document.write('<a href = "accessory.php?id=' + knifes[i-1].id + '"><img src ="' + img + '"></a>');
+				          document.write('</form>');
+				          document.write('<span>' + knifes[i-1].name + '</span>');
+				          document.write('</div>');
+				  }
+				  if (count(knifes) === 3) emptys(3);
+				  if (count(knifes) === 2) emptys(2);
+				  if (count(knifes) === 1) emptys(1);
+				}
 
-	<div style = "margin-top: 33%"><?php include ('footer.php') ?></div>
+				if ( id == "other") {
+				    console.log("other");
+				  for (var i = 1; i <= other.length; i++) {//заполняет сттраницу всеми товарами из массива
+				          if ((other[i-1].img) !== ""){
+				            img = other[i-1].img
+				          }
+				          document.write('<div class = "imgtext">');
+				          document.write('<form action = "accessory.php" method = "_GET">');
+				          document.write('<a href = "accessory.php?id=' + other[i-1].id + '"><img src ="' + img + '"></a>');
+				          document.write('</form>');
+				          document.write('<span>' + other[i-1].name + '</span>');
+				          document.write('</div>');
+				  }
+				  if (count(other) === 3) emptys(3);
+				  if (count(other) === 2) emptys(2);
+				  if (count(other) === 1) emptys(1);
+				}
+			</script>
+		</div>
+
+	<div style = "margin-top: 33%">
+		<?php include ('footer.php') ?></div>
 	</div>
 
 

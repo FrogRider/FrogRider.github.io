@@ -3,7 +3,7 @@
 var img = "img/no-image.gif";
 var name = "null";
 
-var id = "<?php echo $id ?>";
+  var id = "<?php echo $id ?>";
 
  function count(obj) { //сколько товаров не хватает до полной строки
           var count = 0; 
@@ -18,19 +18,57 @@ function emptys(a){//рисует пустые дивы, которыми доз
 		document.write('<div class = "imgtext"></div>');
 	}
 }
-
-  for (var i = 1; i <= products_accessories.length; i++) {//заполняет сттраницу всеми товарами из массива
-          if ((products_accessories[i-1].img) !== ""){
-            img = products_accessories[i-1].img
+console.log(id);
+if ( id == "cap") {
+    console.log("cap");
+  for (var i = 1; i <= caps.length; i++) {//заполняет сттраницу всеми товарами из массива
+          if ((caps[i-1].img) !== ""){
+            img = caps[i-1].img
           }
           document.write('<div class = "imgtext">');
           document.write('<form action = "accessory.php" method = "_GET">');
-          document.write('<a href = "accessory.php?id=' + products_accessories[i-1].id + '"><img src ="' + img + '"></a>');
+          document.write('<a href = "accessory.php?id=' + caps[i-1].id + '"><img src ="' + img + '"></a>');
           document.write('</form>');
-          document.write('<span>' + products_accessories[i-1].name + '</span>');
+          document.write('<span>' + caps[i-1].name + '</span>');
           document.write('</div>');
   }
+  if (count(caps) === 3) emptys(3);
+  if (count(caps) === 2) emptys(2);
+  if (count(caps) === 1) emptys(1);
+}
 
-  if (count(products_accessories) === 3) emptys(3);
-  if (count(products_accessories) === 2) emptys(2);
-  if (count(products_accessories) === 1) emptys(1);
+if ( id == "knife") {
+  console.log("knife");
+  for (var i = 1; i <= knifes.length; i++) {//заполняет сттраницу всеми товарами из массива
+          if ((knifes[i-1].img) !== ""){
+            img = knifes[i-1].img
+          }
+          document.write('<div class = "imgtext">');
+          document.write('<form action = "accessory.php" method = "_GET">');
+          document.write('<a href = "accessory.php?id=' + knifes[i-1].id + '"><img src ="' + img + '"></a>');
+          document.write('</form>');
+          document.write('<span>' + knifes[i-1].name + '</span>');
+          document.write('</div>');
+  }
+  if (count(knifes) === 3) emptys(3);
+  if (count(knifes) === 2) emptys(2);
+  if (count(knifes) === 1) emptys(1);
+}
+
+if ( id == "other") {
+    console.log("other");
+  for (var i = 1; i <= other.length; i++) {//заполняет сттраницу всеми товарами из массива
+          if ((other[i-1].img) !== ""){
+            img = other[i-1].img
+          }
+          document.write('<div class = "imgtext">');
+          document.write('<form action = "accessory.php" method = "_GET">');
+          document.write('<a href = "accessory.php?id=' + other[i-1].id + '"><img src ="' + img + '"></a>');
+          document.write('</form>');
+          document.write('<span>' + other[i-1].name + '</span>');
+          document.write('</div>');
+  }
+  if (count(other) === 3) emptys(3);
+  if (count(other) === 2) emptys(2);
+  if (count(other) === 1) emptys(1);
+}

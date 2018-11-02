@@ -1,0 +1,13 @@
+var products_accessories = [{
+    img: "img/cap.jpg",
+    name: "Насадки",
+    id: "cap",
+},{
+    img: "img/knife.jpg",
+    name: "Ножи",
+    id: "knife",
+},{
+    img: "img/other.jpg",
+    name: "Прочее",
+    id: "other",
+},]

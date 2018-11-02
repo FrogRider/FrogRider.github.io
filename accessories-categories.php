@@ -11,11 +11,11 @@
 	<title>Master groomer</title>
 	<meta content="" name="description" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<?php include ('font.php') ?>
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="libs/animate/animate.css" />
-	<link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+	<?php include ('font.php') ?>
 	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/media.css" />
 
 </head>
 
@@ -35,21 +35,23 @@
 						<a class="text" href="index.php">Техника</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text here" href="tools.php">Инструменты</a>
+						<a class="text" href="tools.php">Инструменты</a>
 					</div>
 					<div class="col-xs-12 col-md-2 about">
-						<a class="text" href="accessories-categories.php">Аксесуары</a>
+						<a class="text here" href="#">Аксесуары</a>
 					</div>
 
 			</div>
 		</header>
-
 		<div class="gallery">
-			<script src = "js/tools-grid.json"></script>
-			<script src = "js/tools-grid.js"></script>
+			<script src = "js/accessories-categories-grid.json"></script>
+			<script src = "js/accessories-categories-grid.js"></script>
 		</div>
 
-		<?php include ('footer.php') ?>
-	</div>	
+	<div style = "margin-top: 33%"><?php include ('footer.php') ?></div>
+	</div>
+
+
+	
 </body>
 </html>
