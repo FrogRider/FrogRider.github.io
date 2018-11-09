@@ -1,0 +1,39 @@
+.gallery {
+	padding: .5vw;
+	font-size: 0;
+	flex-wrap: wrap;
+	flex-direction: column;
+	flex-flow: row wrap;
+	display: flex;
+	margin-top: 5%;
+}
+
+.gallery div {
+	flex: auto;
+	width: 250px;
+	margin: .5vw;
+}
+
+.gallery div img {
+	width: 100%;
+	height: auto;
+}
+
+.text-mobile {
+	display: none;
+}
+
+@media only screen and (max-width: 414px) {
+.header {
+	display: none;
+}
+
+.text-mobile {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+
+
+}

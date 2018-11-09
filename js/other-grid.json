@@ -1,7 +1,0 @@
-var other = [{
-    img: "img/other.jpg",
-    name: "Прочее",
-    id: "3_3_1",
-    description: "",
-    price: ""
-},]

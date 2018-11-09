@@ -1,7 +1,0 @@
-var products = [{
-    img: "img/1_1.jpg",
-    name: "Moser 1170-0061 Fox",
-    description: "descr",
-    price: "1375 грн",
-    id: "3_2_2",
-},]

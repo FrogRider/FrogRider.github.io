@@ -1,151 +1,71 @@
-header {
-	width: 100%;
-}
-
-h1 {
-	font-family: 'Baloo Bhaijaan', cursive;
-	/*color: #a9acad;*/
-}
-
-body {
-	background: #EDF2F4;
-}
-
-.header {
-margin-top: 3%;
-
-}
-
-h3{
-	text-align: center;
-	color: #666;
+a:active,
+a:hover, /* активная/посещенная ссылка */
+a {
+  text-decoration: none;
+  color: #666;
 }
 
 .about {
 	text-align: right;
 	margin-top: 1.5%;
-	padding-bottom: 0;
 }
 
-/*.about:hover {
-	background-color: black;
-	border-radius: 5px;
-}*/
-
-a.text:active, /* активная/посещенная ссылка */
-a.text {
-  text-decoration: none;
-  color: #666;
-}
-a.text:hover {
-	color: #2B2D42;
+header {
+	margin-left: 1%;
+	margin-right: 1%;
 }
 
-.here {
-	opacity: .5;
-}
-
-.here:hover {
-	color: #666;
-	opacity: .5;
-}
-
-a {
-	text-decoration: none;
-}
-
-.gallery {
-	padding: .5vw;
-	font-size: 0;
-	flex-wrap: wrap;
-	flex-direction: column;
-	flex-flow: row wrap;
-	display: flex;
-	background: #DEE7E6FF;
-	margin-top: 5%;
-	/*margin-bottom: 10%;*/
-}
-
-.gallery div {
-	flex: auto;
-	width: 237px;
-	margin: .5vw;
-}
-
-.gallery div img {
-	width: 100%;
-	height: auto;
-	border-radius: 5px;
-}
-
-.gallery div img:hover {
-	/*border-radius: 10px;*/
-}
-
-.imgtext {
-    display:inline-block;   
-    position:relative;
- 
-}
-
-.imgtext:hover span {
-    display:inline-block;
-    position:absolute;
-    top:30px;   
-    left:0px;
-    transition: 0.3s;
-     
-    /* Оформление текста */
-    color:#FFF;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:20px; 
-     
-    /* Фон */
-    background-color:rgba(0,0,0,.4);
-    padding:10px 30px;
-    opacity: 0.6;
-}
-
-.inviz {
+.mobile-header {
 	display: none;
 }
 
-.col-xs-12 {
-	/*text-align: left;*/
+@media only screen and (max-width: 414px) {
+.mobile-header {
+	display: block;
+}
+h1 {
+	text-align: center;
 }
 
-.copyright {
-	margin-bottom: 2%;
+.topnav {
+  overflow: hidden;
+  /*background-color: #333;*/
+  position: relative;
 }
 
-/*_____________________*/
+.topnav #myLinks {
+  display: none;
+}
+
+#myLinks a{
+	text-align: right;
+}
+
+.topnav a {
+  color: #666;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  /*background: black;*/
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+
+.active {
+/*  background-color: #4CAF50;*/
+  color: white;
+}
 
 h6 {
-    text-align: left;
+	margin: 0;
 }
 
-:active, :hover, :focus {
-    outline: 0;
-    outline-offset: 0;
-}
-
-.texter {
-  margin-top: 10%;
-}
-
-.foott {
-	margin-bottom: 0;
-}
-
-a.buy_btn {
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  padding: .8em 1em calc(.8em + 3px);
-  border-radius: 3px;
-  background: rgb(64,199,129);
-}
-
-a.buy_btn:hover {
-	background: #00B072FF;
 }
