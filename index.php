@@ -15,19 +15,17 @@
 		<div class="container-fluid">
 			<header>
 				<div class="row header">
-						<div class="col-xs-12 col-md-4 logo">
+						<div class="col-md-4 logo">
 							<h1> Viano Group</h1>
 						</div>
-						<div class="col-xs-12 col-md-2 about">
+						<div class="col-md-5 about">
 						</div>
-						<div class="col-xs-12 col-md-2 about">
-							<a class="text here" href="#">О нас</a>
-						</div>
-						<div class="col-xs-12 col-md-2 about">
-							<a class="text" href="#">Галерея</a>
-						</div>
-						<div class="col-xs-12 col-md-2 about">
-							<a class="text" href="#">Цены</a>
+						<div class="col-md-3 about">
+							<div class="row">
+								<div class="col-md-4"><a href="#">О нас</a></div>
+								<div class="col-md-4"><a href="#">Цены</a></div>
+								<div class="col-md-4"><a href="#">Галерея</a></div>
+							</div>
 						</div>
 				</div>
 				<div class="row mobile-header">
@@ -46,7 +44,8 @@
 				</div>
 			</header>
 			<div class="gallery">
-
+				
+				<div class="mobile-text"><hr> <h3>Lorem ipsum dolor sit amet</h3></div>
 				<div class="imgtext">
 					<form action="#" method = "_GET">
 						<a href="#"> <img src="img/viano.png" alt=""> </a>
@@ -56,24 +55,27 @@
 					</span>
 				</div>
 
+				<div class="mobile-text"><hr> <h3>Lorem ipsum dolor sit amet</h3></div>
 				<div class="imgtext">
 					<form action="#" method = "_GET">
 						<a href="#"> <img src="img/viano.png" alt=""> </a>
 					</form>
 					<span>
-						<a href="#" style = "text-decoration: none; color: black;">TEXT</a>
+						<a href="#" style = "text-decoration: none; color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, minus.</a>
 					</span>
 				</div>
 
+				<div class="mobile-text"><hr> <h3>Lorem ipsum dolor sit amet</h3></div>
 				<div class="imgtext">
 					<form action="#" method = "_GET">
 						<a href="#"> <img src="img/viano.png" alt=""> </a>
 					</form>
 					<span>
-						<a href="#" style = "text-decoration: none; color: black;">TEXT</a>
+						<a href="#" style = "text-decoration: none; color: black; text-align: center;">TEXTTEXTTEXT</a>
 					</span>
 				</div>
 
+				<div class="mobile-text"><hr> <h3>Lorem ipsum dolor sit amet</h3></div>
 				<div class="imgtext">
 					<form action="#" method = "_GET">
 						<a href="#"> <img src="img/viano.png" alt=""> </a>

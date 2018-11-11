@@ -1,3 +1,7 @@
+header {
+	margin-top: 1.5%;
+}
+
 .gallery {
 	padding: .5vw;
 	font-size: 0;
@@ -5,13 +9,13 @@
 	flex-direction: column;
 	flex-flow: row wrap;
 	display: flex;
-	margin-top: 5%;
+	margin-top: 2%;
 }
 
 .gallery div {
 	flex: auto;
 	width: 250px;
-	margin: .5vw;
+	margin: .2vw;
 }
 
 .gallery div img {
@@ -27,19 +31,9 @@
 	margin: 0;
 }
 
-@media only screen and (max-width: 414px) {
-.header {
+.mobile-text {
 	display: none;
 }
-
-.text-mobile {
-	display: block;
-	width: 100%;
-	text-align: center;
-}
-}
-
-
 
 .imgtext {
     display:inline-block;   
@@ -50,20 +44,48 @@
 .imgtext:hover span {
     display:inline-block;
     position:absolute;
-    top:0%;   
-    /*left:50%;*/
-    blend: 0.7s;
+    top:10%;   
+    left:10%;
+    transition: 0.3s;
      
     /* Оформление текста */
-    color:#666;
+    color:#FFF;
     font-family:Arial, Helvetica, sans-serif;
     font-size:20px; 
-    text-align: center;
      
     /* Фон */
-    background-color:white;
-    padding:42.25%;
-    padding-bottom: 48.4%;
-    opacity: 0.6;
+/*    background-color:rgba(0,0,0,.4);
+    padding:10px 30px;
+    opacity: 0.6;*/
+}
+
+
+.imgtext:hover {
+	opacity: 0.6;
+}
+
+@media only screen and (max-width: 414px) {
+.topnav a {
+	outline:none;
+}
+
+.header {
+	display: none;
+}
+
+span:hover {
+	display: none;
+}
+
+.text-mobile {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.mobile-text {
+	display: block;
+	text-align: center;
+}
 }
 
