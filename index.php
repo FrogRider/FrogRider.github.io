@@ -51,7 +51,7 @@
 						<a href="#"> <img src="img/viano.png" alt=""> </a>
 					</form>
 					<span>
-						<a href="#" style = "text-decoration: none; color: black;">TEXT</a>
+						<a href="#" style = "text-decoration: none; color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, minus.</a>
 					</span>
 				</div>
 
@@ -71,7 +71,7 @@
 						<a href="#"> <img src="img/viano.png" alt=""> </a>
 					</form>
 					<span>
-						<a href="#" style = "text-decoration: none; color: black; text-align: center;">TEXTTEXTTEXT</a>
+						<a href="#" style = "text-decoration: none; color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, minus.</a>
 					</span>
 				</div>
 
@@ -81,7 +81,7 @@
 						<a href="#"> <img src="img/viano.png" alt=""> </a>
 					</form>
 					<span>
-						<a href="#" style = "text-decoration: none; color: black;">TEXT</a>
+						<a href="#" style = "text-decoration: none; color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, minus.</a>
 					</span>
 				</div>
 
