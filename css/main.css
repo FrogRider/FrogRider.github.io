@@ -85,8 +85,9 @@ body {
   margin-top: 1.5%; }
 
 header {
-  outline: none;
-  margin: 0; }
+  margin-left: 1%;
+  margin-right: 1%;
+  outline: none; }
 
 .header {
   background-image: url(../img/upfeathers.png); }
