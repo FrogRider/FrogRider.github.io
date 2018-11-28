@@ -33,6 +33,13 @@ header {
   display: inline-block;
   position: relative; }
 
+.imgtext form a .opacity:hover {
+  opacity: 0.5; }
+
+.imgtext span a {
+  text-decoration: none;
+  color: #464646; }
+
 .imgtext:hover span {
   display: inline-block;
   position: absolute;
@@ -41,15 +48,8 @@ header {
   transition: 0.3s;
   /* Оформление текста */
   color: #FFF;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  /* Фон */
-  /*    background-color:rgba(0,0,0,.4);
-    padding:10px 30px;
-    opacity: 0.6;*/ }
-
-.imgtext:hover {
-  opacity: 0.6; }
+  font-family: Font;
+  font-size: 20px; }
 
 @media only screen and (max-width: 414px) {
   .topnav a {
@@ -66,15 +66,20 @@ header {
     display: block;
     text-align: center; } }
 
+@font-face {
+  font-family: Font;
+  /* Имя шрифта */
+  src: url(../font/SanFrancisco/SFUIDisplay-Ultralight.ttf);
+  /* Путь к файлу со шрифтом */ }
+
+body {
+  font-family: Font; }
+
 a:active,
 a:hover,
 a {
   text-decoration: none;
   color: #666; }
-
-body {
-  font-family: 'Raleway', sans-serif;
-  margin: 0; }
 
 * {
   margin: 0;
@@ -84,10 +89,20 @@ body {
   text-align: right;
   margin-top: 1.5%; }
 
+.about a {
+  color: black; }
+
 header {
   margin-left: 1%;
   margin-right: 1%;
   outline: none; }
+
+.ico {
+  width: 25px;
+  opacity: 0.7; }
+
+.ico:hover {
+  opacity: 0.1; }
 
 .header {
   background-image: url(../img/upfeathers.png); }
