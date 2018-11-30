@@ -1,7 +1,10 @@
+@charset "UTF-8";
 body {
-	background: black; 
-	margin-top: 13vh; }
+  background: black;
+  margin-top: 13vh; }
 
 .owl-carousel p {
   color: #666;
-  margin-top: 2%; }
+  margin-top: 100%; }
+
+
