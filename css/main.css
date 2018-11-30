@@ -143,3 +143,6 @@ header {
     color: white; }
   h6 {
     margin: 0; } }
+
+.carousel {
+  background: black; }
