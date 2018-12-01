@@ -1,10 +1,11 @@
-@charset "UTF-8";
 body {
   background: black;
-  margin-top: 13vh; }
+  margin-top: 4vh; }
 
-.owl-carousel p {
+.imageDiv {
+  text-align: center;
+  display: block; }
+
+p {
   color: #666;
-  margin-top: 100%; }
-
-
+  text-align: center; }
