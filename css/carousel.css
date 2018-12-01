@@ -1,11 +1,20 @@
-body {
-  background: black;
-  margin-top: 4vh; }
+.mobile-header,
+.header {
+  background: #000 !important;
+  margin: 0 !important;
+  padding: 1% !important; }
 
-.imageDiv {
-  text-align: center;
-  display: block; }
+.header a {
+  color: white; }
+
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: white; }
 
 p {
-  color: #666;
+  color: #000;
+  margin: 2% !important; }
+
+.imageDiv {
   text-align: center; }
