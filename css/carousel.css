@@ -1,6 +1,6 @@
 .mobile-header,
 .header {
-  background: #000 !important;
+  background: #202020 !important;
   margin: 0 !important;
   padding: 1% !important; }
 
@@ -18,3 +18,9 @@ p {
 
 .imageDiv {
   text-align: center; }
+
+.btns {
+  margin-top: 2.5% !important; }
+
+.icon h6 {
+  margin-top: 5% !important; }
