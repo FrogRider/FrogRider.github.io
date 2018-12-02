@@ -40,6 +40,11 @@ header {
   text-decoration: none;
   color: #464646; }
 
+.imgtext span:hover {
+  background: #fff;
+  opacity: 0.8;
+  transition: width 5s; }
+
 .imgtext:hover span {
   display: inline-block;
   position: absolute;
@@ -88,7 +93,8 @@ a {
   margin-top: 1.5%; }
 
 .about a {
-  color: black; }
+  color: black;
+  font-size: 90%; }
 
 header {
   margin-left: 1%;
@@ -96,7 +102,7 @@ header {
   outline: none; }
 
 .ico {
-  width: 25px;
+  width: 20px;
   opacity: 0.7; }
 
 .ico:hover {
