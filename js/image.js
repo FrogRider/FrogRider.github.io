@@ -13,11 +13,22 @@ $(document).ready(function() { // Ждём загрузки страниц
 			  $(".popup").remove(); // Удаляем разметку всплывающего окна
 			}, 800);
 		});
-		$(".popup_img").click(function(){	// Событие клика на затемненный фон	   
-			$(".popup").fadeOut(500);	// Медленно убираем всплывающее окно
-			setTimeout(function() {	// Выставляем таймер
-			  $(".popup").remove(); // Удаляем разметку всплывающего окна
+		$(".popup_img").click(function(){		   
+			$(".popup").fadeOut(500);	
+			setTimeout(function() {
+			  $(".popup").remove();
 			}, 800);
 		});
 	}); 
+});
+$(document).keydown(function(e) { //closing at ESC
+    if( e.keyCode > 0) {
+        $(".popup").fadeOut(500)
+			setTimeout(function() {	
+			  $(".popup").remove();
+			}, 800);
+    } else {
+    	var key = e.keyCode;
+    	console.log(e);
+    }
 });
