@@ -118,6 +118,8 @@ header {
   margin-top: 5px; }
 
 @media only screen and (max-width: 414px) {
+  .web {
+    display: none; }
   .mobile-header {
     display: block; }
   h1 {

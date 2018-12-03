@@ -50,6 +50,3 @@ p {
   max-height: 94%;
   max-width: 94%;
   margin: 1% 0 0 0; }
-
-.image:hover {
-  cursor: url("img/cursor.png"), pointer; }

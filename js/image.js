@@ -26,9 +26,21 @@ $(document).keydown(function(e) { //closing at ESC
         $(".popup").fadeOut(500)
 			setTimeout(function() {	
 			  $(".popup").remove();
-			}, 800);
+			}, 800); 
     } else {
     	var key = e.keyCode;
     	console.log(e);
     }
 });
+
+var img = document.getElementsByTagName('img');
+
+for(var i in img)
+{
+    img[i].oncontextmenu = function()
+    {
+        return false;
+    }
+}
+
+
