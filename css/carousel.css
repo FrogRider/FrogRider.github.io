@@ -1,3 +1,6 @@
+a {
+  outline: none; }
+
 .mobile-header,
 .header {
   margin: 0 !important;
@@ -39,19 +42,26 @@ p {
 .popup_bg {
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   height: 100%;
-  width: 100%;
-  cursor: url(../img/zoom-out.png), pointer; }
+  width: 100%; }
 
 .popup_img {
   position: relative;
   margin: 0 auto;
+  margin-top: 4% !important;
   z-index: 2;
-  max-height: 94%;
-  max-width: 94%;
+  max-height: 85%;
+  max-width: 85%;
   margin: 1% 0 0 0;
   cursor: url(../img/zoom-out.png), pointer; }
 
 .image {
   cursor: url(../img/zoom-in.png), pointer; }
+
+.arrow {
+  width: 2%;
+  margin-top: 23% !important;
+  margin-left: 1.5% !important;
+  margin-right: 3% !important;
+  display: absolute; }
