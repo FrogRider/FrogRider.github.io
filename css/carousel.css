@@ -41,8 +41,8 @@ p {
 
 .popup_bg {
   background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  z-index: 5;
+  position: relative;
+  z-index: 2;
   height: 100%;
   width: 100%; }
 
@@ -50,18 +50,32 @@ p {
   position: relative;
   margin: 0 auto;
   margin-top: 4% !important;
-  z-index: 2;
+  z-index: 5;
   max-height: 85%;
   max-width: 85%;
   margin: 1% 0 0 0;
-  cursor: url(../img/zoom-out.png), pointer; }
+  cursor: pointer; }
 
 .image {
   cursor: url(../img/zoom-in.png), pointer; }
 
 .arrow {
+  position: fixed;
+  z-index: 1;
   width: 2%;
   margin-top: 23% !important;
   margin-left: 1.5% !important;
   margin-right: 3% !important;
   display: absolute; }
+
+.popup_bg p {
+  text-align: center;
+  color: #fff; }
+
+.popup_bg:first-child {
+  position: absolute;
+  background: #000;
+  opacity: 0.7; }
+
+.popup_bg:first-child {
+  color: red; }

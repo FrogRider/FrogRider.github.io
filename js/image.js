@@ -5,7 +5,7 @@ $(document).ready(function() { // Ждём загрузки страниц
 	  	var img = $(this); // Получаем изображение, на которое кликнули
 		var src = img.attr('src'); // Достаем из этого изображения путь до картинки
 		$("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-						 "<div class='popup_bg' style='text-align: right'><a href='#' onclick='prev()'><img src='img/back.svg' class='arrow'></a><a href='#' onclick='next()'><img src='img/forward.svg' class='arrow'></a></div>"+ // Блок, который будет служить фоном затемненным
+						 "<div class='popup_bg'></div>"+ // Блок, который будет служить фоном затемненным
 						 "<img src='"+src+"' class='popup_img' />"+ // Само увеличенное фото
 						 "</div>"); 
 		$(".popup").fadeIn(500); // Медленно выводим изображение
@@ -15,15 +15,17 @@ $(document).ready(function() { // Ждём загрузки страниц
 		// 	  $(".popup").remove(); // Удаляем разметку всплывающего окна
 		// 	}, 800);
 		// });
-		$(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
-			$(".popup").fadeOut(500);	
-			setTimeout(function() {
-			  $(".popup").remove();
-			}, 800);
-		});
+		// $(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
+		// 	$(".popup").fadeOut(500);	
+		// 	setTimeout(function() {
+		// 	  $(".popup").remove();
+		// 	}, 800);
+		// });
 	}); 
 
 });
+
+// <div><h1 class='prev'><a href='#' onclick='next()'><</a></h1></div>
 
 var imagesSrcs = []; //тэги src всех нужных изображений будут храниться тут
 var images = document.getElementsByName("pic");//берем все элементы с именем pic (это картинки)
