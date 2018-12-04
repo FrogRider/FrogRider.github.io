@@ -41,7 +41,8 @@ p {
   position: absolute;
   z-index: 1;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  cursor: url(../img/zoom-out.png), pointer; }
 
 .popup_img {
   position: relative;
@@ -49,4 +50,8 @@ p {
   z-index: 2;
   max-height: 94%;
   max-width: 94%;
-  margin: 1% 0 0 0; }
+  margin: 1% 0 0 0;
+  cursor: url(../img/zoom-out.png), pointer; }
+
+.image {
+  cursor: url(../img/zoom-in.png), pointer; }

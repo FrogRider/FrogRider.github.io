@@ -1,4 +1,4 @@
 document.oncontextmenu = function()  {  
-	alert("Right click disabled!")
+	alert("Right click disabled!!!!!!!!")
 	return false; 
 };
