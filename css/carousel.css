@@ -1,3 +1,4 @@
+@charset "UTF-8";
 a {
   outline: none; }
 
@@ -40,7 +41,8 @@ p {
   text-align: center; }
 
 .popup_bg {
-  background: rgba(0, 0, 0, 0.4);
+  background: black;
+  opacity: 0.9;
   position: relative;
   z-index: 2;
   height: 100%;
@@ -54,28 +56,46 @@ p {
   max-height: 85%;
   max-width: 85%;
   margin: 1% 0 0 0;
-  cursor: pointer; }
+  cursor: url(../img/zoom-out.png), pointer; }
 
 .image {
   cursor: url(../img/zoom-in.png), pointer; }
 
-.arrow {
-  position: fixed;
-  z-index: 1;
-  width: 2%;
-  margin-top: 23% !important;
-  margin-left: 1.5% !important;
-  margin-right: 3% !important;
-  display: absolute; }
-
 .popup_bg p {
   text-align: center;
-  color: #fff; }
+  color: #fff !important;
+  margin-top: 50% !important; }
 
 .popup_bg:first-child {
   position: absolute;
-  background: #000;
-  opacity: 0.7; }
+  background: #000; }
 
-.popup_bg:first-child {
-  color: red; }
+.arrowsContainer {
+  display: table;
+  width: 100%; }
+
+.arrow {
+  display: table-cell;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle; }
+
+.next {
+  width: 300px;
+  /*задаем ширину блока*/
+  height: 100px;
+  /*задаем высоту блока*/
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 95%; }
+
+.prev {
+  width: 300px;
+  /*задаем ширину блока*/
+  height: 100px;
+  /*задаем высоту блока*/
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 5%; }

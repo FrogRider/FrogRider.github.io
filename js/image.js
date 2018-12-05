@@ -5,7 +5,7 @@ $(document).ready(function() { // Ждём загрузки страниц
 	  	var img = $(this); // Получаем изображение, на которое кликнули
 		var src = img.attr('src'); // Достаем из этого изображения путь до картинки
 		$("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-						 "<div class='popup_bg'></div>"+ // Блок, который будет служить фоном затемненным
+						 "<div class='popup_bg'><div class='next arrow'><a href='#' onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev arrow'><a href='#' onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
 						 "<img src='"+src+"' class='popup_img' />"+ // Само увеличенное фото
 						 "</div>"); 
 		$(".popup").fadeIn(500); // Медленно выводим изображение
@@ -15,12 +15,12 @@ $(document).ready(function() { // Ждём загрузки страниц
 		// 	  $(".popup").remove(); // Удаляем разметку всплывающего окна
 		// 	}, 800);
 		// });
-		// $(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
-		// 	$(".popup").fadeOut(500);	
-		// 	setTimeout(function() {
-		// 	  $(".popup").remove();
-		// 	}, 800);
-		// });
+		$(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
+			$(".popup").fadeOut(500);	
+			setTimeout(function() {
+			  $(".popup").remove();
+			}, 800);
+		});
 	}); 
 
 });
@@ -38,6 +38,13 @@ $(".image").click(function(){//по клику на картинку
 	picNumber = imagesSrcs.indexOf(src); //запоминаем номер этой картинки в массиве всех картинок
 	// console.log("Pic num = " + picNumber);
 }); 
+
+$(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
+			$(".popup").fadeOut(500);	
+			setTimeout(function() {
+			  $(".popup").remove();
+			}, 800);
+		});
 
 $(document).keydown(function(e) { //closing at ESC
     if( e.keyCode > 0 && e.keyCode != 37 && e.keyCode != 39) {//закрываем увеличенную картинку на все кнопки кроме стелки в лево и право
@@ -64,7 +71,7 @@ var next = function(){
 	}
     document.getElementById("picture").remove();
     $("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-				 	 "<div class='popup_bg' style='text-align: right'><a href='#' onclick='prev()'><img src='img/back.svg' class='arrow'></a><a href='#' onclick='next()'><img src='img/forward.svg' class='arrow'></a></div>"+  // Блок, который будет служить фоном затемненным
+				 	 "<div class='popup_bg'><div class='next arrow'><a href='#' onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev arrow'><a href='#' onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+  // Блок, который будет служить фоном затемненным
 				 	 "<img src='"+imagesSrcs[picNumber]+"' class='popup_img' />"+ // Само увеличенное фото
 				 	 "</div>");
 				 	 $(".popup").fadeIn(0); 
@@ -77,7 +84,7 @@ picNumber--;
     }
     document.getElementById("picture").remove();
     $("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-					 "<div class='popup_bg' style='text-align: right'><a href='#' onclick='prev()'><img src='img/back.svg' class='arrow'></a><a href='#' onclick='next()'><img src='img/forward.svg' class='arrow'></a></div>"+  // Блок, который будет служить фоном затемненным
+					 "<div class='popup_bg'><div class='next arrow'><a href='#' onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev arrow'><a href='#' onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+  // Блок, который будет служить фоном затемненным
 					 "<img src='"+imagesSrcs[picNumber]+"' class='popup_img' />"+ // Само увеличенное фото
 					 "</div>");
 					 $(".popup").fadeIn(0);
