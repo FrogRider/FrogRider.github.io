@@ -55,8 +55,7 @@ p {
   z-index: 5;
   max-height: 85%;
   max-width: 85%;
-  margin: 1% 0 0 0;
-  cursor: url(../img/zoom-out.png), pointer; }
+  margin: 1% 0 0 0; }
 
 .image {
   cursor: url(../img/zoom-in.png), pointer; }
@@ -73,12 +72,6 @@ p {
 .arrowsContainer {
   display: table;
   width: 100%; }
-
-.arrow {
-  display: table-cell;
-  height: 100px;
-  text-align: center;
-  vertical-align: middle; }
 
 .next {
   width: 300px;
@@ -99,3 +92,32 @@ p {
   position: absolute;
   top: 50%;
   left: 5%; }
+
+.cross {
+  width: 300px;
+  /*задаем ширину блока*/
+  height: 100px;
+  /*задаем высоту блока*/
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 10%;
+  left: 5%; }
+
+.close {
+  width: 300px;
+  /*задаем ширину блока*/
+  height: 30px;
+  /*задаем высоту блока*/
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 10%;
+  left: 21%; }
+
+#navbar {
+  overflow: hidden; }
+
+.sticky {
+  position: fixed;
+  top: 1;
+  width: 30%;
+  height: 30px; }
