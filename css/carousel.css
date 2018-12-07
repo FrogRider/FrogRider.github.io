@@ -143,4 +143,7 @@ p {
   color: #000;
   text-align: left;
   margin-top: 10% !important;
-  margin-bottom: 5% !important; }
+  margin-bottom: 5% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 47.5%; }

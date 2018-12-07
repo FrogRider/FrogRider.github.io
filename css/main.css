@@ -159,8 +159,6 @@ header {
   margin-top: 2%; }
 
 @media only screen and (max-width: 414px) {
-  .texter p {
-    display: inline !important; }
   .close {
     top: 4% !important; }
   .web {
@@ -197,14 +195,3 @@ header {
 
 .carousel {
   background: black; }
-
-.socials {
-  text-align: right;
-  margin-right: 1%; }
-
-.socials p {
-  display: none; }
-
-.socials .texter:hover p,
-.socials img:hover + p {
-  display: inline; }
