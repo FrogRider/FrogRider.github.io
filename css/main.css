@@ -195,3 +195,15 @@ header {
 
 .carousel {
   background: black; }
+
+.socials {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0% !important; }
+
+.texxt {
+  display: inline-block;
+  margin-left: -3%; }
+
+.pic {
+  margin-right: 3%; }

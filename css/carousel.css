@@ -85,8 +85,9 @@ p {
   /*задаем высоту блока*/
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 50%;
-  left: 95%; }
+  top: 100%;
+  left: 95%;
+  height: 100vh; }
 
 .prev {
   width: 300px;
@@ -95,8 +96,9 @@ p {
   /*задаем высоту блока*/
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 50%;
-  left: 5%; }
+  top: 100%;
+  left: 5%;
+  height: 100vh; }
 
 .cross {
   width: 300px;
@@ -146,4 +148,4 @@ p {
   margin-bottom: 5% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: 47.5%; }
+  width: 85%; }

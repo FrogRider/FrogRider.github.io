@@ -39,6 +39,10 @@ $(".image").click(function(){//по клику на картинку
 	// console.log("Pic num = " + picNumber);
 }); 
 
+$(".prev").click(function(){//по клику на картинку
+	console.log("prev");
+}); 
+
 $(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
 			console.log("click");
 		});
