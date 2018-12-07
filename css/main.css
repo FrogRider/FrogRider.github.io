@@ -34,23 +34,28 @@ header {
   position: relative; }
 
 .imgtext form a .opacity:hover {
-  opacity: 0.5; }
+  opacity: 0.2; }
 
 .imgtext span a {
   text-decoration: none;
   color: #464646; }
 
-.imgtext span:hover {
-  background: #fff;
+.imgtext span:hover .opacity {
   opacity: 0.8;
   transition: width 5s; }
 
+.imgtext {
+  text-align: center; }
+
+.imgtext span:hover,
 .imgtext:hover span {
   display: inline-block;
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 45%;
+  left: 25%;
   transition: 0.3s;
+  padding: 3px;
+  border: 1px solid #666;
   /* Оформление текста */
   color: #FFF;
   font-family: Font;
@@ -78,6 +83,34 @@ header {
 body {
   font-family: Font; }
 
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: #DEDEDEFF;
+  outline: none; }
+
+input[type=submit] {
+  color: #666;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none; }
+
+input[type=submit]:hover {
+  background-color: #555555FF;
+  color: #fff;
+  outline: none; }
+
+.head {
+  margin-top: 1.9% !important; }
+
 a:active,
 a:hover,
 a {
@@ -100,8 +133,9 @@ a {
   font-size: 90%; }
 
 header {
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-top: 3% !important;
+  margin-left: 1% !important;
+  margin-right: 1% !important;
   outline: none; }
 
 .ico {
@@ -120,7 +154,15 @@ header {
 .icon {
   margin-top: 5px; }
 
+.web {
+  text-align: left;
+  margin-top: 2%; }
+
 @media only screen and (max-width: 414px) {
+  .texter p {
+    display: inline !important; }
+  .close {
+    top: 4% !important; }
   .web {
     display: none; }
   .mobile-header {
@@ -155,3 +197,14 @@ header {
 
 .carousel {
   background: black; }
+
+.socials {
+  text-align: right;
+  margin-right: 1%; }
+
+.socials p {
+  display: none; }
+
+.socials .texter:hover p,
+.socials img:hover + p {
+  display: inline; }
