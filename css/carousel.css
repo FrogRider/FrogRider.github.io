@@ -85,9 +85,12 @@ p {
   /*задаем высоту блока*/
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 100%;
+  top: 61.5%;
   left: 95%;
   height: 100vh; }
+
+.next .ico {
+  padding-top: 80% !important; }
 
 .prev {
   width: 300px;
@@ -96,9 +99,12 @@ p {
   /*задаем высоту блока*/
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 100%;
+  top: 61.5%;
   left: 5%;
   height: 100vh; }
+
+.prev .ico {
+  padding-top: 80% !important; }
 
 .cross {
   width: 300px;
@@ -149,3 +155,6 @@ p {
   margin-left: auto !important;
   margin-right: auto !important;
   width: 85%; }
+
+.cross img {
+  width: 15px; }

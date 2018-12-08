@@ -45,13 +45,17 @@
 			</header>
 			<br><br>
 				<br>
-			<form action="/action_page.php">
+					
+			<form action="#" method="_POST" onsubmit="success();return false">
 				<label for="fname">First Name</label> 
 				<input type="text" id="fname" name="firstname" placeholder="Your name.." required>
 				<label for="lname">Last Name</label>
 				<input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
 				<label for="lname">Email</label>
-				<input type="text" name="email" placeholder="Your email.." required>
+				<input type="text" id="email" name="email" placeholder="Your email.." required>
+				<div class="alert alert-success" role="alert" id="sucess" style="display: none;">
+ 					Message sent successfully
+				</div>
 				<label for="subject">Subject</label>
 				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 				<input type="submit" value="Submit">
@@ -67,10 +71,15 @@
 		<a href = "" target="_blank"><img src="img/skype.svg" class="ico pic skype" alt=""></a>
 		<p class="texxt">: Skype nick</p>
 	</div>
-
+	<script>var success = function(){
+		$("#fname").val("");
+		$("#lname").val("");
+		$("#email").val("");
+		document.getElementById('sucess').style.display='block';
+	}</script>
 	<script src = "js/dropdown-menu.js"></script>
 	<script src="js/contacts.js"></script>
-	<!-- <script src="js/antiload.js"></script> -->
+	<!-- <script src="js/antiload.js"></scriptdocument.getElementById(block_4_close).style.display='none';> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	</body>

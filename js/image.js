@@ -1,11 +1,14 @@
-var picNumber = 0;
+
 $(document).ready(function() { // Ждём загрузки страниц
+
+var picNumber = 0;
+
 	$(".image").click(function(){	// Событие клика на маленькое изображение
 		// console.log($(this).attr('src'));
 	  	var img = $(this); // Получаем изображение, на которое кликнули
 		var src = img.attr('src'); // Достаем из этого изображения путь до картинки
 		$("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-						 "<div class='popup_bg'><div class='cross'><a href='#' onclick='closeImg()'><img src='img/crossWhite.svg' style='width:15px'></a></div><div class='next'><a href='#' onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev '><a href='#' onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
+						 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next' onclick='next()'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev' onclick='prev()'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
 						 "<img src='"+src+"' class='popup_img' />"+ // Само увеличенное фото
 						 "</div>"); 
 		$(".popup").fadeIn(500); // Медленно выводим изображение
@@ -24,8 +27,6 @@ $(document).ready(function() { // Ждём загрузки страниц
 	}); 
 
 });
-
-// <div><h1 class='prev'><a href='#' onclick='next()'><</a></h1></div>
 
 var imagesSrcs = []; //тэги src всех нужных изображений будут храниться тут
 var images = document.getElementsByName("pic");//берем все элементы с именем pic (это картинки)
@@ -71,7 +72,7 @@ var next = function(){
 	}
     document.getElementById("picture").remove();
     $("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-				 	 "<div class='popup_bg'><div class='cross'><a href='#' onclick='closeImg()'><img src='img/crossWhite.svg' style='width:15px'></a></div><div class='next'><a href='#' onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev '><a href='#' onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+  // Блок, который будет служить фоном затемненным
+				 	 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next' onclick='next()'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev' onclick='prev()'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+  // Блок, который будет служить фоном затемненным
 				 	 "<img src='"+imagesSrcs[picNumber]+"' class='popup_img' />"+ // Само увеличенное фото
 				 	 "</div>");
 				 	 $(".popup").fadeIn(0); 
@@ -84,7 +85,7 @@ picNumber--;
     }
     document.getElementById("picture").remove();
     $("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-					 "<div class='popup_bg'><div class='cross'><a href='#' onclick='closeImg()'><img src='img/crossWhite.svg' style='width:15px'></a></div><div class='next'><a href='#' onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev '><a href='#' onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
+					 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next' onclick='next()'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev' onclick='prev()'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
 					 "<img src='"+imagesSrcs[picNumber]+"' class='popup_img' />"+ // Само увеличенное фото
 					 "</div>");
 					 $(".popup").fadeIn(0);
