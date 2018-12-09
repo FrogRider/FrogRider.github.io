@@ -120,6 +120,9 @@ p {
   left: 95%;
   height: 100vh; }
 
+.next img:hover {
+  cursor: pointer; }
+
 .next .ico {
   padding-top: 80% !important; }
 
@@ -134,13 +137,16 @@ p {
   left: 5%;
   height: 100vh; }
 
+.prev a:hover {
+  cursor: pointer; }
+
 .prev .ico {
   padding-top: 80% !important; }
 
 .cross {
-  width: 300px;
+  width: 20px;
   /*задаем ширину блока*/
-  height: 100px;
+  height: 20px;
   /*задаем высоту блока*/
   transform: translate(-50%, -50%);
   position: absolute;

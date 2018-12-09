@@ -1,4 +1,3 @@
-
 $(document).ready(function() { // Ждём загрузки страниц
 	$(".opacity").click(function(){	// Событие клика на маленькое изображение
 		console.log("+");
