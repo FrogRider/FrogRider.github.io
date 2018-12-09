@@ -69,7 +69,7 @@ $(document).keydown(function(e) { //closing at ESC
 
 var next = function(){
 	picNumber++;
-    if(picNumber > imagesSrcs.length-1) { //проверка, не дошли ли мы до последней картинки
+    if(picNumber == imagesSrcs.length-1) { //проверка, не дошли ли мы до последней картинки
 		picNumber = 0; //если да- начинаем с первой снова
 	}
     document.getElementById("picture").remove();
