@@ -248,3 +248,23 @@ video {
 
 .map {
   width: 100vw; }
+
+#p_prldr {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.8;
+  z-index: 30; }
+
+.preloadImage {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 40%;
+  left: 0%; }
+
+.preloadImage img {
+  width: 10%; }
