@@ -9,7 +9,7 @@ header {
   flex-direction: column;
   flex-flow: row wrap;
   display: flex;
-  margin-top: 2%; }
+  margin-top: -3% !important; }
 
 .gallery div {
   flex: auto;
@@ -108,7 +108,7 @@ input[type=submit]:hover {
   outline: none; }
 
 .head {
-  margin-top: 1.9% !important; }
+  margin-top: 1% !important; }
 
 a:active,
 a:hover,
@@ -138,7 +138,7 @@ header {
   outline: none; }
 
 .ico {
-  width: 20px;
+  width: 18px;
   opacity: 0.7; }
 
 .ico:hover {
@@ -155,9 +155,30 @@ header {
 
 .web {
   text-align: left;
-  margin-top: 2%; }
+  margin-top: -1%; }
 
-@media only screen and (max-width: 414px) {
+.imageDiv {
+  background: #fff;
+  width: 56%;
+  margin-left: 22% !important;
+  margin-right: 22% !important;
+  padding-bottom: 0 !important; }
+
+video {
+  height: 80vh; }
+
+@media only screen and (max-width: 514px) {
+  .mobileImages {
+    display: block; }
+  iframe {
+    width: 70vw; }
+  video {
+    width: 90vw;
+    outline: none; }
+  .imageDiv {
+    width: 80%;
+    margin-left: 1% !important;
+    margin-right: 1% !important; }
   .close {
     top: 4% !important; }
   .web {
@@ -206,3 +227,19 @@ header {
 
 .pic {
   margin-right: 3%; }
+
+.mobile-header img {
+  width: 18%; }
+
+.menuButtons {
+  margin-left: 1.33%; }
+
+.fontSmaller {
+  font-size: 80%;
+  text-align: center; }
+
+.fontSmaller:hover {
+  opacity: 0.7; }
+
+.map {
+  width: 100vw; }

@@ -27,11 +27,41 @@ p {
   margin-right: 22% !important;
   padding-bottom: 0 !important; }
 
+@media only screen and (max-width: 514px) {
+  .imageDiv {
+    display: none; }
+  .mobileText {
+    display: block !important;
+    text-align: center; }
+  .mobileContent {
+    display: block; } }
+
 .btns {
   margin-top: 2.5% !important; }
 
 .icon h6 {
   margin-top: 5% !important; }
+
+.mobileContent {
+  text-align: center;
+  margin-top: 3.5% !important;
+  position: relative;
+  z-index: 1; }
+
+.mobileContent img {
+  width: 80vw;
+  height: auto; }
+
+.mobileContentNav {
+  position: relative;
+  z-index: 3;
+  margin-bottom: -90% !important; }
+
+.mobileContentNav .prevMobile {
+  float: left; }
+
+.mobileContentNav .nextMobile {
+  float: right; }
 
 .popup_img {
   margin-top: 1.5% !important; }
@@ -50,6 +80,7 @@ p {
   opacity: 0.9;
   position: relative;
   z-index: 2;
+  overflow: hidden;
   height: 100%;
   width: 100%; }
 
@@ -114,7 +145,10 @@ p {
   transform: translate(-50%, -50%);
   position: absolute;
   top: 10%;
-  left: 5%; }
+  left: 95%; }
+
+.cross:hover {
+  cursor: pointer; }
 
 .close {
   width: 300px;

@@ -12,27 +12,33 @@ var picNumber = 0;
 						 "<img src='"+src+"' class='popup_img' />"+ // Само увеличенное фото
 						 "</div>"); 
 		$(".popup").fadeIn(500); // Медленно выводим изображение
-		// $(".popup_bg").click(function(){	// Событие клика на затемненный фон	   
-		// 	$(".popup").fadeOut(500);	// Медленно убираем всплывающее окно
-		// 	setTimeout(function() {	// Выставляем таймер
-		// 	  $(".popup").remove(); // Удаляем разметку всплывающего окна
-		// 	}, 800);
-		// });
-		$(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
-			$(".popup").fadeOut(500);	
-			setTimeout(function() {
-			  $(".popup").remove();
-			}, 800);
-		});
-	}); 
-
+	});
 });
 
 var imagesSrcs = []; //тэги src всех нужных изображений будут храниться тут
 var images = document.getElementsByName("pic");//берем все элементы с именем pic (это картинки)
+
 for (var i = 0; i < images.length; i++) {//проходимся по ним циклом
 	imagesSrcs.push(images[i].attributes.src.nodeValue)//и из атрибут src пушим в массив
 }
+
+
+var count = 0;
+$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' onclick='prevMobile()'><img src='img/prevBlack.svg' style='width:10px'></a><img src='"+imagesSrcs[count]+"'><a href='#' onclick='nextMobile()'><img src='img/nextBlack.svg' style='width:10px'></a></div>");
+
+var nextMobile = function(){
+	count++;
+	if(count == imagesSrcs.length-1){count=0}
+	document.getElementById("mobileContent").remove();
+	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' onclick='nextMobile()'><img src='img/prevBlack.svg' style='width:10px'></a><img src='"+imagesSrcs[count]+"'><a href='#' onclick='prevMobile()'><img src='img/nextBlack.svg' style='width:10px'></a></div>");
+}
+var prevMobile = function(){
+	count--;
+	if(count < 0){count=imagesSrcs.length-1}
+	document.getElementById("mobileContent").remove();
+	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' onclick='nextMobile()'><img src='img/prevBlack.svg' style='width:10px'></a><img src='"+imagesSrcs[count]+"'><a href='#' onclick='prevMobile()'><img src='img/nextBlack.svg' style='width:10px'></a></div>");
+}
+
 $(".image").click(function(){//по клику на картинку
 	var img = $(this); //берем эту картинку
 	var src = img.attr('src'); //берем ее атрибут src
