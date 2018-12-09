@@ -167,7 +167,12 @@ header {
 video {
   height: 80vh; }
 
+.mobileImages {
+  display: none; }
+
 @media only screen and (max-width: 514px) {
+  body {
+    font-size: 70%; }
   .mobileImages {
     display: block; }
   iframe {
