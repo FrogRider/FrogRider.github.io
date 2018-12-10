@@ -28,6 +28,16 @@ p {
   padding-bottom: 0 !important; }
 
 @media only screen and (max-width: 514px) {
+  a.left {
+    position: absolute;
+    height: 50px;
+    left: 3%;
+    top: 50%; }
+  a.right {
+    position: absolute;
+    height: 50px;
+    right: 3%;
+    top: 50%; }
   .imageDiv {
     display: none; }
   .mobileText {
@@ -49,7 +59,7 @@ p {
   z-index: 1; }
 
 .mobileContent img {
-  width: 80vw;
+  width: 100vw;
   height: auto; }
 
 .mobileContentNav {

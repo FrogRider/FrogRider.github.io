@@ -211,6 +211,25 @@ video {
 .mobileImages {
   display: none; }
 
+.logoWeb {
+  width: 40%;
+  height: auto;
+  margin-top: 7.3%; }
+
+@media only screen and (max-width: 768px) {
+  .logoWeb {
+    width: 80% !important;
+    height: auto;
+    margin-top: 5.3%; } }
+
+@media only screen and (max-height: 500px) {
+  .logoWeb {
+    width: 10% !important;
+    height: auto;
+    margin-top: 5.3%; }
+  .logoWebContainer {
+    text-align: center !important; } }
+
 @media only screen and (max-width: 514px) {
   .topnav img {
     width: 20px !important; }

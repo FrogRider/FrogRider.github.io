@@ -24,19 +24,19 @@ for (var i = 0; i < images.length; i++) {//проходимся по ним ци
 
 
 var count = 0;
-$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' onclick='prevMobile()'><img src='img/prevBlack.svg' style='width:10px'></a><img src='"+imagesSrcs[count]+"'><a href='#' onclick='nextMobile()'><img src='img/nextBlack.svg' style='width:10px'></a></div>");
+$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' class='left' onclick='prevMobile()'><img src='img/back.svg' style='width:15px'></a><img src='"+imagesSrcs[count]+"'><a href='#' class='right' onclick='nextMobile()'><img src='img/next.svg' style='width:15px'></a></div>");
 
 var nextMobile = function(){
 	count++;
 	if(count == imagesSrcs.length-1){count=0}
 	document.getElementById("mobileContent").remove();
-	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' onclick='nextMobile()'><img src='img/prevBlack.svg' style='width:10px'></a><img src='"+imagesSrcs[count]+"'><a href='#' onclick='prevMobile()'><img src='img/nextBlack.svg' style='width:10px'></a></div>");
+	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' class='left' onclick='prevMobile()'><img src='img/back.svg' style='width:15px'></a><img src='"+imagesSrcs[count]+"'><a href='#' class='right' onclick='nextMobile()'><img src='img/next.svg' style='width:15px'></a></div>");
 }
 var prevMobile = function(){
 	count--;
 	if(count < 0){count=imagesSrcs.length-1}
 	document.getElementById("mobileContent").remove();
-	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' onclick='nextMobile()'><img src='img/prevBlack.svg' style='width:10px'></a><img src='"+imagesSrcs[count]+"'><a href='#' onclick='prevMobile()'><img src='img/nextBlack.svg' style='width:10px'></a></div>");
+	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' class='left' onclick='prevMobile()'><img src='img/back.svg' style='width:15px'></a><img src='"+imagesSrcs[count]+"'><a href='#' class='right' onclick='nextMobile()'><img src='img/next.svg' style='width:15px'></a></div>");
 }
 
 $(".image").click(function(){//по клику на картинку
