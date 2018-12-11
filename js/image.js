@@ -28,7 +28,7 @@ $(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a hre
 
 var nextMobile = function(){
 	count++;
-	if(count == imagesSrcs.length-1){count=0}
+	if(count == imagesSrcs.length-1 || imagesSrcs.length == 1){count=0}
 	document.getElementById("mobileContent").remove();
 	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' class='left' onclick='prevMobile()'><img src='img/back.svg' style='width:15px'></a><img src='"+imagesSrcs[count]+"'><a href='#' class='right' onclick='nextMobile()'><img src='img/next.svg' style='width:15px'></a></div>");
 }
@@ -69,7 +69,7 @@ $(document).keydown(function(e) { //closing at ESC
 
 var next = function(){
 	picNumber++;
-    if(picNumber == imagesSrcs.length-1) { //проверка, не дошли ли мы до последней картинки
+    if(picNumber == imagesSrcs.length-1 || imagesSrcs.length == 1) { //проверка, не дошли ли мы до последней картинки
 		picNumber = 0; //если да- начинаем с первой снова
 	}
     document.getElementById("picture").remove();

@@ -36,10 +36,11 @@ p {
   a.right {
     position: absolute;
     height: 50px;
-    right: 3%;
+    right: 6%;
     top: 50%; }
   .imageDiv {
-    display: none; }
+    display: none;
+    margin-top: -30% !important; }
   .mobileText {
     display: block !important;
     text-align: center; }
