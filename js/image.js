@@ -8,7 +8,7 @@ var picNumber = 0;
 	  	var img = $(this); // Получаем изображение, на которое кликнули
 		var src = img.attr('src'); // Достаем из этого изображения путь до картинки
 		$("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-						 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next' onclick='next()'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev' onclick='prev()'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
+						 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
 						 "<img src='"+src+"' class='popup_img' />"+ // Само увеличенное фото
 						 "</div>"); 
 		$(".popup").fadeIn(500); // Медленно выводим изображение
@@ -28,8 +28,9 @@ $(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a hre
 
 var nextMobile = function(){
 	count++;
-	if(count == imagesSrcs.length-1 || imagesSrcs.length == 1){count=0}
+	if((count == imagesSrcs.length && imagesSrcs.length != 2) || imagesSrcs.length == 1 || count > imagesSrcs.length-1){count=0}
 	document.getElementById("mobileContent").remove();
+console.log("next");
 	$(".mobileImages").append("<div class='mobileContent' id='mobileContent'> <a href='#' class='left' onclick='prevMobile()'><img src='img/back.svg' style='width:15px'></a><img src='"+imagesSrcs[count]+"'><a href='#' class='right' onclick='nextMobile()'><img src='img/next.svg' style='width:15px'></a></div>");
 }
 var prevMobile = function(){
@@ -45,10 +46,6 @@ $(".image").click(function(){//по клику на картинку
 	picNumber = imagesSrcs.indexOf(src); //запоминаем номер этой картинки в массиве всех картинок
 	// console.log("Pic num = " + picNumber);
 }); 
-
-$(".popup_img").click(function(){ //закрытие при клике на саму увеличенную картинку
-			console.log("click");
-		});
 
 $(document).keydown(function(e) { //closing at ESC
     if( e.keyCode != 37 && e.keyCode != 39) {//закрываем увеличенную картинку на все кнопки кроме стелки в лево и право
@@ -69,12 +66,13 @@ $(document).keydown(function(e) { //closing at ESC
 
 var next = function(){
 	picNumber++;
-    if(picNumber == imagesSrcs.length-1 || imagesSrcs.length == 1) { //проверка, не дошли ли мы до последней картинки
+    if((picNumber == imagesSrcs.length && imagesSrcs.length != 2) || imagesSrcs.length == 1 || picNumber > imagesSrcs.length-1) { //проверка, не дошли ли мы до последней картинки
 		picNumber = 0; //если да- начинаем с первой снова
 	}
+	console.log(picNumber);
     document.getElementById("picture").remove();
     $("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-				 	 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next' onclick='next()'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev' onclick='prev()'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+  // Блок, который будет служить фоном затемненным
+				 	 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+  // Блок, который будет служить фоном затемненным
 				 	 "<img src='"+imagesSrcs[picNumber]+"' class='popup_img' />"+ // Само увеличенное фото
 				 	 "</div>");
 				 	 $(".popup").fadeIn(0); 
@@ -85,9 +83,10 @@ picNumber--;
     if(picNumber < 0) { //проверка первой картинки. если с первой листаем влево- переключаемся на последюю картинку
     	picNumber = imagesSrcs.length-1
     }
+    console.log("prev");
     document.getElementById("picture").remove();
     $("body").append("<div class='popup' id='picture'>"+ //Добавляем в тело документа разметку всплывающего окна
-					 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next' onclick='next()'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev' onclick='prev()'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
+					 "<div class='popup_bg'><div class='cross'><a onclick='closeImg()'><img src='img/crossWhite.svg'></a></div><div class='next'><a onclick='next()'><img src='img/next.svg' class='ico'></a></div><div class='prev'><a onclick='prev()'><img src='img/back.svg' class='ico'></a></div></div>"+ // Блок, который будет служить фоном затемненным
 					 "<img src='"+imagesSrcs[picNumber]+"' class='popup_img' />"+ // Само увеличенное фото
 					 "</div>");
 					 $(".popup").fadeIn(0);
