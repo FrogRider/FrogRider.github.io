@@ -3,7 +3,7 @@ body {
 
 .menu {
   overflow: hidden;
-  background: url("../img/prism.png");
+  background: #4C8098FF;
   position: fixed;
   z-index: 9;
   top: 0;
@@ -16,9 +16,14 @@ body {
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
-  margin-bottom: 1px !important;
   font-size: 17px;
-  margin-top: 1px; }
+  margin-top: 0.1%; }
+
+.subHeaderr {
+  background: red;
+  float: left;
+  padding: 0 !important;
+  margin: 0 !important; }
 
 .menu a:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -31,38 +36,51 @@ body {
 .logo {
   float: left;
   display: block;
-  color: #f2f2f2;
   text-align: center;
-  padding: 13px 16px;
-  font-size: 17px; }
+  padding-left: 1%;
+  padding-top: 0.6%;
+  margin-top: 0.5%; }
+
+.logo img {
+  width: 5%;
+  float: left; }
+
+.logo p {
+  float: left;
+  color: #fff;
+  margin-left: 3%;
+  margin-top: 0.5%; }
 
 @media only screen and (max-width: 532px) {
   .logo,
   .menu a {
     font-size: 13px; } }
 
-.section:nth-child(3),
-.section:first-child {
-  background: #DFDFDFFF;
-  text-align: center; }
+.content {
+  margin-top: 8%;
+  text-align: center;
+  padding-bottom: 5%;
+  border-radius: 2px;
+  background: #D0D5DBFF;
+  opacity: 0.8; }
 
-.section:nth-child(2) {
-  background: #323232FF;
-  opacity: 0.9; }
+.section {
+  background: url("../img/concrete_seamless.png"); }
 
 .section h1 {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 2%;
   color: #696969; }
 
 .section:first-child .content {
   width: 40vw;
   margin: auto;
   margin-top: 10%;
-  font-size: 25px; }
+  font-size: 25px;
+  padding-bottom: 2% !important; }
 
 .section:first-child .content h5 {
-  margin-top: 20%; }
+  margin-top: 15%; }
 
 .section:nth-child(2) .secondOption,
 .section:nth-child(2) .firstOption {
@@ -72,20 +90,33 @@ body {
   padding: 2% 5%;
   margin-top: 7%;
   border-radius: 10px;
-  opacity: 0.5;
-  color: #fff; }
+  opacity: 0.8;
+  color: #fff;
+  width: 30vw; }
 
 .section:nth-child(2) .firstOption {
   float: left;
   margin-left: 5%;
-  background: green;
-  border: solid 5px #00FF00FF; }
+  font-weight: 100;
+  color: white;
+  text-decoration: none;
+  padding: 0.8em 1em calc(.8em + 3px);
+  border-radius: 5px;
+  background: #40c781;
+  box-shadow: 0 -6px #35a76e inset;
+  transition: 0.9s; }
 
 .section:nth-child(2) .secondOption {
   float: right;
   margin-right: 5%;
-  background: red;
-  border: solid 5px #A70000FF; }
+  font-weight: 100;
+  color: white;
+  text-decoration: none;
+  padding: 0.8em 1em calc(.8em + 3px);
+  border-radius: 5px;
+  background: #ff2163;
+  box-shadow: 0 -6px #d11b51 inset;
+  transition: 0.2s; }
 
 .section:nth-child(2) h3 {
   text-align: center;
