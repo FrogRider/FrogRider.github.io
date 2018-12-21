@@ -46,7 +46,7 @@
       var docDefinition = { //формирование документа с нужными фразами из массива
       content: [
         {
-          text: 'default text \n' +phrases[0] +' \n '+phrases[1]+'\n' + phrases[2]
+          text: 'Первый вопрос: ' +phrases[0] +' \n Второй вопрос: '+phrases[1]+'\n Третий вопрос:' + phrases[2]
         }
       ],  
     };
@@ -60,12 +60,12 @@
   var a=document.getElementsByName("a");
   if(a[0].checked){ //если отммечен первый вариант ответа
     // console.log("1.1");
-    phrases[0] = "var 1.1"; //в массив идет эта фраза
+    phrases[0] = "Да"; //в массив идет эта фраза
     console.log(phrases);
   }
   if(a[1].checked){ //если второй
     // console.log("1.2");
-    phrases[0] = "var 1.2"; //эта
+    phrases[0] = "Нет"; //эта
     console.log(phrases);
   }
  }
@@ -73,11 +73,11 @@
  function b_check(){ //вторая группа
   var b=document.getElementsByName("b");
   if(b[0].checked){
-    phrases[1] = "var 2.1"; 
+    phrases[1] = "Да"; 
     console.log(phrases);
   }
   if(b[1].checked){
-    phrases[1] = "var 2.2"; 
+    phrases[1] = "Нет"; 
     console.log(phrases); 
   }
  }
@@ -85,11 +85,11 @@
  function c_check(){ //третяя
   var c=document.getElementsByName("c");
   if(c[0].checked){
-    phrases[2] = "var 3.1"; 
+    phrases[2] = "Да"; 
     console.log(phrases);
   }
   if(c[1].checked){
-    phrases[2] = "var 3.2"; 
+    phrases[2] = "Нет"; 
     console.log(phrases);
   }
  }
