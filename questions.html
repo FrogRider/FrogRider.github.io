@@ -46,8 +46,15 @@
       var docDefinition = { //формирование документа с нужными фразами из массива
       content: [
         {
-          text: 'Первый вопрос: ' +phrases[0] +' \n Второй вопрос: '+phrases[1]+'\n Третий вопрос:' + phrases[2]
-        }
+      text: [
+        'Ответ на первый вопрос:' + phrases[0] + '\n',
+        {text: '  ', fontSize: 15, bold: true},
+        'Ответ на второй вопрос' +phrases[1]+'\n',
+        {text: '  ', fontSize: 20},
+        'Ответ на третий вопрос' +phrases[1]+'\n',
+        {text: ' ', fontSize: 20},
+      ]
+    },
       ],  
     };
       pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
@@ -58,7 +65,7 @@
 
  function a_check(){ //первая группа вопросов
   var a=document.getElementsByName("a");
-  if(a[0].checked){ //если отммечен первый вариант ответа
+  if(a[0].checked){ //если отмечен первый вариант ответа
     // console.log("1.1");
     phrases[0] = "Да"; //в массив идет эта фраза
     console.log(phrases);
