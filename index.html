@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,10 +19,7 @@
     <div class="logo"><img src="img/speedometer.svg" alt=""><p>Name</p></div>
     <a href="#about">Про нас</a>
     <a href="#use_conditions">Умови використання</a>
-    <a href="#use">Скористатись</a>
-    <div class="progress-container">
-      <div class="progress-bar" id="myBar"></div>
-    </div> 
+    <a href="#use">Скористатись</a> 
   </div>
 
 <div id="fullpage">
@@ -52,7 +49,7 @@
             <h1>Оскарж САМ свiй штраф!</h1>
             <h3>Всього за 10 хвилин</h3>
 
-            <a href="#option1">
+            <a href="#option1" onclick='pdf()'>
               <div class="firstOption">
               Власне оскарження<br /><br />
               50 грн.
@@ -60,8 +57,8 @@
 
             <a href="#option2">
               <div class="secondOption">
-              Консультацiя у юриста<br /><br />
-              520 грн.
+              Власне оскарження<br /><br /> 
+              50 грн.
             </div></a>
           </div>
         </div>
@@ -106,5 +103,9 @@
     <script src="libs/fullpage/scrolloverflow.min.js"></script>
     <script src="libs/fullpage/jquery.fullPage.min.js"></script>
     <script src="js/fullapgeInit.js"></script> 
+    <script src="libs/pdfmake/pdfmake.min.js"></script> 
+    <script src="libs/pdfmake/vfs_fonts.js"></script> 
+    <script src="js/pdf.js"></script>
+    <!-- <script>pdf()</script> -->
   </body> 
 </html>

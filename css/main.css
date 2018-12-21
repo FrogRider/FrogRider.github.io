@@ -51,11 +51,6 @@ body {
   margin-left: 3%;
   margin-top: 0.5%; }
 
-@media only screen and (max-width: 532px) {
-  .logo,
-  .menu a {
-    font-size: 13px; } }
-
 .content {
   margin-top: 8%;
   text-align: center;
