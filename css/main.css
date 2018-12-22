@@ -3,7 +3,7 @@ body {
 
 .menu {
   overflow: hidden;
-  background: #4C8098FF;
+  background: rgb(76, 128, 152);;
   position: fixed;
   z-index: 9;
   top: 0;
@@ -13,7 +13,7 @@ body {
 .menu a {
   float: right;
   display: block;
-  color: #f2f2f2;
+  color: rgb(242, 242, 242);;
   text-align: center;
   padding: 14px 16px;
   font-size: 17px;
@@ -28,8 +28,8 @@ body {
 .menu a:hover {
   background: rgba(255, 255, 255, 0.1);
   opacity: 0.3;
-  color: #fff;
-  border: 1px solid #fff;
+  color: rgb(255, 255, 255);;
+  border: 1px solid rgb(255, 255, 255);;
   border-radius: 5px;
   padding: 13px 17px; }
 
@@ -47,7 +47,7 @@ body {
 
 .logo p {
   float: left;
-  color: #fff;
+  color: rgb(255, 255, 255);;
   margin-left: 3%;
   margin-top: 0.5%; }
 
@@ -56,7 +56,7 @@ body {
   text-align: center;
   padding-bottom: 5%;
   border-radius: 2px;
-  background: #D0D5DBFF;
+  background: rgb(208, 213, 219);;
   opacity: 0.8; }
 
 .section {
@@ -65,7 +65,7 @@ body {
 .section h1 {
   text-align: center;
   margin-top: 2%;
-  color: #696969; }
+  color: rgb(105, 105, 105);; }
 
 .section:first-child .content {
   width: 40vw;
@@ -86,7 +86,7 @@ body {
   margin-top: 7%;
   border-radius: 10px;
   opacity: 0.8;
-  color: #fff;
+  color: rgb(255, 255, 255);;
   width: 30vw; }
 
 .section:nth-child(2) .firstOption {
@@ -97,8 +97,8 @@ body {
   text-decoration: none;
   padding: 0.8em 1em calc(.8em + 3px);
   border-radius: 5px;
-  background: #40c781;
-  box-shadow: 0 -6px #35a76e inset;
+  background: rgb(64, 199, 129);;
+  box-shadow: 0 -6px rgb(53, 167, 110); inset;
   transition: 0.9s; }
 
 .section:nth-child(2) .secondOption {
@@ -109,8 +109,8 @@ body {
   text-decoration: none;
   padding: 0.8em 1em calc(.8em + 3px);
   border-radius: 5px;
-  background: #ff2163;
-  box-shadow: 0 -6px #d11b51 inset;
+  background: rgb(255, 33, 99);;
+  box-shadow: 0 -6px rgb(209, 27, 81); inset;
   transition: 0.2s; }
 
 .section:nth-child(2) h3 {
@@ -142,9 +142,9 @@ body {
 .step:nth-child(2),
 .step:nth-child(4),
 .step:nth-child(6) {
-  background: #666;
+  background: rgb(102, 102, 102);;
   opacity: 0.9;
-  color: #fff; }
+  color: rgb(255, 255, 255);; }
 
 .example {
   width: 60vw;
@@ -165,4 +165,4 @@ body {
 a:hover,
 a {
   text-decoration: none;
-  color: #313131FF; }
+  color: rgb(49, 49, 49); }
