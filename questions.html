@@ -10,97 +10,82 @@
 
     <!-- Custom css -->
     <link rel="stylesheet" href="css/main.css" /> 
+    <link rel="stylesheet" href="css/radiobutton.css" /> 
 
     <title>Title</title>
   </head>
   <body>
 
-    <div style="text-align:left">
-      <p>Вопрос 1</p>
-      <input type="radio" name="a" value="l" onchange="a_check(); all()">Да<br/> 
-      <input type="radio" name="a" value="2" onchange="a_check(); all()">Нет<br/>
-    </div>
-    <hr>
 
-    <div style="text-align:left">
-      <p>Вопрос 2</p>
-      <input type="radio" name="b" value="l" onchange="b_check(); all()">Да<br/> 
-      <input type="radio" name="b" value="2" onchange="b_check(); all()">Нет<br/>
-    </div>
-    <hr>
+<div id="home"><a href="index.html"><div class="home"><b><</b></div></a></div>
 
-    <div style="text-align:left">
-      <p>Вопрос 3</p>
-      <input type="radio" name="c" value="l" onchange="c_check(); all()">Да<br/> 
-      <input type="radio" name="c" value="2" onchange="c_check(); all()">Нет<br/>
-    </div>
-    <hr>
-    <button onclick='submit()'>Submit</button>
+<form name="dateForm" style="display: none;">
+  <input type="date" name="date"><br/>
+</form> 
+
+<form class="form">
+  
+  <h5 class="question">Чи складався протокол? <span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio1" name="a" type="radio"/>
+    <label for="radio1">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio2" name="a" type="radio"/>
+    <label for="radio2">Нi</label>
+  </div>
+  <hr>
+
+  <h5 class="question">Чи пред’являлись сертифікати про радар та відомості про щорічну перевірку данного
+приладу, а також його опломбування?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio3" name="b" type="radio"/>
+    <label for="radio3">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio4" name="b" type="radio"/>
+    <label for="radio4">Нi</label>
+  </div>
+  <hr>
+
+  <h5 class="question">Чи пред’являлись сертифікати про радар та відомості про щорічну перевірку данного
+приладу, а також його опломбування?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio5" name="c" type="radio"/>
+    <label for="radio5">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio6" name="c" type="radio"/>
+    <label for="radio6">Нi</label>
+  </div>
+  <hr>
+
+  <h5 class="question">Чи зазначено в постанові прізвище, ім’я, по-батькові та спеціальне звання патрульного
+поліцейського?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio7" name="d" type="radio"/>
+    <label for="radio7">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio8" name="d" type="radio"/>
+    <label for="radio8">Нi</label>
+  </div>
+  <hr>
+
+  <h5 class="question">Чи вказано в постанові технічний засіб, яким здійснено фото аба відео запис?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio9" name="e" type="radio"/>
+    <label for="radio9">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio10" name="e" type="radio"/>
+    <label for="radio10">Нi</label>
+  </div>
+  <hr>
+</form>
 
 
-<script>
-  var phrases = ["null", "null", "null"]; //ответы на вопросы
-
-  function submit(){
-    if(phrases[0] != "null" && phrases[1] != "null" && phrases[2] != "null"){ //проверка, ответил ли пользователь на все вопросы
-      var docDefinition = { //формирование документа с нужными фразами из массива
-      content: [
-        {
-      text: [
-        'Ответ на первый вопрос:' + phrases[0] + '\n',
-        {text: '  ', fontSize: 15, bold: true},
-        'Ответ на второй вопрос' +phrases[1]+'\n',
-        {text: '  ', fontSize: 20},
-        'Ответ на третий вопрос' +phrases[1]+'\n',
-        {text: ' ', fontSize: 20},
-      ]
-    },
-      ],  
-    };
-      pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
-    } else {
-      alert('Ответьте на все вопросы');
-    }
-  };
-
- function a_check(){ //первая группа вопросов
-  var a=document.getElementsByName("a");
-  if(a[0].checked){ //если отмечен первый вариант ответа
-    // console.log("1.1");
-    phrases[0] = "Да"; //в массив идет эта фраза
-    console.log(phrases);
-  }
-  if(a[1].checked){ //если второй
-    // console.log("1.2");
-    phrases[0] = "Нет"; //эта
-    console.log(phrases);
-  }
- }
-
- function b_check(){ //вторая группа
-  var b=document.getElementsByName("b");
-  if(b[0].checked){
-    phrases[1] = "Да"; 
-    console.log(phrases);
-  }
-  if(b[1].checked){
-    phrases[1] = "Нет"; 
-    console.log(phrases); 
-  }
- }
-
- function c_check(){ //третяя
-  var c=document.getElementsByName("c");
-  if(c[0].checked){
-    phrases[2] = "Да"; 
-    console.log(phrases);
-  }
-  if(c[1].checked){
-    phrases[2] = "Нет"; 
-    console.log(phrases);
-  }
- }
-</script>
+<script src="js/questions.js"></script>
 
 
   

@@ -14,25 +14,29 @@
     <title>Title</title>
   </head>
   <body>
-    
+
   <div class="menu">
-    <div class="logo"><img src="img/speedometer.svg" alt=""><p>Name</p></div>
-    <a href="#about">Про нас</a>
-    <a href="#use_conditions">Умови використання</a>
-    <a href="#use">Скористатись</a> 
-  </div>
+    <div class="logo">
+      <a href="index.html">Name</a>
+    </div>
+    <div class="items">
+      <a href="#home">Умови</a>
+      <a href="#news">Про нас</a>
+      <a href="#end" onclick="">Скористатись</a>
+    </div>
+</div>
 
 <div id="fullpage">
     <section class="section">
-      <div class="container">
+      <div class = "bg" id="begin">
+              <div class="container">
         <div class="row">
-          <div class="col-md-12 content">
-            <div class="subHeaderr" style="width: 100%">content</div>
+          <div class="col-md-12 col-xs-12 col-xl-12 content">
             <h1>АвтоШтраф №1</h1>
             <div class="content">
-              <p>
+              <h5>
                 Наш сервiс призначений для оскарження суперечливих протоколiв, пов'язаних з дорожньо-транспортними подiями.
-              </p>
+              </h5>
               <h5>
                 Ми робимо складнi юридичнi документи доступними за допомогою IT технологiй
               </h5>
@@ -40,6 +44,10 @@
           </div>
         </div>
       </div>
+      </div>
+
+
+
     </section>
 
     <section class="section">
@@ -49,7 +57,7 @@
             <h1>Оскарж САМ свiй штраф!</h1>
             <h3>Всього за 10 хвилин</h3>
 
-            <a href="#option1" onclick='pdf()'>
+            <a href="#option1">
               <div class="firstOption">
               Власне оскарження<br /><br />
               50 грн.
@@ -65,21 +73,25 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
+    <section class="section"> 
+      <div class="container" data-anchor="use">
         <div class="row">
-          <div class="col-md-12 content">
+          <div class="col-md-12 content"  ы>
             <h1>Як це працює</h1>
 
-            <div class="step">1. Вiдповiдаєте на питання (всi вiдповiдi є у Вашiй постановi)</div>
+            <div class="step"  id="option1">1. Вiдповiдаєте на питання (всi вiдповiдi є у Вашiй постановi)</div>
             <!-- <div class="scale">
               <img src="img/shkala.jpg" alt="" />
             </div> -->
-            <div class="step">2. Сплачуєте полсуги нашого сервiсу</div>
+            <div class="step" id="end">2. Сплачуєте полсуги нашого сервiсу</div>
             <div class="step">3. Заповнюєте персональнi данi</div>
             <div class="step">4. Ми формуємо PDF-файл по Вашiй справi</div>
             <div class="step">5. Отримуєте розраховану вiрогiднiсть успiшного оскарження</div>
             <div class="step">6. Оскаржуєте штраф!</div>
+            <a href="questions.html"><br>
+              <div class="start">
+              Оскаржити
+            </div></a>
 <!-- 
             <div class="example">
               <img src="img/shkala.jpg" alt="" />
@@ -106,6 +118,7 @@
     <script src="libs/pdfmake/pdfmake.min.js"></script> 
     <script src="libs/pdfmake/vfs_fonts.js"></script> 
     <script src="js/pdf.js"></script>
+    <script src="js/txt_reader.js"></script>
     <!-- <script>pdf()</script> -->
   </body> 
 </html>
