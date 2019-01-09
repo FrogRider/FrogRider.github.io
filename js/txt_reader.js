@@ -24,11 +24,3 @@ function get_text(name) {
         return response;
     }
 };
-
-var arg1 = get_text('argues/arg1.txt');
-var arg2 = get_text('argues/arg2.txt');
-var arg3 = get_text('argues/arg3.txt');
-var arg4 = get_text('argues/arg4.txt');
-var arg5 = get_text('argues/arg5.txt');
-console.log(arg1);
-

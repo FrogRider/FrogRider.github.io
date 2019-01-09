@@ -27,11 +27,11 @@
   
   <h5 class="question">Чи складався протокол? <span class="glyphicon glyphicon-facetime-video"></span></h5>
   <div class="inputGroup">
-    <input id="radio1" name="a" type="radio"/>
+    <input id="radio1" name="q1" type="radio"/>
     <label for="radio1">Так</label>
   </div>
   <div class="inputGroup">
-    <input id="radio2" name="a" type="radio"/>
+    <input id="radio2" name="q1" type="radio"/>
     <label for="radio2">Нi</label>
   </div>
   <hr>
@@ -39,57 +39,103 @@
   <h5 class="question">Чи пред’являлись сертифікати про радар та відомості про щорічну перевірку данного
 приладу, а також його опломбування?<span class="glyphicon glyphicon-facetime-video"></span></h5>
   <div class="inputGroup">
-    <input id="radio3" name="b" type="radio"/>
+    <input id="radio3" name="q2" type="radio"/>
     <label for="radio3">Так</label>
   </div>
   <div class="inputGroup">
-    <input id="radio4" name="b" type="radio"/>
+    <input id="radio4" name="q2" type="radio"/>
     <label for="radio4">Нi</label>
   </div>
   <hr>
 
-  <h5 class="question">Чи пред’являлись сертифікати про радар та відомості про щорічну перевірку данного
-приладу, а також його опломбування?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio5" name="c" type="radio"/>
-    <label for="radio5">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio6" name="c" type="radio"/>
-    <label for="radio6">Нi</label>
-  </div>
-  <hr>
-
   <h5 class="question">Чи зазначено в постанові прізвище, ім’я, по-батькові та спеціальне звання патрульного
-поліцейського?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    поліцейського?<span class="glyphicon glyphicon-facetime-video"></span></h5>
   <div class="inputGroup">
-    <input id="radio7" name="d" type="radio"/>
+    <input id="radio7" name="q3" type="radio"/>
     <label for="radio7">Так</label>
   </div>
   <div class="inputGroup">
-    <input id="radio8" name="d" type="radio"/>
+    <input id="radio8" name="q3" type="radio"/>
     <label for="radio8">Нi</label>
   </div>
   <hr>
 
   <h5 class="question">Чи вказано в постанові технічний засіб, яким здійснено фото аба відео запис?<span class="glyphicon glyphicon-facetime-video"></span></h5>
   <div class="inputGroup">
-    <input id="radio9" name="e" type="radio"/>
+    <input id="radio9" name="q4" type="radio"/>
     <label for="radio9">Так</label>
   </div>
   <div class="inputGroup">
-    <input id="radio10" name="e" type="radio"/>
+    <input id="radio10" name=q4e" type="radio"/>
     <label for="radio10">Нi</label>
   </div>
   <hr>
+
+  <h5 class="question">Чи внесені Ваші персональні данні до постанови?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio11" name="q5" type="radio"/>
+    <label for="radio11">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio12" name="q5" type="radio"/>
+    <label for="radio12">Нi</label>
+  </div>
+  <hr>
+
+  <h5 class="question">Чи зазначена дата розгляду справи у постанові?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio13" name="q6" type="radio"/>
+    <label for="radio13">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio14" name="q6" type="radio"/>
+    <label for="radio14">Нi</label>
+  </div>
+  <hr>  
+
+  <h5 class="question">Чи вказана в постанові стаття 122 КУпАП?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio15" name="q7" type="radio"/>
+    <label for="radio15">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio16" name="q7" type="radio"/>
+    <label for="radio16">Нi</label>
+  </div>
+  <hr>
+
+  <h5 class="question">Постанова написана від руки?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <div class="inputGroup">
+    <input id="radio17" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "none"; '/>
+    <label for="radio17">Так</label>
+  </div>
+  <div class="inputGroup">
+    <input id="radio18" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "block";'/>
+    <label for="radio18">Нi</label>
+  </div>
+  <hr>
+
+  <div id="lastQ">
+    <h5 class="question">Записи в постанові написані розбірливим почерком, друкованими літерами, синьою або
+    чорною пастою?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio19" name="q9" type="radio"/>
+      <label for="radio19">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio20" name="q9" type="radio"'/>
+      <label for="radio20">Нi</label>
+    </div>
+  </div>
 </form>
+<button onclick="check(); submit()"> Subit</button>
 
 
-<script src="js/questions.js"></script>
 
 
-  
-  
+
+    <script src="js/txt_reader.js"></script>
+    <script src="js/questions.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -97,6 +143,6 @@
 
     <script src="libs/pdfmake/pdfmake.min.js"></script> 
     <script src="libs/pdfmake/vfs_fonts.js"></script> 
-    <script src="js/pdf.js"></script>
+    <!-- <script src="js/pdf.js"></script> -->
   </body> 
 </html>
