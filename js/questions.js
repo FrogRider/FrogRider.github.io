@@ -1,6 +1,20 @@
               // 0       1       2       3       4       5       6       7       8
 var phrases = ["null", "null", "null", "null", "null", "null", "null", "null", "null"]; //ответы на вопросы
 
+var error = function(){
+  const swalWithBootstrapButtons = Swal.mixin({
+    confirmButtonClass: 'btn btn-primary',
+    buttonsStyling: false,
+  })
+
+  swalWithBootstrapButtons.fire({
+    title: 'Ответьте на все вопросы',
+    background: '#D0D5DBFF',
+    type: 'error',
+    confirmButtonText: 'Ответить',
+  })
+}
+
 var q6_arr = [];//тут собираются в кучу части одного из пунктов конечного PDF файла
 
   function submit(){
@@ -8,7 +22,7 @@ var q6_arr = [];//тут собираются в кучу части одног�
     // console.log(date);
     submit:    if(phrases[0] != "null" && phrases[1] != "null" && phrases[2] != "null" && phrases[3] != "null" && phrases[4] != "null" && phrases[5] != "null" && phrases[6] != "null" && phrases[7] != "null"){ //проверка, ответил ли пользователь на все вопросы
       if(phrases[7] == "Yes"){
-        if(phrases[8] == "null") {console.log(8); alert("Ответьте на все вопросы"); break submit; }
+        if(phrases[8] == "null") {console.log(8); error(); break submit; }
       }
       var docDefinition = { //формирование документа с нужными фразами из массива
       content: [
@@ -140,13 +154,15 @@ var q6_arr = [];//тут собираются в кучу части одног�
           docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_6&/gim, q6_arr[5]);
           break;
       }
+      docDefinition.content[6].text = docDefinition.content[6].text.replace(/\n+/g,'\n');
     }
       pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
       docDefinition.content[2].text = "&q1&";
-      docDefinition.content[4].text = "&q2&"
+      docDefinition.content[4].text = "&q2&";
+      docDefinition.content[6].text = "&main_6&";
 
     } else {
-      alert('Ответьте на все вопросы');
+      error();
     }
   };
 
