@@ -21,120 +21,253 @@
 
 <div id="home"><a href="index.html"><div class="home"><b>&#8249;</b></div></a></div>
 
-<form name="dateForm" style="display: none;">
-  <input type="date" name="date"><br/>
-</form> 
+<div class="firstOptionsBlock" id="first">
+  <p>Оберiть один iз запропонованих варiантiв:</p>
+  <button onclick = "hider('first'); hider('second_2')">Зупинили на мiсцi правопорушення i виписали протокол </button><br>
+  <button onclick = "hider('first'); hider('second_1')">Вислали постанову поштою</button>
+</div>
 
-<form class="form">
+<div class="dateByPost">
   
-  <h5 class="question">Чи складався протокол? <span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio1" name="q1" type="radio" onchange='q1_check();'/>
-    <label for="radio1">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio2" name="q1" type="radio" onchange='q1_check();'/>
-    <label for="radio2">Нi</label>
-  </div>
-  <hr>
+</div>
 
-  <h5 class="question">Чи пред’являлись сертифікати про радар та відомості про щорічну перевірку данного
-приладу, а також його опломбування?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio3" name="q2" type="radio" onchange='q2_check();'/>
-    <label for="radio3">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio4" name="q2" type="radio" onchange='q2_check();'/>
-    <label for="radio4">Нi</label>
-  </div>
-  <hr>
+<div class = "datePolice" id = "second_1" style=" display: none;">
+  <form name = "dateForm1">
+    <div>
+      <input type = "date" name="date" id = "inPoliceStation" onchange = "postDate1();"> 
+      <p>Дата вчинення порушення</p><br/>
+    </div>
+    <div>
+      <input type = "date" name = "date" id = "watchigDate" onchange = "postDate2()">
+      <p>Дата розгляду справи</p><br/>
+    </div>
+    <div>
+      <input type = "date" name = "date" id = "directingDate" onchange = "postDate3()">
+      <p>Дата направлення постанови</p><br/>
+    </div>
+    <div>
+      <input type = "date" name = "date" id = "receivingDate" onchange = "postDate4()">
+      <p>Дата отримання постанови</p><br/>
+    </div>
+  </form>
+</div>
 
-  <h5 class="question">Чи зазначено в постанові прізвище, ім’я, по-батькові та спеціальне звання патрульного
-    поліцейського?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio7" name="q3" type="radio" onchange='q3_check();'/>
-    <label for="radio7">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio8" name="q3" type="radio" onchange='q3_check();'/>
-    <label for="radio8">Нi</label>
-  </div>
-  <hr>
+<div class="dateOnPlace" id = "second_2" style="  display: none;">
+  <form name = "dateForm2" method = "post">
+    <div>
+      <input type = "date" name = "date" id = "onPlace" onchange = "console.log(getDate('onPlace'));">
+      <p>Дата вчинення правопорушення</p><br/>
+    </div>
+  </form>
+  <button onclick = "checkOnPlace()" style="border-radius: 5px ">Пiдтвердити</button>
+</div>
 
-  <h5 class="question">Чи вказано в постанові технічний засіб, яким здійснено фото аба відео запис?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio9" name="q4" type="radio" onchange='q4_check();'/>
-    <label for="radio9">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio10" name="q4" type="radio" onchange='q4_check();'/>
-    <label for="radio10">Нi</label>
-  </div>
-  <hr>
+<div class="payy" id="pay" style="display: none; text-align: center">
+  
+  <button onclick="hider('pay'); hider('userInfoBlock')" style="background: #55AA7FFF; padding: 15px; border-radius: 10px; border: none; outline: none; margin-top: 10%">Cплатити</button>
 
-  <h5 class="question">Чи внесені Ваші персональні данні до постанови?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio11" name="q5" type="radio" onchange='q5_check();'/>
-    <label for="radio11">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio12" name="q5" type="radio" onchange='q5_check();'/>
-    <label for="radio12">Нi</label>
-  </div>
-  <hr>
+</div>
 
-  <h5 class="question">Чи зазначена дата розгляду справи у постанові?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio13" name="q6" type="radio" onchange='q6_check();'/>
-    <label for="radio13">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio14" name="q6" type="radio" onchange='q6_check();'/>
-    <label for="radio14">Нi</label>
-  </div>
-  <hr>  
+<div class="userInfoBlock" id = "userInfoBlock" style = "display:none">
+  <input type="text" placeholder="ЕАА № 000000" id = "postanovaNumber"></input>
+  <p> Номер ростанови </p>
+  
 
-  <h5 class="question">Чи вказана в постанові стаття 122 КУпАП?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio15" name="q7" type="radio" onchange='q7_check();'/>
-    <label for="radio15">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio16" name="q7" type="radio" onchange='q7_check();'/>
-    <label for="radio16">Нi</label>
-  </div>
-  <hr>
+  <input type="text" placeholder="Honda CR-V" text="" id = "car"></input>
+  <p> Машина </p>
+  
 
-  <h5 class="question">Постанова написана від руки?<span class="glyphicon glyphicon-facetime-video"></span></h5>
-  <div class="inputGroup">
-    <input id="radio17" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "block"; q8_check();'/>
-    <label for="radio17">Так</label>
-  </div>
-  <div class="inputGroup">
-    <input id="radio18" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "none"; q8_check();'/>
-    <label for="radio18">Нi</label>
-  </div>
-  <hr>
+  <input type="text" placeholder ="АА 7777 АН" text="" id = "carNumber"></input>
+  <p> Номер машини </p>
+  
+  
+  <input type="text" placeholder ="20.10.2018" text="" id = "carYear"></input>
+  <p> Рiк машини </p>
+  
 
-  <div id="lastQ">
-    <h5 class="question">Записи в постанові написані розбірливим почерком, друкованими літерами, синьою або
-    чорною пастою?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+  <input type="text" placeholder ="пр-т Перемоги, 66, м. Київ" text="" id = "address"></input>
+  <p> Адреса фiксацii правопорушення </p>
+  
+
+  <input type="text" placeholder ="120 км/год" text="" id = "speed"></input>
+  <p> Швидкiсть руху </p>
+  
+
+  <input type="text" placeholder ="Шевченківський районний міста Києва" text="" id = "courtAddress"></input>
+  <p> Адреса суду </p>
+  
+
+  <input type="text" placeholder ="03057" text="" id = "courtIndex"></input>
+  <p> Поштовий iндекс суду </p>
+  
+
+  <input type="text" placeholder ="м. Київ" text="" id = "courtTown"></input>
+  <p> Мiсто розташування суду </p>
+  
+
+  <input type="text" placeholder ="вул. Дегтярівська, 31-А" text="" id = "courtStreet"></input>
+  <p> Адреса суду </p>
+  
+
+  <input type="text" placeholder ="Мумрієнко Анастасія Сергіївна" text="" id = "pozivFirsLastSurName"></input>
+  <p> ФIП позивача </p>
+  
+
+  <input type="text" placeholder ="1234567890" text="" id = "ipn"></input>
+  <p> IПН </p>
+  
+
+  <input type="text" placeholder ="04112" text="" id = "pozivIndex"></input>
+  <p> Поштовий iндекс позивача </p>
+  
+
+  <input type="text" placeholder ="м. Київ" text="" id = "pozivTown"></input>
+  <p> Мiсто проживання позивача </p>
+  
+
+  <input type="text" placeholder ="вул. Авіаконструктора Ігоря Сікорського, 8, оф. 34" text="" id = "pozivStreet"></input>
+  <p> Адреса проживання позивача </p>
+  
+
+  <input type="text" placeholder ="063 536 13 90" text="" id = "pozivAnotherComunications"></input>
+  <p> Iншi способи зв'язку з позивачем </p>
+  
+
+  <input type="text" placeholder ="Шевченківське УП ГУНП України в м. Києві" text="" id = "vidpovidOtdelenie"></input>
+  <p> Вiддiлення вiыдповiдача </p>
+  
+
+  <input type="text" placeholder ="інспектор поліції Іванов Іван Іванович" text="" id = "vidpovidach"></input>
+  <p> Вiдповiдач </p>
+  
+
+  <input type="text" placeholder ="04050" text="" id = "vidpovidIndex"></input>
+  <p> Iндекс вiдповiдача </p>
+  
+
+  <input type="text" placeholder ="м. Київ" text="" id = "vidpovidTown"></input>
+  <p> Мiсто розташування вiдповiдача </p>
+  
+
+  <input type="text" placeholder ="вул. Герцена, 9" text="" id = "vidpovidStreet"></input>
+  <p> Адреса вiдповiдача </p>
+  
+
+  <input type="text" placeholder ="" text="" id = "vidpovidAnotherComaunications"></input>
+  <p> Iншi способи зв'язку з вiдповiдачем </p>
+
+  <button onclick="check()">Пiдтвердити</button>
+
+</div>
+
+<div class="questionsBlock" id = "questions" style = "display: none;">
+  <form class="form">
+    
+    <h5 class="question">Чи складався протокол? <span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio19" name="q9" type="radio" onchange='q9_check();'/>
-      <label for="radio19">Так</label>
+      <input id="radio1" name="q1" type="radio" onchange='q1_check();'/>
+      <label for="radio1">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio20" name="q9" type="radio" onchange='q9_check();'/>
-      <label for="radio20">Нi</label>
+      <input id="radio2" name="q1" type="radio" onchange='q1_check();'/>
+      <label for="radio2">Нi</label>
     </div>
-  </div>
-</form>
-<div class="submit"><button onclick="submit()"> Пiдтвердити</button></div>
+    <hr>
 
+    <h5 class="question">Чи пред’являлись сертифікати про радар та відомості про щорічну перевірку данного
+  приладу, а також його опломбування?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio3" name="q2" type="radio" onchange='q2_check();'/>
+      <label for="radio3">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio4" name="q2" type="radio" onchange='q2_check();'/>
+      <label for="radio4">Нi</label>
+    </div>
+    <hr>
 
+    <h5 class="question">Чи зазначено в постанові прізвище, ім’я, по-батькові та спеціальне звання патрульного
+      поліцейського?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio7" name="q3" type="radio" onchange='q3_check();'/>
+      <label for="radio7">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio8" name="q3" type="radio" onchange='q3_check();'/>
+      <label for="radio8">Нi</label>
+    </div>
+    <hr>
 
+    <h5 class="question">Чи вказано в постанові технічний засіб, яким здійснено фото аба відео запис?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio9" name="q4" type="radio" onchange='q4_check();'/>
+      <label for="radio9">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio10" name="q4" type="radio" onchange='q4_check();'/>
+      <label for="radio10">Нi</label>
+    </div>
+    <hr>
 
+    <h5 class="question">Чи внесені Ваші персональні данні до постанови?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio11" name="q5" type="radio" onchange='q5_check();'/>
+      <label for="radio11">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio12" name="q5" type="radio" onchange='q5_check();'/>
+      <label for="radio12">Нi</label>
+    </div>
+    <hr>
+
+    <h5 class="question">Чи зазначена дата розгляду справи у постанові?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio13" name="q6" type="radio" onchange='q6_check();'/>
+      <label for="radio13">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio14" name="q6" type="radio" onchange='q6_check();'/>
+      <label for="radio14">Нi</label>
+    </div>
+    <hr>  
+
+    <h5 class="question">Чи вказана в постанові стаття 122 КУпАП?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio15" name="q7" type="radio" onchange='q7_check();'/>
+      <label for="radio15">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio16" name="q7" type="radio" onchange='q7_check();'/>
+      <label for="radio16">Нi</label>
+    </div>
+    <hr>
+
+    <h5 class="question">Постанова написана від руки?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio17" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "block"; q8_check();'/>
+      <label for="radio17">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio18" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "none"; q8_check();'/>
+      <label for="radio18">Нi</label>
+    </div>
+    <hr>
+
+    <div id="lastQ">
+      <h5 class="question">Записи в постанові написані розбірливим почерком, друкованими літерами, синьою або
+      чорною пастою?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+      <div class="inputGroup">
+        <input id="radio19" name="q9" type="radio" onchange='q9_check();'/>
+        <label for="radio19">Так</label>
+      </div>
+      <div class="inputGroup">
+        <input id="radio20" name="q9" type="radio" onchange='q9_check();'/>
+        <label for="radio20">Нi</label>
+      </div>
+    </div>
+  </form>
+  <div class="submit"><button onclick="hider('questions'); hider('pay')"> Пiдтвердити</button></div>
+</div>
 
     <script src="js/txt_reader.js"></script>
     <script src="libs/sweetAlert/sweetalert2.all.min.js"></script>

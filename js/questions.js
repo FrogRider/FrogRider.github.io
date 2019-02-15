@@ -1,70 +1,149 @@
               // 0       1       2       3       4       5       6       7       8
 var phrases = ["null", "null", "null", "null", "null", "null", "null", "null", "null"]; //ответы на вопросы
 
-var error = function(){
+var userInfo = [{
+  date:"",
+  postanovaNumber:"",
+  car:"",
+  carNumber:"",
+  carYear:"",
+  address:"",
+  speed:"",
+  courtAddress:"",
+  courtIndex:"",
+  courtTown:"",
+  courtStreet:"",
+  pozivFirsLastSurName:"",
+  ipn:"",
+  pozivIndex:"",
+  pozivTown:"",
+  pozivStreet:"",
+  pozivAnotherComunications:"",
+  vidpovidOtdelenie:"",
+  vidpovidach:"",
+  vidpovidIndex:"",
+  vidpovidTown:"",
+  vidpovidStreet:"",
+  vidpovidAnotherComaunications:""
+}]
+
+var q6_arr = [];//тут собираются в кучу части одного из пунктов конечного PDF файла
+
+var dateArgs = [null, null];
+
+var error = function(opt1, opt2){
   const swalWithBootstrapButtons = Swal.mixin({
     confirmButtonClass: 'btn btn-primary',
     buttonsStyling: false,
   })
 
   swalWithBootstrapButtons.fire({
-    title: 'Ответьте на все вопросы',
+    title: opt1,
     background: '#D0D5DBFF',
     type: 'error',
-    confirmButtonText: 'Ответить',
+    confirmButtonText: opt2,
   })
 }
 
-var q6_arr = [];//тут собираются в кучу части одного из пунктов конечного PDF файла
+var success = function(opt1, opt2){
+  const swalWithBootstrapButtons = Swal.mixin({
+    confirmButtonClass: 'btn btn-primary',
+    buttonsStyling: false,
+  })
 
-  function submit(){
-    var date = document.dateForm.date.value.split('-');//массив с числом, месяцем и годом с поля дата 
-    // console.log(date);
+  swalWithBootstrapButtons.fire({
+    title: opt1,
+    background: '#D0D5DBFF',
+    type: 'success',
+    confirmButtonText: opt2,
+  })
+}
+
+var caution = function(opt1, opt2){
+  const swalWithBootstrapButtons = Swal.mixin({
+    confirmButtonClass: 'btn btn-primary',
+    buttonsStyling: false,
+  })
+
+  swalWithBootstrapButtons.fire({
+    title: opt1,
+    background: '#D0D5DBFF',
+    type: 'warning',
+    confirmButtonText: opt2,
+  })
+}
+
+var firstDownload = true;
+
+function submit(){
+  // if( !firstDownload){
+  //   success('Ваш файл вже завантажено', 'Ok')
+  //   return false;
+  // }
+    var submiter = true;
     submit:    if(phrases[0] != "null" && phrases[1] != "null" && phrases[2] != "null" && phrases[3] != "null" && phrases[4] != "null" && phrases[5] != "null" && phrases[6] != "null" && phrases[7] != "null"){ //проверка, ответил ли пользователь на все вопросы
       if(phrases[7] == "Yes"){
-        if(phrases[8] == "null") {console.log(8); error(); break submit; }
+        if(phrases[8] == "null") {console.log(8); error('Ви вiдповiли не на всi питання', 'Вiдповiсти'); break submit; }
       }
+      firstDownload = false;
       var docDefinition = { //формирование документа с нужными фразами из массива
       content: [
-    {
-      text: 'АДМІНІСТРАТИВНИЙ ПОЗОВ',
+      {
+      table: {
+        widths: [165, '*'],
+        body: [
+          ['', {text:[{text: '&courtAddress& ', bold: true},'\n&courtIndex&, &courtTown&, &courtStreet&']}],
+          [{text: 'Позивач:', bold: true, alignment: 'right'}, {text:[{text: '&pozivFirsLastSurName&', bold: true},'\nІПН: &ipn& \n &pozivIndex&, &pozivTown&, &pozivStreet& \n Інші засоби зв’язку – &pozivAnotherComunications&']}],
+          [{text: 'Відповідач:', bold: true, alignment: 'right'},{text:[{text: '&vidpovidOtdelenie& \n &vidpovidach&', bold: true},'\n &vidpovidIndex&, &vidpovidTown&, &vidpovidStreet& \n Інші засоби зв’язку - &vidpovidAnotherComaunications&.']}]
+        ],
+        alignment: 'right'
+      },
+      layout: 'noBorders'
+    },                                              //0
+
+    {text: '\n\nАДМІНІСТРАТИВНИЙ ПОЗОВ',
       style: 'header',
-      alignment: 'center'
-    },
-    {
-      text: 'про скасування постанови про накладення адміністративного стягнення\n\n',
+      alignment: 'center'},                         //1
+
+    {text: 'про скасування постанови про накладення адміністративного стягнення\n',
       style: 'subheader',
-      alignment: 'center'
-    },
-    {
-      text: '&q1&',
+      alignment: 'center'},                         //2
+
+    {text: '&main&',
       style: '',
-      alignment: ''
-    },
-    {
-      text: '\n',
+      alignment: ''},                               //3
+
+    {text: '&arg1&',
       style: '',
-      alignment: ''
-    },
-    {
-      text: '&q2&',
+      alignment: ''},                               //4
+
+    {text: '&arg2&',
       style: '',
-      alignment: ''
-    },
-    {
-      text: '\n',
+      alignment: ''},                               //5
+
+    {text: '&q1&',
       style: '',
-      alignment: ''
-    },
-    {
-      text: '&main_6&',
+      alignment: ''},                               //6
+
+    {text: '\n',
       style: '',
-      alignment: ''
-    }
+      alignment: ''},                               //7
+
+    {text: '&q2&',
+      style: '',
+      alignment: ''},                               //8
+
+    {text: '\n',
+      style: '',
+      alignment: ''},                               //9
+
+    {text: '&main_6&',
+      style: '',
+      alignment: ''}                                //10
   ],
   styles: {
     header: {
-      fontSize: 18,
+      fontSize: 16,
       bold: true,
       alignment: 'justify'
     },
@@ -76,21 +155,20 @@ var q6_arr = [];//тут собираются в кучу части одног�
   }
     };
     if(phrases[0] === "No"){
-      docDefinition.content[2].text = docDefinition.content[2].text.replace(/&q1&/gim, get_text('argues/arg3.txt'));
+      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&q1&/gim, get_text('argues/arg3.txt'));
     }else{
-      docDefinition.content[2].text = " ";
+      docDefinition.content[6].text = " ";
     }
 
     if(phrases[1] === "No"){
-      docDefinition.content[4].text = docDefinition.content[4].text.replace(/&q2&/gim, get_text('argues/arg5.txt'));
+      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&q2&/gim, get_text('argues/arg5.txt'));
     }else{
-      docDefinition.content[4].text = " ";
+      docDefinition.content[8].text = " ";
     }
 
     var q6_arr_build = function(place_in_phrases, text_file_path){ //тут все фразы, которые надо дописать в составной вопрос
       if(phrases[place_in_phrases] === "No"){
         q6_arr.push(get_text(text_file_path));
-        console.log('masivchik: '+q6_arr);
       }
     }
 
@@ -102,67 +180,106 @@ var q6_arr = [];//тут собираются в кучу части одног�
     q6_arr_build(8, 'argues/arg6_7.txt');
 
     var space_replacer = function(){ // убирает оставшиеся без фраз места
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_1&/gim, "");
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_2&/gim, "");
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_3&/gim, "");
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_4&/gim, "");
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_5&/gim, "");
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_6&/gim, "");
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_1&/gim, "");
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_2&/gim, "");
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_3&/gim, "");
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_4&/gim, "");
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_5&/gim, "");
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_6&/gim, "");
     }
 
     if(q6_arr.length >= 1) { //проверка для начала формирования вопроса, состоящего из подпунктов
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&main_6&/gim, get_text('argues/arg6.txt'));
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/&main_6&/gim, get_text('argues/arg6.txt'));
       console.log(q6_arr.length);
       var len = q6_arr.length;
       switch (len){
         case 1:
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_1&/gim, q6_arr[0]);
           space_replacer();
           break;
         case 2:
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_2&/gim, q6_arr[1]);
           space_replacer();
           break;
         case 3:
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_3&/gim, q6_arr[2]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_3&/gim, q6_arr[2]);
           space_replacer();
           break;
         case 4:
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_4&/gim, q6_arr[3]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_3&/gim, q6_arr[2]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_4&/gim, q6_arr[3]);
           space_replacer();
           break;
         case 5:
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_4&/gim, q6_arr[3]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_5&/gim, q6_arr[4]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_3&/gim, q6_arr[2]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_4&/gim, q6_arr[3]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_5&/gim, q6_arr[4]);
           space_replacer();
           break;
         case 6:
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_4&/gim, q6_arr[3]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_5&/gim, q6_arr[4]);
-          docDefinition.content[6].text = docDefinition.content[6].text.replace(/&6_6&/gim, q6_arr[5]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_3&/gim, q6_arr[2]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_4&/gim, q6_arr[3]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_5&/gim, q6_arr[4]);
+          docDefinition.content[10].text = docDefinition.content[10].text.replace(/&6_6&/gim, q6_arr[5]);
           break;
       }
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/\n+/g,'\n');
+      docDefinition.content[10].text = docDefinition.content[10].text.replace(/\n+/g,'\n');
     }
+      // postDate1();
+      if(dateArgs[0] !== null){
+        docDefinition.content[4].text = docDefinition.content[4].text.replace(/&arg1&/gim, dateArgs[0]);
+      } else{
+        docDefinition.content[4].text = docDefinition.content[4].text.replace(/&arg1&/gim, '');
+      }
+      if(dateArgs[1] !== null){
+        docDefinition.content[5].text = docDefinition.content[5].text.replace(/&arg2&/gim, dateArgs[1]);
+      } else{
+        docDefinition.content[5].text = docDefinition.content[5].text.replace(/&arg2&/gim, '');
+      }
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&main&/gim, get_text('argues/main.txt'));
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&date&/gim, userInfo[0].date);
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&postanovaNumber&/gim, userInfo[0].postanovaNumber);
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&car&/gim, userInfo[0].car);
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&carNumber&/gim, userInfo[0].carNumber);
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&carYear&/gim, userInfo[0].carYear);
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&address&/gim, userInfo[0].address);
+      docDefinition.content[3].text = docDefinition.content[3].text.replace(/&speed&/gim, userInfo[0].speed);
+
+      docDefinition.content[0].table.body[0][1].text[0].text = docDefinition.content[0].table.body[0][1].text[0].text.replace(/&courtAddress&/gim, userInfo[0].courtAddress);
+      // alert(docDefinition.content[0].table.body[0][1].text[0].text);
+      docDefinition.content[0].table.body[0][1].text[1] = docDefinition.content[0].table.body[0][1].text[1].replace(/&courtIndex&/gim, userInfo[0].courtIndex);
+      docDefinition.content[0].table.body[0][1].text[1] = docDefinition.content[0].table.body[0][1].text[1].replace(/&courtTown&/gim, userInfo[0].courtTown);
+      docDefinition.content[0].table.body[0][1].text[1] = docDefinition.content[0].table.body[0][1].text[1].replace(/&courtStreet&/gim, userInfo[0].courtStreet);
+      docDefinition.content[0].table.body[1][1].text[0].text = docDefinition.content[0].table.body[1][1].text[0].text.replace(/&pozivFirsLastSurName&/gim, userInfo[0].pozivFirsLastSurName);
+      docDefinition.content[0].table.body[1][1].text[1] = docDefinition.content[0].table.body[1][1].text[1].replace(/&ipn&/gim, userInfo[0].ipn);
+      docDefinition.content[0].table.body[1][1].text[1] = docDefinition.content[0].table.body[1][1].text[1].replace(/&pozivIndex&/gim, userInfo[0].pozivIndex);
+      docDefinition.content[0].table.body[1][1].text[1] = docDefinition.content[0].table.body[1][1].text[1].replace(/&pozivTown&/gim, userInfo[0].pozivTown);
+      docDefinition.content[0].table.body[1][1].text[1] = docDefinition.content[0].table.body[1][1].text[1].replace(/&pozivStreet&/gim, userInfo[0].pozivStreet);
+      docDefinition.content[0].table.body[1][1].text[1] = docDefinition.content[0].table.body[1][1].text[1].replace(/&pozivAnotherComunications&/gim, userInfo[0].pozivAnotherComunications);
+      docDefinition.content[0].table.body[2][1].text[0].text = docDefinition.content[0].table.body[2][1].text[0].text.replace(/&vidpovidOtdelenie&/gim, userInfo[0].vidpovidOtdelenie);
+      docDefinition.content[0].table.body[2][1].text[0].text = docDefinition.content[0].table.body[2][1].text[0].text.replace(/&vidpovidach&/gim, userInfo[0].vidpovidach);
+      docDefinition.content[0].table.body[2][1].text[1] = docDefinition.content[0].table.body[2][1].text[1].replace(/&vidpovidIndex&/gim, userInfo[0].vidpovidIndex);
+      docDefinition.content[0].table.body[2][1].text[1] = docDefinition.content[0].table.body[2][1].text[1].replace(/&vidpovidTown&/gim, userInfo[0].vidpovidTown);
+      docDefinition.content[0].table.body[2][1].text[1] = docDefinition.content[0].table.body[2][1].text[1].replace(/&vidpovidStreet&/gim, userInfo[0].vidpovidStreet);
+      docDefinition.content[0].table.body[2][1].text[1] = docDefinition.content[0].table.body[2][1].text[1].replace(/&vidpovidAnotherComaunications&/gim, userInfo[0].vidpovidAnotherComaunications);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
-      docDefinition.content[2].text = "&q1&";
-      docDefinition.content[4].text = "&q2&";
-      docDefinition.content[6].text = "&main_6&";
+      // console.log(docDefinition);
+      docDefinition.content[6].text = "&q1&";
+      docDefinition.content[8].text = "&q2&";
+      docDefinition.content[10].text = "&main_6&";
 
     } else {
-      error();
+      error('Ви вiдповiли не на всi питання', 'Вiдповiсти');
     }
   };
 
@@ -276,3 +393,257 @@ var q6_arr = [];//тут собираются в кучу части одног�
     console.log(phrases);
   }
  }
+
+var hider = function(id){
+  if(document.getElementById(id).style.display == 'none'){
+    document.getElementById(id).style.display = 'block';
+  } else {
+    document.getElementById(id).style.display = 'none';
+  }
+}
+
+var getDate = function(id){
+  var date = document.getElementById(id).value.split('-');//массив с числом, месяцем и годом с поля дата (y m d)
+  if(date[1]){
+    return date;
+  }else {
+    return null;
+  }
+}
+
+var today = function(){
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
+
+  today = mm + '/' + dd + '/' + yyyy;
+  return today;
+}
+
+var dateDiff = function(date1, date2){
+  var d1 = new Date(date1);
+  var d2 = new Date(date2);
+  var daysLag = Math.ceil(Math.abs(d2.getTime() - d1.getTime()) / (1000 * 3600 * 24));
+   if(d1 > d2){
+    daysLag = -daysLag;
+   }
+  return daysLag;
+}
+
+var checkOnPlace = function(){
+  if(getDate('onPlace') === null){
+    error('Оберiть дату','Обрати');
+    return false;
+  }
+  var dateFromField = getDate('onPlace')[1] + '/' + getDate('onPlace')[2] + '/' + getDate('onPlace')[0];//date from field in an appropriate order
+checking:  if(getDate('onPlace') != null){
+    var splittedToday = today().split('/');
+    if((dateDiff(dateFromField, today())) < 0){ //if current date < chousen date
+      document.getElementById('onPlace').value = '';
+      error('Обрана дата не може бути бiльшою за поточний день!', 'Змiнити дату')
+      break checking;
+    }
+    if (dateDiff(dateFromField, today()) > 10) {
+        caution('Пройшло бiльше 10 днiв. Шнас на успiшне оскарження малий', 'Продовжити');
+    }
+    userInfo[0].date = dateFromField;
+    console.log(userInfo[0].date);
+    hider('second_2');
+    hider('questions'); 
+  } else {
+      error('Оберiть дату', 'Обрати')
+    }
+}
+
+var postDate1 = function(){
+  var date = getDate('inPoliceStation');
+  if(date !== null){
+    if((dateDiff(date, today())) < 0){ //incorrect date
+      error('Поточна дата не може бути ранiше дати вчинення','Ок');
+      document.getElementById('inPoliceStation').value = '';
+      return false;
+    }else if((dateDiff(date, today())) > 61){ //two month check
+      dateArgs[0] = get_text('argues/arg1.txt').replace(/&date1&/gim, getDate('inPoliceStation')[2] + '.' + getDate('inPoliceStation')[1] + '.' + getDate('inPoliceStation')[0]);
+    } else if((dateDiff(date, today())) < 61){
+      dateArgs[0] = null;
+    }
+  } else {
+    error('Вкажiть дату','Ок');
+  }
+}
+
+var postDate2 = function(){
+  var date = getDate('watchigDate')[1] + '/' + getDate('watchigDate')[2] + '/' + getDate('watchigDate')[0];
+  var inPoliceStation = getDate('inPoliceStation')[1] + '/' + getDate('inPoliceStation')[2] + '/' + getDate('inPoliceStation')[0];
+  if(date !== null){
+    if(dateArgs[0] !== null){
+      dateArgs[0] = dateArgs[0].replace(/&date2&/gim, getDate('watchigDate')[2] + '.' + getDate('watchigDate')[1] + '.' + getDate('watchigDate')[0]);
+    }
+    if(getDate('inPoliceStation') === null){
+      caution('Вкажiть попередню дату','Ок');
+      document.getElementById('watchigDate').value = '';
+      return false;
+    }
+    if((dateDiff(date, inPoliceStation)) > 0){
+      error('Дата розгляду не може бути ранiше за дату вчинення порушення','Ок');
+      document.getElementById('watchigDate').value = '';
+      return false;
+    }else if((dateDiff(inPoliceStation, date)) > 3){ //three days check
+      dateArgs[1] = get_text('argues/arg2.txt');
+    } else if((dateDiff(date, today())) < 3 && (dateDiff(date, today())) > 0){
+      dateArgs[1] = null;
+    }
+  }else {
+    caution('Вкажiть дату','Ок');
+  }
+  console.log(dateArgs);
+}
+
+var postDate3 = function(){
+  var date = getDate('directingDate');
+  if(date !== null){
+    if(getDate('watchigDate') === null){
+      caution('Вкажiть попередню дату','Ок');
+      document.getElementById('directingDate').value = '';
+      return false;
+    }
+    if((dateDiff(date, getDate('watchigDate'))) > 0){
+      error('Дата направлення постанови не може бути ранiше за дату розгляду справи','Ок');
+      document.getElementById('directingDate').value = '';
+      return false;
+    }
+  }else {
+    caution('Вкажiть дату','Ок');
+  }
+}
+
+var postDate4 = function(){
+  var date = getDate('receivingDate');
+  if(date !== null){
+    dateArgs[1] = get_text('argues/arg2.txt').replace(/&date3&/gim, getDate('directingDate')[2] + '.' + getDate('directingDate')[1] + '.' + getDate('directingDate')[0]);
+    dateArgs[1] = dateArgs[1].replace(/&date4&/gim, getDate('receivingDate')[2] + '.' + getDate('receivingDate')[1] + '.' + getDate('receivingDate')[0]);
+    console.log(dateArgs[1]);
+    if(getDate('directingDate') === null){
+      caution('Вкажiть попередню дату','Ок');
+      document.getElementById('receivingDate').value = '';
+      return false;
+    }
+    if((dateDiff(date, getDate('inPoliceStation'))) > 0){
+      error('Дата отримання постанови не може бути ранiше за дату вчинення порушення','Ок');
+      document.getElementById('receivingDate').value = '';
+      return false;
+    }
+    if((dateDiff(date, getDate('directingDate'))) > 0){
+      error('Дата отримання постанови не може бути ранiше за дату її направлення','Ок');
+      document.getElementById('receivingDate').value = '';
+      return false;
+    }
+    if((dateDiff( getDate('directingDate'), date)) > 10){
+      error('Пройшло бiльше 10 днiв. Шнас на успiшне оскарження малий', 'Продовжити');
+    }
+  }
+  if(getDate('inPoliceStation') !== null && 
+     getDate('watchigDate') !== null && 
+     getDate('directingDate') !== null){
+        hider('second_1');
+        hider('questions');
+  }
+}
+
+var infoCheck = function(id){
+  if(document.getElementById(id).value){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+var getVal = function(id){
+  var value = document.getElementById(id).value;
+  return value;
+}
+
+var check = function(){
+  if((infoCheck('postanovaNumber') && 
+    infoCheck('car') &&
+    infoCheck('carNumber') &&
+    infoCheck('carYear') &&
+    infoCheck('address') &&
+    infoCheck('speed') &&
+    infoCheck('courtAddress') &&
+    infoCheck('courtIndex') &&
+    infoCheck('courtTown') &&
+    infoCheck('courtStreet') &&
+    infoCheck('pozivFirsLastSurName') &&
+    infoCheck('ipn') &&
+    infoCheck('pozivIndex') &&
+    infoCheck('pozivTown') &&
+    infoCheck('pozivStreet') &&
+    infoCheck('pozivAnotherComunications') &&
+    infoCheck('vidpovidOtdelenie') &&
+    infoCheck('vidpovidach') &&
+    infoCheck('vidpovidIndex') &&
+    infoCheck('vidpovidTown') &&
+    infoCheck('vidpovidStreet') &&
+    infoCheck('vidpovidAnotherComaunications')) !== false){
+      userInfo[0].postanovaNumber = getVal('postanovaNumber');
+      userInfo[0].car = getVal('car');
+      userInfo[0].carNumber = getVal('carNumber');
+      userInfo[0].carYear = getVal('carYear');
+      userInfo[0].address = getVal('address');
+      userInfo[0].speed = getVal('speed');
+      userInfo[0].courtAddress = getVal('courtAddress');
+      userInfo[0].courtIndex = getVal('courtIndex');
+      userInfo[0].courtTown = getVal('courtTown');
+      userInfo[0].courtStreet = getVal('courtStreet');
+      userInfo[0].pozivFirsLastSurName = getVal('pozivFirsLastSurName');
+      userInfo[0].ipn = getVal('ipn');
+      userInfo[0].pozivIndex = getVal('pozivIndex');
+      userInfo[0].pozivTown = getVal('pozivTown');
+      userInfo[0].pozivStreet = getVal('pozivStreet');
+      userInfo[0].pozivAnotherComunications = getVal('pozivAnotherComunications');
+      userInfo[0].vidpovidOtdelenie = getVal('vidpovidOtdelenie');
+      userInfo[0].vidpovidach = getVal('vidpovidach');
+      userInfo[0].vidpovidIndex = getVal('vidpovidIndex');
+      userInfo[0].vidpovidTown = getVal('vidpovidTown');
+      userInfo[0].vidpovidStreet = getVal('vidpovidStreet');
+      userInfo[0].vidpovidAnotherComaunications = getVal('vidpovidAnotherComaunications');
+      // console.log(userInfo);
+      submit();
+  } else {
+    caution('Заповнiть всi поля','Ок');
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
