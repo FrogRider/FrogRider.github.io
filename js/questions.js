@@ -1,6 +1,8 @@
               // 0       1       2       3       4       5       6       7       8
 var phrases = ["null", "null", "null", "null", "null", "null", "null", "null", "null"]; //ответы на вопросы
 
+var ukr = 1;
+
 var userInfo = [{
   date:"",
   postanovaNumber:"",
@@ -180,7 +182,16 @@ function submit(){
       docDefinition.content[3].text[9] = docDefinition.content[3].text[9].replace(/&mainP5&/gim, get_text('argues/main.txt').substr(1305, 447));
       docDefinition.content[3].text[11] = docDefinition.content[3].text[11].replace(/&mainP6&/gim, get_text('argues/main.txt').substr(1752, 141));
       docDefinition.content[3].text[13] = docDefinition.content[3].text[13].replace(/&mainP7&/gim, get_text('argues/main.txt').substr(1893, 550));
-      // docDefinition.content[3].text = docDefinition.content[3].text.replace(/&main&/gim, get_text('argues/main.txt'));
+      ///////////////////////////////////////////////////////////////////////////
+      // docDefinition.content[3].text[15] = docDefinition.content[3].text[15].replace(/&mainP8&/gim, get_text('argues/main.txt').substr(2443, 175));
+      // docDefinition.content[3].text[17] = docDefinition.content[3].text[17].replace(/&mainP9&/gim, get_text('argues/main.txt').substr(2618, 36));
+      // docDefinition.content[3].text[19] = docDefinition.content[3].text[19].replace(/&mainP10&/gim, get_text('argues/main.txt').substr(2654, 58));
+      // docDefinition.content[3].text[21] = docDefinition.content[3].text[21].replace(/&mainP11&/gim, get_text('argues/main.txt').substr(2712, 179));
+      // docDefinition.content[3].text[23] = docDefinition.content[3].text[23].replace(/&mainP12&/gim, get_text('argues/main.txt').substr(2891, 135));
+      // docDefinition.content[3].text[25] = docDefinition.content[3].text[25].replace(/&mainP13&/gim, get_text('argues/main.txt').substr(1893, 550));
+      // docDefinition.content[3].text[27] = docDefinition.content[3].text[27].replace(/&mainP14&/gim, get_text('argues/main.txt').substr(1893, 550));
+      // docDefinition.content[3].text[29] = docDefinition.content[3].text[129].replace(/&mainP15&/gim, get_text('argues/main.txt').substr(1893, 550));
+      //////////////////////////////////////////////////////////////////////////////
       docDefinition.content[3].text[1] = docDefinition.content[3].text[1].replace(/&date&/gim, userInfo[0].date); 
       docDefinition.content[3].text[1] = docDefinition.content[3].text[1].replace(/&postanovaNumber&/gim, userInfo[0].postanovaNumber);
       docDefinition.content[3].text[3] = docDefinition.content[3].text[3].replace(/&car&/gim, userInfo[0].car);
@@ -507,87 +518,112 @@ var getVal = function(id){
 }
 
 var check = function(){
-  if((infoCheck('postanovaNumber') && 
-    infoCheck('car') &&
-    infoCheck('carNumber') &&
-    infoCheck('address') &&
-    infoCheck('speed') &&
-    infoCheck('courtAddress') &&
-    infoCheck('courtIndex') &&
-    infoCheck('courtTown') &&
-    infoCheck('courtStreet') &&
-    infoCheck('pozivFirsLastSurName') &&
-    infoCheck('ipn') &&
-    infoCheck('pozivIndex') &&
-    infoCheck('pozivTown') &&
-    infoCheck('pozivStreet') &&
-    infoCheck('pozivAnotherComunications') &&
-    infoCheck('vidpovidOtdelenie') &&
-    infoCheck('vidpovidach') &&
-    infoCheck('vidpovidIndex') &&
-    infoCheck('vidpovidTown') &&
-    infoCheck('vidpovidStreet') &&
-    infoCheck('vidpovidAnotherComaunications')) !== false){
-      userInfo[0].postanovaNumber = getVal('postanovaNumber');
-      userInfo[0].car = getVal('car');
-      userInfo[0].carNumber = getVal('carNumber');
-      userInfo[0].address = getVal('address');
-      userInfo[0].speed = getVal('speed');
-      userInfo[0].courtAddress = getVal('courtAddress');
-      userInfo[0].courtIndex = getVal('courtIndex');
-      userInfo[0].courtTown = getVal('courtTown');
-      userInfo[0].courtStreet = getVal('courtStreet');
-      userInfo[0].pozivFirsLastSurName = getVal('pozivFirsLastSurName');
-      userInfo[0].ipn = getVal('ipn');
-      userInfo[0].pozivIndex = getVal('pozivIndex');
-      userInfo[0].pozivTown = getVal('pozivTown');
-      userInfo[0].pozivStreet = getVal('pozivStreet');
-      userInfo[0].pozivAnotherComunications = getVal('pozivAnotherComunications');
-      userInfo[0].vidpovidOtdelenie = getVal('vidpovidOtdelenie');
-      userInfo[0].vidpovidach = getVal('vidpovidach');
-      userInfo[0].vidpovidIndex = getVal('vidpovidIndex');
-      userInfo[0].vidpovidTown = getVal('vidpovidTown');
-      userInfo[0].vidpovidStreet = getVal('vidpovidStreet');
-      userInfo[0].vidpovidAnotherComaunications = getVal('vidpovidAnotherComaunications');
-      // console.log(userInfo);
-      submit();
-  } else {
-    caution('Заповнiть всi поля','Ок');
+  if(ukr == 1){
+     if((infoCheck('postanovaNumber') && 
+        infoCheck('car') &&
+        infoCheck('carNumber') &&
+        infoCheck('address') &&
+        infoCheck('speed') &&
+        infoCheck('courtAddress') &&
+        infoCheck('courtIndex') &&
+        infoCheck('courtTown') &&
+        infoCheck('courtStreet') &&
+        infoCheck('pozivFirsLastSurName') &&
+        infoCheck('ipn') &&
+        infoCheck('pozivIndex') &&
+        infoCheck('pozivTown') &&
+        infoCheck('pozivStreet') &&
+        infoCheck('pozivAnotherComunications') &&
+        infoCheck('vidpovidOtdelenie') &&
+        infoCheck('vidpovidach') &&
+        infoCheck('vidpovidIndex') &&
+        infoCheck('vidpovidTown') &&
+        infoCheck('vidpovidStreet') &&
+        infoCheck('vidpovidAnotherComaunications')) !== false){
+          userInfo[0].postanovaNumber = getVal('postanovaNumber');
+          userInfo[0].car = getVal('car');
+          userInfo[0].carNumber = getVal('carNumber');
+          userInfo[0].address = getVal('address');
+          userInfo[0].speed = getVal('speed');
+          userInfo[0].courtAddress = getVal('courtAddress');
+          userInfo[0].courtIndex = getVal('courtIndex');
+          userInfo[0].courtTown = getVal('courtTown');
+          userInfo[0].courtStreet = getVal('courtStreet');
+          userInfo[0].pozivFirsLastSurName = getVal('pozivFirsLastSurName');
+          userInfo[0].ipn = getVal('ipn');
+          userInfo[0].pozivIndex = getVal('pozivIndex');
+          userInfo[0].pozivTown = getVal('pozivTown');
+          userInfo[0].pozivStreet = getVal('pozivStreet');
+          userInfo[0].pozivAnotherComunications = getVal('pozivAnotherComunications');
+          userInfo[0].vidpovidOtdelenie = getVal('vidpovidOtdelenie');
+          userInfo[0].vidpovidach = getVal('vidpovidach');
+          userInfo[0].vidpovidIndex = getVal('vidpovidIndex');
+          userInfo[0].vidpovidTown = getVal('vidpovidTown');
+          userInfo[0].vidpovidStreet = getVal('vidpovidStreet');
+          userInfo[0].vidpovidAnotherComaunications = getVal('vidpovidAnotherComaunications');
+          // console.log(userInfo);
+          submit();
+      } else {
+        caution('Заповнiть всi поля','Ок');
+      }
   }
 }
 
-var threeNumberValue = function(id, field){
-  if(getVal(id) == ""){
-    caution('Введiть значення' + field, 'Ok');
-    return false;
-  }
-  if( (getVal(id).match(/^[0-9]{1,3}$/)) === null ){
-    error('Введiть коректне значення' + field, 'Ок');
-    document.getElementById(id).value = '';
-  } 
+var threeNumberValue = function(id, label){
+  var text = document.getElementById(id);
+      text.onkeyup =  function testKey(){
+            for(i in text.value){
+            if(i >= 3){
+              text.value = text.value.slice(0,3);
+              document.getElementById(label).style.display="block";
+            } else document.getElementById(label).style.display="none";
+          }       
+      }
 }
 
-var fiveNumberValue = function(id, field){
-  if(getVal(id) == ""){
-    caution('Введiть коректне значення' + field, 'Ok');
-    return false;
-  }
-  if( (getVal(id).match(/^[0-9]{5}$/)) === null ){
-    error('Введiть корректне значення', 'Ок');
-    document.getElementById(id).value = '';
-  } 
+threeNumberValue('speed','speed_label');
+
+var fiveNumberValue = function(id, label){
+  var text = document.getElementById(id);
+      text.onkeyup =  function testKey(){
+            for(i in text.value){
+            if(i >= 5){
+              text.value = text.value.slice(0,5);
+              document.getElementById(label).style.display="block";
+            } else document.getElementById(label).style.display="none";
+          }       
+      }
 }
 
-var tenNumberValue = function(id, field){
-  if(getVal(id) == ""){
-    caution('Введiть коректне значення' + field, 'Ok');
-    return false;
-  }
-  if( (getVal(id).match(/^[0-9]{10}$/)) === null ){
-    error('Введiть корректне значення', 'Ок');
-    document.getElementById(id).value = '';
-  } 
+fiveNumberValue('courtIndex','courtIndex_label'); fiveNumberValue('pozivIndex','pozivIndex_label'); fiveNumberValue('vidpovidIndex','vidpovidIndex_label');
+
+var tenNumberValue = function(id, label){
+  var text = document.getElementById(id);
+      text.onkeyup =  function testKey(){
+            for(i in text.value){
+            if(i >= 10){
+              text.value = text.value.slice(0,10);
+              document.getElementById(label).style.display="block";
+            } else document.getElementById(label).style.display="none";
+          }       
+      }
 }
+
+tenNumberValue('ipn', 'ipn_label');
+
+var ukrCheck = function(id, label){
+  var text = document.getElementById(id);
+      text.onkeyup =  function testKey(){
+            for(i in text.value){
+            if(text.value[i].match(/[ыЫъЪэЭa-zA-Z]+/) !== null){
+              text.value = text.value.replace(/[ыЫъЪэЭa-zA-Z]+/,'');
+              document.getElementById(label).style.display="block";
+            } else document.getElementById(label).style.display="none";
+          }       
+      }
+}
+
+ukrCheck('carNumber', 'carNumber_label'); ukrCheck('address', 'address_label'); ukrCheck('courtAddress', 'courtAddress_label'); ukrCheck('courtTown', 'courtTown_label'); ukrCheck('courtStreet', 'courtStreet_label'); ukrCheck('pozivFirsLastSurName', 'pozivFirsLastSurName_label'); ukrCheck('pozivTown', 'pozivTown_label'); ukrCheck('pozivStreet', 'pozivStreet_label'); ukrCheck('vidpovidOtdelenie', 'vidpovidOtdelenie_label'); ukrCheck('vidpovidach', 'vidpovidach_label'); ukrCheck('vidpovidTown', 'vidpovidTown_label'); ukrCheck('vidpovidStreet', 'vidpovidStreet_label'); 
 
 var yesNoQuestionsCheck = function(){
   submit: if(phrases[0] != "null" && 

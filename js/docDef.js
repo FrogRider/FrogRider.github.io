@@ -22,20 +22,36 @@ var docDefinition = { //формирование документа с нужн�
       alignment: 'center'},                         //2
 
     {text: [
-      {text: 'par', fontSize: 15, color: 'white'},
+      {text: 'par', fontSize: 15, color: 'red'},
       ' &mainP1& \n', //date, postanovaNumber
-      {text: 'par', fontSize: 15, color: 'white'}, //вставить дату происшествия после номера машины
+      {text: 'par', fontSize: 15, color: 'red'},
       ' &mainP2& \n', //car, carNumber, carYear, address, speed
-      {text: 'par', fontSize: 15, color: 'white'},
+      {text: 'par', fontSize: 15, color: 'red'},
       ' &mainP3& \n',
-      {text: 'par', fontSize: 15, color: 'white'},
+      {text: 'par', fontSize: 15, color: 'red'},
       ' &mainP4& \n',
-      {text: 'par', fontSize: 15, color: 'white'},
+      {text: 'par', fontSize: 15, color: 'red'},
       ' &mainP5& \n',
-      {text: 'par', fontSize: 15, color: 'white'},
+      {text: 'par', fontSize: 15, color: 'red'},
       ' &mainP6& \n',
-      {text: 'par', fontSize: 15, color: 'white'},
-      ' &mainP7& \n'
+      {text: 'par', fontSize: 15, color: 'red'},
+      ' &mainP7& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP8& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP9& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP10& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP11& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP12& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP13& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP14& \n',
+      // {text: 'par', fontSize: 15, color: 'red'},
+      // ' &mainP15& \n',
       ],
       style: '',
       alignment: ''},                               //3

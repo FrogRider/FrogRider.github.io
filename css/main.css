@@ -4,7 +4,7 @@ body {
 
 .menu {
   overflow: hidden;
-  background-color: rgb(76,128,152);
+  background-color: #4C8098FF;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -14,15 +14,15 @@ body {
 .menu a {
   float: right;
   display: block;
-  color: rgb(242,242,242);
+  color: #f2f2f2;
   text-align: center;
   padding: 3vh;
   text-decoration: none;
   font-size: 17px; }
 
 .menu a:hover {
-  color: rgb(199,78,86);
-  background: rgb(62,106,125);
+  color: #C74E56FF;
+  background: #3E6A7DFF;
   padding-bottom: 4vh; }
 
 .items {
@@ -55,7 +55,7 @@ body {
   text-align: center;
   padding-bottom: 5%;
   border-radius: 2px;
-  background: rgb(208,213,219);
+  background: #D0D5DBFF;
   opacity: 0.8;
   height: 100%; }
 
@@ -69,7 +69,7 @@ body {
 .how img {
   margin-top: 3.5vh;
   padding: 1%;
-  border: 3px solid rgb(208,213,219);
+  border: 3px solid #D0D5DBFF;
   border-radius: 2px; }
 
 .container {
@@ -78,7 +78,7 @@ body {
 .section h1 {
   text-align: center;
   margin-top: 2%;
-  color: rgb(105,105,105); }
+  color: #696969; }
 
 .section:first-child .content {
   width: 40vw;
@@ -98,7 +98,7 @@ body {
   margin-top: 7%;
   border-radius: 10px;
   opacity: 0.8;
-  color: rgb(255,255,255);
+  color: #fff;
   width: 30vw; }
 
 .section:nth-child(2) .firstOption {
@@ -109,8 +109,8 @@ body {
   text-decoration: none;
   padding: 0.8em 1em calc(.8em + 3px);
   border-radius: 5px;
-  background: rgb(64,199,129);
-  box-shadow: 0 -6px rgb(53,167,110) inset;
+  background: #40c781;
+  box-shadow: 0 -6px #35a76e inset;
   transition: 0.9s; }
 
 .section:nth-child(2) .secondOption {
@@ -121,8 +121,8 @@ body {
   text-decoration: none;
   padding: 0.8em 1em calc(.8em + 3px);
   border-radius: 5px;
-  background: rgb(255,33,99);
-  box-shadow: 0 -6px rgb(209,27,81) inset;
+  background: #ff2163;
+  box-shadow: 0 -6px #d11b51 inset;
   transition: 0.2s; }
 
 .section:nth-child(2) h3 {
@@ -152,9 +152,9 @@ body {
 .step:nth-child(2),
 .step:nth-child(4),
 .step:nth-child(6) {
-  background: rgb(102,102,102);
+  background: #666;
   opacity: 0.9;
-  color: rgb(255,255,255); }
+  color: #fff; }
 
 .example {
   width: 60vw;
@@ -173,19 +173,19 @@ body {
   display: inline-block;
   border-radius: 10px;
   opacity: 0.8;
-  color: rgb(255,255,255);
+  color: #fff;
   width: 30vw;
   font-weight: 100;
   color: white;
   text-decoration: none;
   padding: 0.3em 1em calc(.8em + 3px);
   border-radius: 5px;
-  background: rgb(64,199,129);
-  box-shadow: 0 -6px rgb(53,167,110) inset;
+  background: #40c781;
+  box-shadow: 0 -6px #35a76e inset;
   transition: 0.9s; }
 
 .inputGroup {
-  background-color: rgb(255,255,255);
+  background-color: #fff;
   display: block;
   margin: 10px 0;
   position: relative; }
@@ -194,7 +194,7 @@ body {
     width: 100%;
     display: block;
     text-align: left;
-    color: rgb(60,69,76);
+    color: #3C454C;
     cursor: pointer;
     position: relative;
     z-index: 2;
@@ -205,7 +205,7 @@ body {
       height: 10px;
       border-radius: 50%;
       content: '';
-      background-color: rgb(76,128,152);
+      background-color: #4C8098FF;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -217,8 +217,8 @@ body {
       width: 32px;
       height: 32px;
       content: '';
-      border: 2px solid rgb(209,215,220);
-      background-color: rgb(255,255,255);
+      border: 2px solid #D1D7DC;
+      background-color: #fff;
       background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
       background-repeat: no-repeat;
       background-position: 2px 3px;
@@ -231,13 +231,13 @@ body {
       cursor: pointer;
       transition: all 200ms ease-in; }
   .inputGroup input:checked ~ label {
-    color: rgb(255,255,255); }
+    color: #fff; }
     .inputGroup input:checked ~ label:before {
       transform: translate(-50%, -50%) scale3d(56, 56, 1);
       opacity: 1; }
     .inputGroup input:checked ~ label:after {
-      background-color: rgb(199,78,86);
-      border-color: rgb(176,69,76); }
+      background-color: #C74E56FF;
+      border-color: #B0454CFF; }
   .inputGroup input {
     width: 32px;
     height: 32px;
@@ -259,7 +259,7 @@ body {
   line-height: 36px; }
 
 body {
-  background-color: rgb(209,215,220);
+  background-color: #D1D7DC;
   font-family: 'Fira Sans', sans-serif; }
 
 *,
@@ -271,7 +271,7 @@ html {
   box-sizing: border-box; }
 
 code {
-  background-color: rgb(154,163,172);
+  background-color: #9AA3AC;
   padding: 0 8px; }
 
 .question {
@@ -281,12 +281,12 @@ code {
   height: 2em;
   width: 2em;
   border-radius: 50%;
-  background: rgb(199,78,86);
+  background: #C74E56FF;
   position: fixed; }
 
 .home b {
   font-size: 125%;
-  color: rgb(255,255,255);
+  color: #fff;
   margin-left: 35%;
   margin-top: 30%; }
 
@@ -298,7 +298,7 @@ code {
   opacity: 0.99; }
 
 hr {
-  border-top: 1px dashed rgb(76,128,152); }
+  border-top: 1px dashed #4C8098FF; }
 
 .submit {
   text-align: center; }
@@ -306,8 +306,8 @@ hr {
 .submit button {
   width: 25%;
   margin-bottom: 3%;
-  background: rgb(76,128,152);
-  border-color: rgb(76,128,152); }
+  background: #4C8098FF;
+  border-color: #4C8098FF; }
   .submit button:hover {
     cursor: pointer; }
 
@@ -326,8 +326,8 @@ hr {
   margin-top: 2%;
   border-radius: 10px;
   outline: none;
-  background: rgb(208,213,219);
-  color: rgb(0,0,0); }
+  background: #D0D5DBFF;
+  color: #000; }
 
 .dateOnPlace,
 .datePolice,
@@ -342,10 +342,10 @@ hr {
 
 .dateOnPlace button {
   padding: 0.5%;
-  background: rgb(0,123,255);
-  color: rgb(255,255,255);
+  background: #007BFFFF;
+  color: #fff;
   border-style: solid;
-  border-color: rgb(0,118,245);
+  border-color: #0076F5FF;
   border-width: 3px; }
 
 * {
@@ -356,4 +356,4 @@ hr {
 a:hover,
 a {
   text-decoration: none;
-  color: rgb(49,49,49); }
+  color: #313131FF; }
