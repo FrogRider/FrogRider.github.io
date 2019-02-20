@@ -69,12 +69,12 @@
 </div>
 
 <div class="userInfoBlock" id = "userInfoBlock" style = "display:none">
-  <input type="text" placeholder="ЕАА № 000000" id = "postanovaNumber"></input>
-  <p> Номер ростанови </p>
+  <input type="text" placeholder="ЕАА № 000000" id = "postanovaNumber" onchange=""></input>
+  <p> Номер постанови </p>
   
 
   <input type="text" placeholder="Honda CR-V" text="" id = "car"></input>
-  <p> Машина </p>
+  <p> Марка авто </p>
   
 
   <input type="text" placeholder ="АА 7777 АН" text="" id = "carNumber"></input>
@@ -89,7 +89,7 @@
   <p> Адреса фiксацii правопорушення </p>
   
 
-  <input type="text" placeholder ="120 км/год" text="" id = "speed"></input>
+  <input type="text" placeholder ="120" text="" id = "speed" onchange="threeNumberValue('speed', ' швидкостi')"></input>
   <p> Швидкiсть руху </p>
   
 
@@ -97,7 +97,7 @@
   <p> Адреса суду </p>
   
 
-  <input type="text" placeholder ="03057" text="" id = "courtIndex"></input>
+  <input type="text" placeholder ="03057" text="" id = "courtIndex" onchange="fiveNumberValue('courtIndex', ' iндексу')"></input>
   <p> Поштовий iндекс суду </p>
   
 
@@ -113,11 +113,11 @@
   <p> ФIП позивача </p>
   
 
-  <input type="text" placeholder ="1234567890" text="" id = "ipn"></input>
+  <input type="text" placeholder ="1234567890" text="" id = "ipn" onchange="tenNumberValue('ipn', ' IПН')"></input>
   <p> IПН </p>
   
 
-  <input type="text" placeholder ="04112" text="" id = "pozivIndex"></input>
+  <input type="text" placeholder ="04112" text="" id = "pozivIndex" onchange="fiveNumberValue('pozivIndex', ' iндексу')"></input>
   <p> Поштовий iндекс позивача </p>
   
 
@@ -129,19 +129,19 @@
   <p> Адреса проживання позивача </p>
   
 
-  <input type="text" placeholder ="063 536 13 90" text="" id = "pozivAnotherComunications"></input>
+  <input type="text" placeholder ="063 536 13 90 або example@gmail.com" text="" id = "pozivAnotherComunications"></input>
   <p> Iншi способи зв'язку з позивачем </p>
   
 
   <input type="text" placeholder ="Шевченківське УП ГУНП України в м. Києві" text="" id = "vidpovidOtdelenie"></input>
-  <p> Вiддiлення вiыдповiдача </p>
+  <p> Вiддiлення вiдповiдача </p>
   
 
   <input type="text" placeholder ="інспектор поліції Іванов Іван Іванович" text="" id = "vidpovidach"></input>
   <p> Вiдповiдач </p>
   
 
-  <input type="text" placeholder ="04050" text="" id = "vidpovidIndex"></input>
+  <input type="text" placeholder ="04050" text="" id = "vidpovidIndex" onchange="fiveNumberValue('vidpovidIndex', ' iндексу')"></input>
   <p> Iндекс вiдповiдача </p>
   
 
@@ -153,7 +153,7 @@
   <p> Адреса вiдповiдача </p>
   
 
-  <input type="text" placeholder ="" text="" id = "vidpovidAnotherComaunications"></input>
+  <input type="text" placeholder ="063 536 13 90 або example@gmail.com" text="" id = "vidpovidAnotherComaunications"></input>
   <p> Iншi способи зв'язку з вiдповiдачем </p>
 
   <button onclick="check()">Пiдтвердити</button>
@@ -262,15 +262,16 @@
       </div>
       <div class="inputGroup">
         <input id="radio20" name="q9" type="radio" onchange='q9_check();'/>
-        <label for="radio20">Нi</label>
+        <label for="radio20">Нi</label> 
       </div>
     </div>
   </form>
-  <div class="submit"><button onclick="hider('questions'); hider('pay')"> Пiдтвердити</button></div>
+  <div class="submit"><button onclick="yesNoQuestionsCheck()"> Пiдтвердити</button></div>
 </div>
-
+    
     <script src="js/txt_reader.js"></script>
     <script src="libs/sweetAlert/sweetalert2.all.min.js"></script>
+    <script src="js/docDef.js"></script>
     <script src="js/questions.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
