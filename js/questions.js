@@ -86,15 +86,15 @@ function submit(){
       firstDownload = false;
       
     if(phrases[0] === "No"){
-      docDefinition.content[6].text = docDefinition.content[6].text.replace(/&q1&/gim, get_text('argues/arg3.txt'));
+      docDefinition.content[6].text[1] = docDefinition.content[6].text[1].replace(/&q1&/gim, get_text('argues/arg3.txt'));
     }else{
-      docDefinition.content[6].text = " ";
+      delete docDefinition.content[6];
     }
 
     if(phrases[1] === "No"){
-      docDefinition.content[7].text = docDefinition.content[7].text.replace(/&q2&/gim, get_text('argues/arg5.txt'));
+      docDefinition.content[7].text[1] = docDefinition.content[7].text[1].replace(/&q2&/gim, get_text('argues/arg5.txt'));
     }else{
-      docDefinition.content[7].text = " ";
+      delete docDefinition.content[7].text;
     }
 
     var q6_arr_build = function(place_in_phrases, text_file_path){ //тут все фразы, которые надо дописать в составной вопрос
@@ -110,77 +110,76 @@ function submit(){
     q6_arr_build(6, 'argues/arg6_6.txt');
     q6_arr_build(8, 'argues/arg6_7.txt');
 
-    var space_replacer = function(){ // убирает оставшиеся без фраз места
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_1&/gim, "");
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_2&/gim, "");
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_3&/gim, "");
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_4&/gim, "");
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_5&/gim, "");
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_6&/gim, "");
+    var spaceReplacer = function(arr){
+      var i = arr.length;
+      var par = (6 - i) * 2;
+      if(arr.length <= 5){
+        for(par; par > 0; par--){
+          delete docDefinition.content[8].text[16-par] ;
+        }
+      }
     }
 
     if(q6_arr.length >= 1) { //проверка для начала формирования вопроса, состоящего из подпунктов
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/&main_6&/gim, get_text('argues/arg6.txt'));
-      console.log(q6_arr.length);
+      docDefinition.content[8].text[1] = docDefinition.content[8].text[1].replace(/&main_6P1&/gim, get_text('argues/arg6.txt').substr(0, 647));
+      docDefinition.content[8].text[3] = docDefinition.content[8].text[3].replace(/&main_6P2&/gim, get_text('argues/arg6.txt').substr(647, 861));
       var len = q6_arr.length;
       switch (len){
         case 1:
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_1&/gim, q6_arr[0]);
-          space_replacer();
+          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
           break;
         case 2:
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_2&/gim, q6_arr[1]);
-          space_replacer();
+          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
           break;
         case 3:
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_3&/gim, q6_arr[2]);
-          space_replacer();
+          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
           break;
         case 4:
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_4&/gim, q6_arr[3]);
-          space_replacer();
+          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+          docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
           break;
         case 5:
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_4&/gim, q6_arr[3]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_5&/gim, q6_arr[4]);
-          space_replacer();
+          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+          docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+          docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
           break;
         case 6:
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_4&/gim, q6_arr[3]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_5&/gim, q6_arr[4]);
-          docDefinition.content[8].text = docDefinition.content[8].text.replace(/&6_6&/gim, q6_arr[5]);
+          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+          docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+          docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
+          docDefinition.content[8].text[15] = docDefinition.content[8].text[15].replace(/&6_6&/gim, q6_arr[5]);
           break;
       }
-      docDefinition.content[8].text = docDefinition.content[8].text.replace(/\n+/g,'\n');
+      spaceReplacer(q6_arr);
     }
       // postDate1();
       if(dateArgs[0] !== null){
-
-        docDefinition.content[4].text = docDefinition.content[4].text.replace(/&arg1&/gim, dateArgs[0]);
+        docDefinition.content[4].text[1] = docDefinition.content[4].text[1].replace(/&arg1&/gim, dateArgs[0]);
       } else{
-        docDefinition.content[4].text = docDefinition.content[4].text.replace(/&arg1&/gim, '')}
+        delete docDefinition.content[4].text[0];
+        delete docDefinition.content[4].text[1];
+        }
       if(dateArgs[1] !== null){
-        docDefinition.content[5].text = docDefinition.content[5].text.replace(/&arg2&/gim, dateArgs[1]);
+        docDefinition.content[5].text[1] = docDefinition.content[5].text[1].replace(/&arg2&/gim, dateArgs[1]);
       } else{
-        docDefinition.content[5].text = docDefinition.content[5].text.replace(/&arg2&/gim, '')}
+        delete docDefinition.content[5].text[0];
+        delete docDefinition.content[5].text[1];
+      }
       docDefinition.content[3].text[1] = docDefinition.content[3].text[1].replace(/&mainP1&/gim, get_text('argues/main.txt').substr(0, 287));
       docDefinition.content[3].text[3] = docDefinition.content[3].text[3].replace(/&mainP2&/gim, get_text('argues/main.txt').substr(287, 190));
       docDefinition.content[3].text[5] = docDefinition.content[3].text[5].replace(/&mainP3&/gim, get_text('argues/main.txt').substr(477, 439));
       docDefinition.content[3].text[7] = docDefinition.content[3].text[7].replace(/&mainP4&/gim, get_text('argues/main.txt').substr(916, 389));
       docDefinition.content[3].text[9] = docDefinition.content[3].text[9].replace(/&mainP5&/gim, get_text('argues/main.txt').substr(1305, 447));
-      docDefinition.content[3].text[11] = docDefinition.content[3].text[11].replace(/&mainP6&/gim, get_text('argues/main.txt').substr(1752, 141));
+      docDefinition.content[3].text[11] = docDefinition.content[3].text[11].replace(/&mainP6&/gim, get_text('argues/main.txt').substr(1752, 141)); //згiдно з законом......
       docDefinition.content[3].text[13] = docDefinition.content[3].text[13].replace(/&mainP7&/gim, get_text('argues/main.txt').substr(1893, 550));
       ///////////////////////////////////////////////////////////////////////////
       // docDefinition.content[3].text[15] = docDefinition.content[3].text[15].replace(/&mainP8&/gim, get_text('argues/main.txt').substr(2443, 175));
@@ -418,6 +417,7 @@ var postDate1 = function(){
       return false;
     }else if((dateDiff(date, today())) > 61){ //two month check
       dateArgs[0] = get_text('argues/arg1.txt').replace(/&date1&/gim, getDate('inPoliceStation')[1] + '.' + getDate('inPoliceStation')[2] + '.' + getDate('inPoliceStation')[0]);
+      // alert(dateArgs[0]);
     } else if((dateDiff(date, today())) < 61){
       dateArgs[0] = null;
     }
@@ -579,6 +579,11 @@ var threeNumberValue = function(id, label){
             } else document.getElementById(label).style.display="none";
           }       
       }
+      text.onchange = function testAmount(){
+        if(text.value.length < 2){
+          document.getElementById(label).style.display="block";
+        } else document.getElementById(label).style.display="none";
+      }
 }
 
 threeNumberValue('speed','speed_label');
@@ -593,6 +598,12 @@ var fiveNumberValue = function(id, label){
             } else document.getElementById(label).style.display="none";
           }       
       }
+      text.onchange = function testAmount(){
+        if(text.value.length <= 4){
+          document.getElementById(label).style.display="block";
+        } else document.getElementById(label).style.display="none";
+      }
+
 }
 
 fiveNumberValue('courtIndex','courtIndex_label'); fiveNumberValue('pozivIndex','pozivIndex_label'); fiveNumberValue('vidpovidIndex','vidpovidIndex_label');
@@ -606,6 +617,11 @@ var tenNumberValue = function(id, label){
               document.getElementById(label).style.display="block";
             } else document.getElementById(label).style.display="none";
           }       
+      }
+      text.onchange = function testAmount(){
+        if(text.value.length <= 9){
+          document.getElementById(label).style.display="block";
+        } else document.getElementById(label).style.display="none";
       }
 }
 
@@ -624,6 +640,33 @@ var ukrCheck = function(id, label){
 }
 
 ukrCheck('carNumber', 'carNumber_label'); ukrCheck('address', 'address_label'); ukrCheck('courtAddress', 'courtAddress_label'); ukrCheck('courtTown', 'courtTown_label'); ukrCheck('courtStreet', 'courtStreet_label'); ukrCheck('pozivFirsLastSurName', 'pozivFirsLastSurName_label'); ukrCheck('pozivTown', 'pozivTown_label'); ukrCheck('pozivStreet', 'pozivStreet_label'); ukrCheck('vidpovidOtdelenie', 'vidpovidOtdelenie_label'); ukrCheck('vidpovidach', 'vidpovidach_label'); ukrCheck('vidpovidTown', 'vidpovidTown_label'); ukrCheck('vidpovidStreet', 'vidpovidStreet_label'); 
+
+(function(){
+  var btn1 = document.getElementById('btn1');
+  var btn2 = document.getElementById('btn2');
+  btn1.onclick = function(){ //on place
+    docDefinition.content[3].text[15] = docDefinition.content[3].text[15].replace(/&mainP8&/gim, get_text('argues/main.txt').substr(2443, 175)); //pasting 4 part from document
+    docDefinition.content[3].text[17] = docDefinition.content[3].text[17].replace(/&mainP9&/gim, get_text('argues/main.txt').substr(2618, 36));
+    docDefinition.content[3].text[19] = docDefinition.content[3].text[19].replace(/&mainP10&/gim, get_text('argues/main.txt').substr(2654, 58));
+    docDefinition.content[3].text[21] = docDefinition.content[3].text[21].replace(/&mainP11&/gim, get_text('argues/main.txt').substr(2712, 179));
+    docDefinition.content[3].text[23] = docDefinition.content[3].text[23].replace(/&mainP12&/gim, get_text('argues/main.txt').substr(2891, 135));
+    docDefinition.content[3].text[25] = docDefinition.content[3].text[25].replace(/&mainP13&/gim, get_text('argues/main.txt').substr(3026, 111));
+    docDefinition.content[3].text[27] = docDefinition.content[3].text[27].replace(/&mainP14&/gim, get_text('argues/main.txt').substr(3137, 138));
+    docDefinition.content[3].text[29] = docDefinition.content[3].text[29].replace(/&mainP15&/gim, get_text('argues/main.txt').substr(3275, 221));
+    docDefinition.content[3].text[31] = docDefinition.content[3].text[31].replace(/&mainP16&/gim, get_text('argues/main.txt').substr(3496, 202));
+    hider('first'); 
+    hider('second_2');
+  }
+  btn2.onclick = function(){ //delivered
+    for(i in docDefinition.content[3].text){ //deleting paragraphs only needed second button 
+      if(i>=14){
+        delete docDefinition.content[3].text[i];
+      }
+    }
+    hider('first'); 
+    hider('second_1')
+  }
+})()
 
 var yesNoQuestionsCheck = function(){
   submit: if(phrases[0] != "null" && 
@@ -645,5 +688,7 @@ var yesNoQuestionsCheck = function(){
             error('Ви вiдповiли не на всi питання', 'Вiдповiсти');
           }
 }
+
+
 
 

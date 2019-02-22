@@ -23,8 +23,8 @@
 
 <div class="firstOptionsBlock" id="first">
   <p>Оберiть один iз запропонованих варiантiв:</p>
-  <button onclick = "hider('first'); hider('second_2')">Зупинили на мiсцi правопорушення i виписали протокол </button><br>
-  <button onclick = "hider('first'); hider('second_1')">Вислали постанову поштою</button>
+  <button id = "btn1">Зупинили на мiсцi правопорушення i виписали протокол </button><br>
+  <button id = "btn2">Вислали постанову поштою</button>
 </div>
 
 <div class="dateByPost">
@@ -117,7 +117,7 @@
   <p> ФIП позивача </p>
   
 
-  <input type="numberF" placeholder ="1234567890" text="" id = "ipn""></input>
+  <input type="number" placeholder ="1234567890" text="" id = "ipn""></input>
   <label id="ipn_label" style="color: red; display:none">* IПН складає 10 знакiв</label>
   <p> IПН </p>
   
@@ -151,9 +151,9 @@
   <p> Вiдповiдач </p>
   
 
-  <input type="text" placeholder ="04050" text="" id = "vidpovidIndex"></input>
+  <input type="number" placeholder ="04050" text="" id = "vidpovidIndex"></input>
   <label id="vidpovidIndex_label" style="display: none; color: red">* поштовий iндекс складає 5 знакiв</label>
-  <p> Iндекс вiдповiдача </p>
+  <p> Iндекс вiдповiдача </p> 
   
 
   <input type="text" placeholder ="м. Київ" text="" id = "vidpovidTown"></input>

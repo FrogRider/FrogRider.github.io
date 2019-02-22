@@ -22,59 +22,79 @@ var docDefinition = { //формирование документа с нужн�
       alignment: 'center'},                         //2
 
     {text: [
-      {text: 'par', fontSize: 15, color: 'red'},
+      {text: 'par', fontSize: 15, color: 'white'},                            //0
       ' &mainP1& \n', //date, postanovaNumber
-      {text: 'par', fontSize: 15, color: 'red'},
+      {text: 'par', fontSize: 15, color: 'white'},                            //2
       ' &mainP2& \n', //car, carNumber, carYear, address, speed
-      {text: 'par', fontSize: 15, color: 'red'},
+      {text: 'par', fontSize: 15, color: 'white'},                            //4
       ' &mainP3& \n',
-      {text: 'par', fontSize: 15, color: 'red'},
+      {text: 'par', fontSize: 15, color: 'white'},                            //6
       ' &mainP4& \n',
-      {text: 'par', fontSize: 15, color: 'red'},
+      {text: 'par', fontSize: 15, color: 'white'},                            //8
       ' &mainP5& \n',
-      {text: 'par', fontSize: 15, color: 'red'},
+      {text: 'par', fontSize: 15, color: 'white'},                            //10
       ' &mainP6& \n',
-      {text: 'par', fontSize: 15, color: 'red'},
+      {text: 'par', fontSize: 15, color: 'white'},                            //12
       ' &mainP7& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP8& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP9& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP10& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP11& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP12& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP13& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP14& \n',
-      // {text: 'par', fontSize: 15, color: 'red'},
-      // ' &mainP15& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //14
+      ' &mainP8& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //16
+      ' &mainP9& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //18
+      ' &mainP10& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //20
+      ' &mainP11& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //22
+      ' &mainP12& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //24
+      ' &mainP13& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //26
+      ' &mainP14& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //28
+      ' &mainP15& \n',
+      {text: 'par', fontSize: 15, color: 'white'},                            //30
+      ' &mainP16& \n',
       ],
       style: '',
       alignment: ''},                               //3
 
-    {text: '&arg1&',
-      style: '',
-      alignment: ''},                               //4
+    {text: [
+      {text: 'par', fontSize: 15, color: 'white'},
+      ' &arg1& \n']},                             //4
 
-    {text: '&arg2&',
-      style: '',
-      alignment: ''},                               //5
+    {text: [
+      {text: 'par', fontSize: 15, color: 'white'},
+      ' &arg2& \n']},                             //5
 
-    {text: '&q1&',
-      style: '',
-      alignment: ''},                               //6
+    {text: [
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&q1& \n'
+    ]},                                 //6
 
-    {text: '&q2&',
-      style: '',
-      alignment: ''},                               //7
+    {text: [
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&q2& \n'
+    ]},                                 //7
 
-    {text: '&main_6&',
-      style: '',
-      alignment: ''}                                //8
+    {text: [
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&main_6P1& \n', 
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&main_6P2& \n',
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&6_1& \n',
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&6_2& \n',
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&6_3& \n',
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&6_4& \n',
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&6_5& \n',
+      {text: 'par', fontSize: 15, color: 'white'},
+      '&6_6&',
+      ]
+    }                              //8
   ],
   styles: {
     header: {
