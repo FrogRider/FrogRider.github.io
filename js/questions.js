@@ -1,5 +1,5 @@
-              // 0       1       2       3       4       5       6       7       8
-var phrases = ["null", "null", "null", "null", "null", "null", "null", "null", "null"]; //ответы на вопросы
+              // 0       1       2       3       4       5       6       7       8       9
+var phrases = ["null", "null", "null", "null", "null", "null", "null", "null", "null", "null"]; //ответы на вопросы
 
 var ukr = 1;
 
@@ -103,16 +103,13 @@ function submit(){
       }
     }
 
-    q6_arr_build(2, 'argues/arg6_2.txt');
-    q6_arr_build(3, 'argues/arg6_3.txt');
-    q6_arr_build(4, 'argues/arg6_5.txt');
-    q6_arr_build(5, 'argues/arg6_4.txt');
-    q6_arr_build(6, 'argues/arg6_6.txt');
+    for(i=2; i<7; i++){
+      q6_arr_build(i, `argues/arg6_${i}.txt`);
+    }
     q6_arr_build(8, 'argues/arg6_7.txt');
 
     var spaceReplacer = function(arr){
-      var i = arr.length;
-      var par = (6 - i) * 2;
+      var par = (6 - arr.length) * 2;
       if(arr.length <= 5){
         for(par; par > 0; par--){
           delete docDefinition.content[8].text[16-par] ;
@@ -161,7 +158,13 @@ function submit(){
       }
       spaceReplacer(q6_arr);
     }
-      // postDate1();
+
+    // docDefinition.content[8].text[17] = docDefinition.content[8].text[17].replace(/&7_1&/gim, get_text('argues/arg7.txt').substr(0, 519));
+    // docDefinition.content[8].text[19] = docDefinition.content[8].text[19].replace(/&7_2&/gim, get_text('argues/arg7.txt').substr(519, 122));
+    // docDefinition.content[8].text[21] = docDefinition.content[8].text[21].replace(/&7_3&/gim, get_text('argues/arg7.txt').substr(641, 561));
+    // docDefinition.content[8].text[23] = docDefinition.content[8].text[23].replace(/&7_4&/gim, get_text('argues/arg7.txt').substr(1202, 223));
+    // docDefinition.content[8].text[23] = docDefinition.content[8].text[23].replace(/&7_4&/gim, get_text('argues/arg7.txt').substr(1425, )); //делал 7 пункт так, но потом стало лень
+
       if(dateArgs[0] !== null){
         docDefinition.content[4].text[1] = docDefinition.content[4].text[1].replace(/&arg1&/gim, dateArgs[0]);
       } else{
@@ -181,17 +184,13 @@ function submit(){
       docDefinition.content[3].text[9] = docDefinition.content[3].text[9].replace(/&mainP5&/gim, get_text('argues/main.txt').substr(1305, 447));
       docDefinition.content[3].text[11] = docDefinition.content[3].text[11].replace(/&mainP6&/gim, get_text('argues/main.txt').substr(1752, 141)); //згiдно з законом......
       docDefinition.content[3].text[13] = docDefinition.content[3].text[13].replace(/&mainP7&/gim, get_text('argues/main.txt').substr(1893, 550));
-      ///////////////////////////////////////////////////////////////////////////
-      // docDefinition.content[3].text[15] = docDefinition.content[3].text[15].replace(/&mainP8&/gim, get_text('argues/main.txt').substr(2443, 175));
-      // docDefinition.content[3].text[17] = docDefinition.content[3].text[17].replace(/&mainP9&/gim, get_text('argues/main.txt').substr(2618, 36));
-      // docDefinition.content[3].text[19] = docDefinition.content[3].text[19].replace(/&mainP10&/gim, get_text('argues/main.txt').substr(2654, 58));
-      // docDefinition.content[3].text[21] = docDefinition.content[3].text[21].replace(/&mainP11&/gim, get_text('argues/main.txt').substr(2712, 179));
-      // docDefinition.content[3].text[23] = docDefinition.content[3].text[23].replace(/&mainP12&/gim, get_text('argues/main.txt').substr(2891, 135));
-      // docDefinition.content[3].text[25] = docDefinition.content[3].text[25].replace(/&mainP13&/gim, get_text('argues/main.txt').substr(1893, 550));
-      // docDefinition.content[3].text[27] = docDefinition.content[3].text[27].replace(/&mainP14&/gim, get_text('argues/main.txt').substr(1893, 550));
-      // docDefinition.content[3].text[29] = docDefinition.content[3].text[129].replace(/&mainP15&/gim, get_text('argues/main.txt').substr(1893, 550));
-      //////////////////////////////////////////////////////////////////////////////
+
       docDefinition.content[3].text[1] = docDefinition.content[3].text[1].replace(/&date&/gim, userInfo[0].date); 
+      docDefinition.content[13].table.body[0][0].text = docDefinition.content[13].table.body[0][0].text.replace(/&today&/gim, today().split('/')[1] + ' ' + getMonth(today().split('/')[0]) + ' ' + today().split('/')[2]); 
+      docDefinition.content[13].table.body[0][1].text = docDefinition.content[13].table.body[0][1].text.replace(/&name&/gim, userInfo[0].pozivFirsLastSurName.split(' ')[1][0] + '. ' + userInfo[0].pozivFirsLastSurName.split(' ')[2][0] + '. ' + userInfo[0].pozivFirsLastSurName.split(' ')[0]);
+
+      docDefinition.content[10].ol[1] = docDefinition.content[10].ol[1].replace(/&date&/gim, userInfo[0].date); 
+      docDefinition.content[10].ol[1] = docDefinition.content[10].ol[1].replace(/&postanovaNumber&/gim, userInfo[0].postanovaNumber);
       docDefinition.content[3].text[1] = docDefinition.content[3].text[1].replace(/&postanovaNumber&/gim, userInfo[0].postanovaNumber);
       docDefinition.content[3].text[3] = docDefinition.content[3].text[3].replace(/&car&/gim, userInfo[0].car);
       docDefinition.content[3].text[3] = docDefinition.content[3].text[3].replace(/&carNumber&/gim, userInfo[0].carNumber);
@@ -336,6 +335,18 @@ function submit(){
   }
  }
 
+  function q10_check(){
+  var q10=document.getElementsByName("q10");
+  if(q10[0].checked){
+    phrases[9] = "Yes"; 
+    console.log(phrases);
+  }
+  if(q10[1].checked){
+    phrases[9] = "No"; 
+    console.log(phrases);
+  }
+ }
+
 var hider = function(id){
   if(document.getElementById(id).style.display == 'none'){
     document.getElementById(id).style.display = 'block';
@@ -351,6 +362,24 @@ var getDate = function(id){
   }else {
     return null;
   }
+}
+
+var getMonth = function(month){
+  var arr=[
+   'сiчня',
+   'лютого',
+   'березня',
+   'квiтня',
+   'травня',
+   'червня',
+   'липня',
+   'серпня',
+   'вересня',
+   'жовтня',
+   'листопада',
+   'грудня',
+  ];
+  return(arr[month-1]);
 }
 
 var today = function(){
@@ -528,7 +557,9 @@ var check = function(){
         infoCheck('courtIndex') &&
         infoCheck('courtTown') &&
         infoCheck('courtStreet') &&
-        infoCheck('pozivFirsLastSurName') &&
+        infoCheck('pozivFirstName') &&
+        infoCheck('pozivLastName') &&
+        infoCheck('pozivSurName') &&
         infoCheck('ipn') &&
         infoCheck('pozivIndex') &&
         infoCheck('pozivTown') &&
@@ -549,7 +580,7 @@ var check = function(){
           userInfo[0].courtIndex = getVal('courtIndex');
           userInfo[0].courtTown = getVal('courtTown');
           userInfo[0].courtStreet = getVal('courtStreet');
-          userInfo[0].pozivFirsLastSurName = getVal('pozivFirsLastSurName');
+          userInfo[0].pozivFirsLastSurName = getVal('pozivSurName') + ' ' + getVal('pozivFirstName') + ' ' + getVal('pozivLastName');
           userInfo[0].ipn = getVal('ipn');
           userInfo[0].pozivIndex = getVal('pozivIndex');
           userInfo[0].pozivTown = getVal('pozivTown');
@@ -639,7 +670,7 @@ var ukrCheck = function(id, label){
       }
 }
 
-ukrCheck('carNumber', 'carNumber_label'); ukrCheck('address', 'address_label'); ukrCheck('courtAddress', 'courtAddress_label'); ukrCheck('courtTown', 'courtTown_label'); ukrCheck('courtStreet', 'courtStreet_label'); ukrCheck('pozivFirsLastSurName', 'pozivFirsLastSurName_label'); ukrCheck('pozivTown', 'pozivTown_label'); ukrCheck('pozivStreet', 'pozivStreet_label'); ukrCheck('vidpovidOtdelenie', 'vidpovidOtdelenie_label'); ukrCheck('vidpovidach', 'vidpovidach_label'); ukrCheck('vidpovidTown', 'vidpovidTown_label'); ukrCheck('vidpovidStreet', 'vidpovidStreet_label'); 
+ukrCheck('carNumber', 'carNumber_label'); ukrCheck('address', 'address_label'); ukrCheck('courtAddress', 'courtAddress_label'); ukrCheck('courtTown', 'courtTown_label'); ukrCheck('courtStreet', 'courtStreet_label'); ukrCheck('pozivFirstName', 'pozivFirstName_label'); ukrCheck('pozivLastName', 'pozivLastName_label'); ukrCheck('pozivSurName', 'pozivSurName_label'); ukrCheck('pozivTown', 'pozivTown_label'); ukrCheck('pozivStreet', 'pozivStreet_label'); ukrCheck('vidpovidOtdelenie', 'vidpovidOtdelenie_label'); ukrCheck('vidpovidach', 'vidpovidach_label'); ukrCheck('vidpovidTown', 'vidpovidTown_label'); ukrCheck('vidpovidStreet', 'vidpovidStreet_label'); 
 
 (function(){
   var btn1 = document.getElementById('btn1');
@@ -676,11 +707,19 @@ var yesNoQuestionsCheck = function(){
            phrases[4] != "null" && 
            phrases[5] != "null" && 
            phrases[6] != "null" && 
-           phrases[7] != "null"){ 
+           phrases[7] != "null" &&
+           phrases[9] != "null") { 
               if(phrases[7] == "Yes"){
                 if(phrases[8] == "null") {
                   console.log(8); error('Ви вiдповiли не на всi питання', 'Вiдповiсти'); break submit
                 }
+              }
+              if(phrases[0] === 'no'){
+                docDefinition.content[12].ol[2] = docDefinition.content[12].ol[3];
+                delete docDefinition.content[12].ol[3];
+              }
+              if(phrases[9] === 'no'){
+                delete docDefinition.content[12].ol[3];
               }
               hider('questions'); 
               hider('pay');

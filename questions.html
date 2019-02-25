@@ -112,9 +112,19 @@
   <p> Адреса суду </p>
   
 
-  <input type="text" placeholder ="Мумрієнко Анастасія Сергіївна" text="" id = "pozivFirsLastSurName"></input>
-  <label id="pozivFirsLastSurName_label" style="color: red; display:none">* поле має бути заповнено українською мовою</label>
-  <p> ФIП позивача </p>
+  <input type="text" placeholder ="Мумрієнко" text="" id = "pozivSurName"></input>
+  <label id="pozivSurName_label" style="color: red; display:none">* поле має бути заповнено українською мовою</label>
+  <p> Фамiлiя позивача </p>
+
+
+  <input type="text" placeholder ="Анастасія" text="" id = "pozivFirstName"></input>
+  <label id="pozivFirstName_label" style="color: red; display:none">* поле має бути заповнено українською мовою</label>
+  <p> Iм'я позивача </p>
+
+
+  <input type="text" placeholder ="Сергіївна" text="" id = "pozivLastName"></input>
+  <label id="pozivLastName_label" style="color: red; display:none">* поле має бути заповнено українською мовою</label>
+  <p> По батьковi позивача </p>
   
 
   <input type="number" placeholder ="1234567890" text="" id = "ipn""></input>
@@ -278,6 +288,17 @@
         <label for="radio20">Нi</label> 
       </div>
     </div>
+
+    <h5 class="question">Чи була складена скарга до органiв Нацiональної полiцiї з приводу некоректного вирiшення постанови?<span class="glyphicon glyphicon-facetime-video"></span></h5>
+    <div class="inputGroup">
+      <input id="radio21" name="q10" type="radio" onchange='q10_check()'/>
+      <label for="radio21">Так</label>
+    </div>
+    <div class="inputGroup">
+      <input id="radio22" name="q10" type="radio" onchange='q10_check()'/>
+      <label for="radio22">Нi</label>
+    </div>
+    <hr>
   </form>
   <div class="submit"><button onclick="yesNoQuestionsCheck()"> Пiдтвердити</button></div>
 </div>
