@@ -162,5 +162,5 @@ hr {
   border-color: rgb(0,118,245);
   border-width: 3px; }
 
-* {
-  color: rgb(255,255,255); }
+.question {
+  color: white; }

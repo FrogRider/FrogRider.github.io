@@ -48,7 +48,7 @@ var error = function(opt1, opt2){
 }
 
 var success = function(opt1, opt2){
-  const swalWithBootstrapButtons = Swal.mixin({
+  const swalWithBootbacstrapButtons = Swal.mixin({
     confirmButtonClass: 'btn btn-primary',
     buttonsStyling: false,
   })
