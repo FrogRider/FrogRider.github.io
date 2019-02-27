@@ -153,6 +153,10 @@ function submit(){
           break;
       }
       spaceReplacer(q6_arr);
+    } else {
+      for(var i = 0; i <=15; i++){
+        delete docDefinition.content[8].text[i];
+      }
     }
 
     // docDefinition.content[8].text[17] = docDefinition.content[8].text[17].replace(/&7_1&/gim, get_text('argues/arg7.txt').substr(0, 519));
