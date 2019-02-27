@@ -11,7 +11,7 @@ var docDefinition = { //формирование документа с нужн�
         alignment: 'right'
       },
       layout: 'noBorders'
-    },        docDefinition                                      //0
+    },                                              //0
 
     {text: '\n\n\n\n\n\nАДМІНІСТРАТИВНИЙ ПОЗОВ',
       style: 'header',
