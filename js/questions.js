@@ -85,16 +85,12 @@ function submit(){
     var submiter = true;
       firstDownload = false;
       
-    if(phrases[0] === "No"){
-      docDefinition.content[6].text[1] = docDefinition.content[6].text[1].replace(/&q1&/gim, get_text('argues/arg3.txt'));
-    }else{
+    if(phrases[0] === "Yes"){
       delete docDefinition.content[6];
     }
 
-    if(phrases[1] === "No"){
-      docDefinition.content[7].text[1] = docDefinition.content[7].text[1].replace(/&q2&/gim, get_text('argues/arg5.txt'));
-    }else{
-      delete docDefinition.content[7].text;
+    if(phrases[1] === "Yes"){
+      delete docDefinition.content[7];
     }
 
     var q6_arr_build = function(place_in_phrases, text_file_path){ //тут все фразы, которые надо дописать в составной вопрос
@@ -217,10 +213,6 @@ function submit(){
       docDefinition.content[0].table.body[2][1].text[1] = docDefinition.content[0].table.body[2][1].text[1].replace(/&vidpovidAnotherComaunications&/gim, userInfo[0].vidpovidAnotherComaunications);
 
       pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
-      // console.log(get_text('argues/main.txt'));
-      docDefinition.content[6].text = "&q1&";
-      docDefinition.content[7].text = "&q2&";
-      docDefinition.content[8].text = "&main_6&";
 
   };
 
@@ -727,7 +719,5 @@ var yesNoQuestionsCheck = function(){
             error('Ви вiдповiли не на всi питання', 'Вiдповiсти');
           }
 }
-
-
 
 
