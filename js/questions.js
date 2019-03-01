@@ -117,41 +117,46 @@ function submit(){
       docDefinition.content[8].text[1] = docDefinition.content[8].text[1].replace(/&main_6P1&/gim, get_text('argues/arg6.txt').substr(0, 647));
       docDefinition.content[8].text[3] = docDefinition.content[8].text[3].replace(/&main_6P2&/gim, get_text('argues/arg6.txt').substr(647, 861));
       var len = q6_arr.length;
-      switch (len){
-        case 1:
-          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-          break;
-        case 2:
-          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-          break;
-        case 3:
-          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-          break;
-        case 4:
-          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
-          break;
-        case 5:
-          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
-          docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
-          break;
-        case 6:
-          docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-          docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-          docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-          docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
-          docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
-          docDefinition.content[8].text[15] = docDefinition.content[8].text[15].replace(/&6_6&/gim, q6_arr[5]);
-          break;
+      var regs = [/&6_1&/gim, /&6_2&/gim, /&6_3&/gim, /&6_4&/gim, /&6_5&/gim, /&6_6&/gim];
+      for (len; len > 0; len--){
+        var i = 5 + ((len - 1) * 2);
+        docDefinition.content[8].text[i] = docDefinition.content[8].text[i].replace(regs[len-1], q6_arr[len-1]);
       }
+      // switch (len){
+      //   case 1:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     break;
+      //   case 2:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     break;
+      //   case 3:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     break;
+      //   case 4:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+      //     break;
+      //   case 5:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+      //     docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
+      //     break;
+      //   case 6:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+      //     docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
+      //     docDefinition.content[8].text[15] = docDefinition.content[8].text[15].replace(/&6_6&/gim, q6_arr[5]);
+      //     break;
+      // }
       spaceReplacer(q6_arr);
     } else {
       for(var i = 0; i <=15; i++){
@@ -216,132 +221,40 @@ function submit(){
       docDefinition.content[0].table.body[2][1].text[1] = docDefinition.content[0].table.body[2][1].text[1].replace(/&vidpovidStreet&/gim, userInfo[0].vidpovidStreet);
       docDefinition.content[0].table.body[2][1].text[1] = docDefinition.content[0].table.body[2][1].text[1].replace(/&vidpovidAnotherComaunications&/gim, userInfo[0].vidpovidAnotherComaunications);
 
+      pdfMake.fonts = {
+        MyFont: {
+                normal: 'Merriweather-Regular.ttf',
+                bold: 'Merriweather-Bold.ttf',
+                italics: 'Merriweather-Italic.ttf',
+                bolditalics: 'Merriweather-Italic.ttf'
+        }
+      };
+      // console.log(q6_arr);
       pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
 
   };
 
- function q1_check(){ //первая группа вопросов
-  var q1=document.getElementsByName("q1");
-  if(q1[0].checked){ //если отмечен первый вариант ответа
-    phrases[0] = "Yes"; //в массив идет эта фраза
+  var qCheck = function(num){ // yes/no array filler
+  var elem = document.getElementsByName("q"+num);
+  if(elem[0].checked){
+    phrases[num-1] = "Yes";
+    if(num == 8){
+      document.getElementById("lastQ").style.display = "block";
+    }
     console.log(phrases);
   }
-  if(q1[1].checked){ //если второй
-    phrases[0] = "No" //эта
-    console.log(phrases);
-  }
- }
-
- function q2_check(){ //вторая группа
-  var q2=document.getElementsByName("q2");
-  if(q2[0].checked){
-    phrases[1] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q2[1].checked){
-    phrases[1] = "No"; 
+  if(elem[1].checked){
+    phrases[num-1] = "No";
+    if(num == 8){
+      phrases[8] = "null";
+      document.getElementById("lastQ").style.display = "none";
+      document.getElementById("radio19").checked=false;
+      document.getElementById("radio20").checked=false;
+    }
     console.log(phrases); 
   }
  }
 
- function q3_check(){ //третяя
-  var q3=document.getElementsByName("q3");
-  if(q3[0].checked){
-    phrases[2] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q3[1].checked){
-    phrases[2] = "No"; 
-    console.log(phrases);
-  }
- }
-
-  function q4_check(){
-  var q4=document.getElementsByName("q4");
-  if(q4[0].checked){
-    phrases[3] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q4[1].checked){
-    phrases[3] = "No"; 
-    console.log(phrases);
-  }
- }
-
-  function q5_check(){
-  var q5=document.getElementsByName("q5");
-  if(q5[0].checked){
-    phrases[4] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q5[1].checked){
-    phrases[4] = "No"; 
-    console.log(phrases);
-  }
- }
-
-  function q6_check(){
-  var q6=document.getElementsByName("q6");
-  if(q6[0].checked){
-    phrases[5] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q6[1].checked){
-    phrases[5] = "No"; 
-    console.log(phrases);
-  }
- }
-
-  function q7_check(){
-  var q7=document.getElementsByName("q7");
-  if(q7[0].checked){
-    phrases[6] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q7[1].checked){
-    phrases[6] = "No"; 
-    console.log(phrases);
-  }
- }
-
-  function q8_check(){
-  var q8=document.getElementsByName("q8");
-  if(q8[0].checked){
-    phrases[7] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q8[1].checked){
-    phrases[7] = "No"; 
-    phrases[8] = "null";
-    document.getElementById("radio19").checked=false;
-    document.getElementById("radio20").checked=false;
-    console.log(phrases);
-  }
- }
-
-  function q9_check(){
-  var q9=document.getElementsByName("q9");
-  if(q9[0].checked){
-    phrases[8] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q9[1].checked){
-    phrases[8] = "No"; 
-    console.log(phrases);
-  }
- }
-
-  function q10_check(){
-  var q10=document.getElementsByName("q10");
-  if(q10[0].checked){
-    phrases[9] = "Yes"; 
-    console.log(phrases);
-  }
-  if(q10[1].checked){
-    phrases[9] = "No"; 
-    console.log(phrases);
-  }
- }
 
 var hider = function(id){
   if(document.getElementById(id).style.display == 'none'){

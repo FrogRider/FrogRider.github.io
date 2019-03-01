@@ -205,12 +205,18 @@ var docDefinition = { //формирование документа с нужн�
     header: {
       fontSize: 16,
       bold: true,
-      alignment: 'justify'
+      alignment: 'justify',
+      font: 'MyFont'
     },
     subheader: {
       fontSize: 13.5,
       bold: true,
-      alignment: 'justify'
+      alignment: 'justify', 
+      font: 'MyFont'
     }
+  },
+  defaultStyle: {
+    font: 'MyFont'
   }
+
 };

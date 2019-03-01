@@ -189,11 +189,11 @@
     
     <h5 class="question">Чи складався протокол? <span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio1" name="q1" type="radio" onchange='q1_check()'/>
+      <input id="radio1" name="q1" type="radio" onchange='qCheck("1")'/>
       <label for="radio1">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio2" name="q1" type="radio" onchange='q1_check()'/>
+      <input id="radio2" name="q1" type="radio" onchange='qCheck("1")'/>
       <label for="radio2">Нi</label>
     </div>
     <hr>
@@ -201,11 +201,11 @@
     <h5 class="question">Чи пред’являлись сертифікати про радар та відомості про щорічну перевірку данного
   приладу, а також його опломбування?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio3" name="q2" type="radio" onchange='q2_check();'/>
+      <input id="radio3" name="q2" type="radio" onchange='qCheck("2")'/>
       <label for="radio3">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio4" name="q2" type="radio" onchange='q2_check();'/>
+      <input id="radio4" name="q2" type="radio" onchange='qCheck("2")'/>
       <label for="radio4">Нi</label>
     </div>
     <hr>
@@ -213,66 +213,66 @@
     <h5 class="question">Чи зазначено в постанові прізвище, ім’я, по-батькові та спеціальне звання патрульного
       поліцейського?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio7" name="q3" type="radio" onchange='q3_check();'/>
+      <input id="radio7" name="q3" type="radio" onchange='qCheck("3")'/>
       <label for="radio7">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio8" name="q3" type="radio" onchange='q3_check();'/>
+      <input id="radio8" name="q3" type="radio" onchange='qCheck("3")'/>
       <label for="radio8">Нi</label>
     </div>
     <hr>
 
     <h5 class="question">Чи вказано в постанові технічний засіб, яким здійснено фото аба відео запис?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio9" name="q4" type="radio" onchange='q4_check();'/>
+      <input id="radio9" name="q4" type="radio" onchange='qCheck("4")'/>
       <label for="radio9">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio10" name="q4" type="radio" onchange='q4_check();'/>
+      <input id="radio10" name="q4" type="radio" onchange='qCheck("4")'/>
       <label for="radio10">Нi</label>
     </div>
     <hr>
 
     <h5 class="question">Чи внесені Ваші персональні данні до постанови?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio11" name="q5" type="radio" onchange='q5_check();'/>
+      <input id="radio11" name="q5" type="radio" onchange='qCheck("5");'/>
       <label for="radio11">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio12" name="q5" type="radio" onchange='q5_check();'/>
+      <input id="radio12" name="q5" type="radio" onchange='qCheck("5");'/>
       <label for="radio12">Нi</label>
     </div>
     <hr>
 
     <h5 class="question">Чи зазначена дата розгляду справи у постанові?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio13" name="q6" type="radio" onchange='q6_check();'/>
+      <input id="radio13" name="q6" type="radio" onchange='qCheck("6");'/>
       <label for="radio13">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio14" name="q6" type="radio" onchange='q6_check();'/>
+      <input id="radio14" name="q6" type="radio" onchange='qCheck("6");'/>
       <label for="radio14">Нi</label>
     </div>
     <hr>  
 
     <h5 class="question">Чи вказана в постанові стаття 122 КУпАП?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio15" name="q7" type="radio" onchange='q7_check();'/>
+      <input id="radio15" name="q7" type="radio" onchange='qCheck("7")'/>
       <label for="radio15">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio16" name="q7" type="radio" onchange='q7_check();'/>
+      <input id="radio16" name="q7" type="radio" onchange='qCheck("7")'/>
       <label for="radio16">Нi</label>
     </div>
     <hr>
 
     <h5 class="question">Постанова написана від руки?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio17" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "block"; q8_check();'/>
+      <input id="radio17" name="q8" type="radio" onchange='qCheck("8")'/>
       <label for="radio17">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio18" name="q8" type="radio" onchange='document.getElementById("lastQ").style.display = "none"; q8_check();'/>
+      <input id="radio18" name="q8" type="radio" onchange='qCheck("8")'/>
       <label for="radio18">Нi</label>
     </div>
     <hr>
@@ -281,11 +281,11 @@
       <h5 class="question">Записи в постанові написані розбірливим почерком, друкованими літерами, синьою або
       чорною пастою?<span class="glyphicon glyphicon-facetime-video"></span></h5>
       <div class="inputGroup">
-        <input id="radio19" name="q9" type="radio" onchange='q9_check();'/>
+        <input id="radio19" name="q9" type="radio" onchange='qCheck("9")'/>
         <label for="radio19">Так</label>
       </div>
       <div class="inputGroup">
-        <input id="radio20" name="q9" type="radio" onchange='q9_check();'/>
+        <input id="radio20" name="q9" type="radio" onchange='qCheck("9")'/>
         <label for="radio20">Нi</label> 
       </div>
       <hr>
@@ -293,11 +293,11 @@
 
     <h5 class="question">Чи була складена скарга до органiв Нацiональної полiцiї з приводу некоректного вирiшення постанови?<span class="glyphicon glyphicon-facetime-video"></span></h5>
     <div class="inputGroup">
-      <input id="radio21" name="q10" type="radio" onchange='q10_check()'/>
+      <input id="radio21" name="q10" type="radio" onchange='qCheck("10");'/>
       <label for="radio21">Так</label>
     </div>
     <div class="inputGroup">
-      <input id="radio22" name="q10" type="radio" onchange='q10_check()'/>
+      <input id="radio22" name="q10" type="radio" onchange='qCheck("10");'/>
       <label for="radio22">Нi</label>
     </div>
     <hr>
