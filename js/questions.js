@@ -229,7 +229,6 @@ function submit(){
                 bolditalics: 'Merriweather-Italic.ttf'
         }
       };
-      // console.log(q6_arr);
       pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
 
   };
@@ -324,11 +323,11 @@ var checkOnPlace = function(){
     error('Оберiть дату','Обрати');
     return false;
   }
-  var dateFromField = getDate('onPlace')[1] + '/' + getDate('onPlace')[2] + '/' + getDate('onPlace')[0];//date from field in an appropriate order
+  var dateFromField = getDate('onPlace')[1] + '/' + getDate('onPlace')[2] + '/' + getDate('onPlace')[0];//date from field in appropriate order
 checking:  if(getDate('onPlace') != null){
     userInfo[0].date = getDate('onPlace')[2] + '.' + getDate('onPlace')[1] + '.' + getDate('onPlace')[0];
     var splittedToday = today().split('/');
-    if((dateDiff(dateFromField, today())) < 0){ //if current date < chousen date
+    if((dateDiff(dateFromField, today())) < 0){ //if current date < chosen date
       document.getElementById('onPlace').value = '';
       error('Обрана дата не може бути бiльшою за поточний день!', 'Змiнити дату')
       break checking;

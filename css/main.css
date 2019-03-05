@@ -9,8 +9,11 @@
   padding-left: 10px; }
 
 .navbar {
-  background: rgb(0,189,131) !important;
+  background: rgb(45,42,62) !important;
   border-radius: 5px; }
+
+.logo {
+  width: 5%; }
 
 a {
   color: rgb(255,255,255) !important; }
