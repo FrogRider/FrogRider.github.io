@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou");
 @import url("https://fonts.googleapis.com/css?family=Rubik");
 .navbar-toggler {
   outline: none !important; }
@@ -9,11 +10,13 @@
   padding-left: 10px; }
 
 .navbar {
-  background: rgb(45,42,62) !important;
-  border-radius: 5px; }
+  background: rgb(0,189,131) !important;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgb(0, 0, 0), 0 5px 5px rgb(0, 0, 0); }
 
-.logo {
-  width: 5%; }
+.navbar-brand {
+  font-size: 2em !important;
+  color: red !important; }
 
 a {
   color: rgb(255,255,255) !important; }
@@ -36,6 +39,7 @@ body {
   position: absolute;
   transform: translate(20%, 10%);
   border-radius: 5px;
+  box-shadow: 0 14px 28px rgb(0, 0, 0), 0 1px 1px rgb(0, 0, 0);
   color: rgb(176,175,183);
   text-align: center;
   padding-bottom: 100px; }
@@ -62,6 +66,9 @@ body {
 .extraMargin {
   margin-top: 15vh; }
 
+.extraPadding {
+  padding-bottom: 9vh; }
+
 .use {
   position: absolute;
   transform: translate(37%, 230%);
@@ -75,12 +82,30 @@ body {
     margin-top: 0.7%;
     background: rgb(0,159,106); }
 
+.diagram {
+  margin-top: -5vh;
+  height: 70vh; }
+
+.content p {
+  font-size: 2.2vw; }
+
+.content p:first-child {
+  margin-top: 20vh; }
+
+#logo {
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  font-size: 2em; }
+
 @media only screen and (max-width: 690px) {
   .content {
     position: absolute;
     top: 15%; }
   .extraMargin {
-    margin-top: 20%; } }
+    margin-top: 20%; }
+  .diagram {
+    display: none; }
+  .home {
+    display: none; } }
 
 @media only screen and (max-width: 458px) {
   .header {

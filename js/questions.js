@@ -34,52 +34,46 @@ var q6_arr = [];//тут собираются в кучу части одног�
 var dateArgs = [null, null];
 
 var error = function(opt1, opt2){
-  const swalWithBootstrapButtons = Swal.mixin({
-    confirmButtonClass: 'btn btn-primary',
-    buttonsStyling: false,
-  })
-
-  swalWithBootstrapButtons.fire({
-    title: opt1,
-    background: '#D0D5DBFF',
-    type: 'error',
-    confirmButtonText: opt2,
-  })
+  Swal.fire({
+  title: opt1,
+  width: 600,
+  type: 'error',
+  padding: '3em',
+  background: '#D0D5DBFF',
+  confirmButtonColor: '#00BD83',
+  confirmButtonText: opt2,
+})
 }
 
 var success = function(opt1, opt2){
-  const swalWithBootbacstrapButtons = Swal.mixin({
-    confirmButtonClass: 'btn btn-primary',
-    buttonsStyling: false,
-  })
-
-  swalWithBootstrapButtons.fire({
-    title: opt1,
-    background: '#D0D5DBFF',
-    type: 'success',
-    confirmButtonText: opt2,
-  })
+  Swal.fire({
+  title: 'opt1',
+  width: 600,
+  type: 'success',
+  padding: '3em',
+  background: '#D0D5DBFF',
+  confirmButtonColor: '#00BD83',
+  confirmButtonText: 'opt2',
+})
 }
 
 var caution = function(opt1, opt2){
-  const swalWithBootstrapButtons = Swal.mixin({
-    confirmButtonClass: 'btn btn-primary',
-    buttonsStyling: false,
-  })
-
-  swalWithBootstrapButtons.fire({
-    title: opt1,
-    background: '#D0D5DBFF',
-    type: 'warning',
-    confirmButtonText: opt2,
-  })
+  Swal.fire({
+  title: 'opt1',
+  width: 600,
+  type: 'warning',
+  padding: '3em',
+  background: '#D0D5DBFF',
+  confirmButtonColor: '#00BD83',
+  confirmButtonText: 'opt2',
+})
 }
 
 var firstDownload = true;
 
 function submit(){
   if( !firstDownload){
-    success('Ваш файл вже завантажено', 'Ok')
+    pdfMake.createPdf(docDefinition).download();
     return false;
   }
     var submiter = true;
@@ -122,53 +116,13 @@ function submit(){
         var i = 5 + ((len - 1) * 2);
         docDefinition.content[8].text[i] = docDefinition.content[8].text[i].replace(regs[len-1], q6_arr[len-1]);
       }
-      // switch (len){
-      //   case 1:
-      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-      //     break;
-      //   case 2:
-      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-      //     break;
-      //   case 3:
-      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-      //     break;
-      //   case 4:
-      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
-      //     break;
-      //   case 5:
-      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
-      //     docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
-      //     break;
-      //   case 6:
-      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
-      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
-      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
-      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
-      //     docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
-      //     docDefinition.content[8].text[15] = docDefinition.content[8].text[15].replace(/&6_6&/gim, q6_arr[5]);
-      //     break;
-      // }
+
       spaceReplacer(q6_arr);
     } else {
       for(var i = 0; i <=15; i++){
         delete docDefinition.content[8].text[i];
       }
     }
-
-    // docDefinition.content[8].text[17] = docDefinition.content[8].text[17].replace(/&7_1&/gim, get_text('argues/arg7.txt').substr(0, 519));
-    // docDefinition.content[8].text[19] = docDefinition.content[8].text[19].replace(/&7_2&/gim, get_text('argues/arg7.txt').substr(519, 122));
-    // docDefinition.content[8].text[21] = docDefinition.content[8].text[21].replace(/&7_3&/gim, get_text('argues/arg7.txt').substr(641, 561));
-    // docDefinition.content[8].text[23] = docDefinition.content[8].text[23].replace(/&7_4&/gim, get_text('argues/arg7.txt').substr(1202, 223));
-    // docDefinition.content[8].text[23] = docDefinition.content[8].text[23].replace(/&7_4&/gim, get_text('argues/arg7.txt').substr(1425, )); //делал 7 пункт так, но потом стало лень
 
       if(dateArgs[0] !== null){
         docDefinition.content[4].text[1] = docDefinition.content[4].text[1].replace(/&arg1&/gim, dateArgs[0]);
@@ -230,6 +184,7 @@ function submit(){
         }
       };
       pdfMake.createPdf(docDefinition).download(); //скачать сформированный файл
+      
 
   };
 
@@ -580,6 +535,10 @@ var ukrCheck = function(id, label){
 
 ukrCheck('carNumber', 'carNumber_label'); ukrCheck('address', 'address_label'); ukrCheck('courtAddress', 'courtAddress_label'); ukrCheck('courtTown', 'courtTown_label'); ukrCheck('courtStreet', 'courtStreet_label'); ukrCheck('pozivFirstName', 'pozivFirstName_label'); ukrCheck('pozivLastName', 'pozivLastName_label'); ukrCheck('pozivSurName', 'pozivSurName_label'); ukrCheck('pozivTown', 'pozivTown_label'); ukrCheck('pozivStreet', 'pozivStreet_label'); ukrCheck('vidpovidOtdelenie', 'vidpovidOtdelenie_label'); ukrCheck('vidpovidach', 'vidpovidach_label'); ukrCheck('vidpovidTown', 'vidpovidTown_label'); ukrCheck('vidpovidStreet', 'vidpovidStreet_label'); 
 
+document.oncontextmenu = function(){  
+  return false; 
+};
+
 (function(){
   var btn1 = document.getElementById('btn1');
   var btn2 = document.getElementById('btn2');
@@ -630,10 +589,10 @@ var yesNoQuestionsCheck = function(){
                 delete docDefinition.content[12].ol[3];
               }
               hider('questions'); 
-              hider('pay');
+              hider('userInfoBlock');
         } else {
             error('Ви вiдповiли не на всi питання', 'Вiдповiсти');
           }
 }
 
-
+// alert(sessionStorage.store)
