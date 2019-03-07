@@ -99,7 +99,7 @@ code {
   border-radius: 50%;
   background: rgb(255,0,127);
   position: fixed;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
+  box-shadow: 0 1px 1px rgb(0, 0, 0), 0 5px 5px rgb(0, 0, 0); }
 
 .home b {
   font-size: 125%;
@@ -125,15 +125,12 @@ hr {
   margin-bottom: 3%;
   background: rgb(76,128,152);
   border-color: rgb(76,128,152); }
-  .submit button:hover {
+  .submit button .button, .submit button #btn1, #btn2
+.submit button:hover {
     cursor: pointer; }
 
 #lastQ {
   display: none; }
-
-@media only screen and (max-width: 720px) {
-  .home {
-    display: none; } }
 
 #home {
   margin-top: 2%; }
@@ -210,5 +207,20 @@ hr {
 .mb {
   margin-bottom: 4vh; }
 
-.userInfoBlock p {
+.userInfoBlock p, p {
   color: rgb(255,255,255); }
+
+@media only screen and (max-width: 720px) {
+  .home {
+    display: none; } }
+
+@media only screen and (max-width: 458px) {
+  .button, #btn1, #btn2 {
+    width: 80vw;
+    font-size: 3vw !important; }
+  [type="date"] {
+    width: 80vw; }
+  .datePolice {
+    margin-top: 20vh; }
+  .dateOnPlace {
+    margin-top: 35vh; } }

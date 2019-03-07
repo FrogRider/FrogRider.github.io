@@ -116,13 +116,53 @@ function submit(){
         var i = 5 + ((len - 1) * 2);
         docDefinition.content[8].text[i] = docDefinition.content[8].text[i].replace(regs[len-1], q6_arr[len-1]);
       }
-
+      // switch (len){
+      //   case 1:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     break;
+      //   case 2:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     break;
+      //   case 3:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     break;
+      //   case 4:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+      //     break;
+      //   case 5:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+      //     docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
+      //     break;
+      //   case 6:
+      //     docDefinition.content[8].text[5] = docDefinition.content[8].text[5].replace(/&6_1&/gim, q6_arr[0]);
+      //     docDefinition.content[8].text[7] = docDefinition.content[8].text[7].replace(/&6_2&/gim, q6_arr[1]);
+      //     docDefinition.content[8].text[9] = docDefinition.content[8].text[9].replace(/&6_3&/gim, q6_arr[2]);
+      //     docDefinition.content[8].text[11] = docDefinition.content[8].text[11].replace(/&6_4&/gim, q6_arr[3]);
+      //     docDefinition.content[8].text[13] = docDefinition.content[8].text[13].replace(/&6_5&/gim, q6_arr[4]);
+      //     docDefinition.content[8].text[15] = docDefinition.content[8].text[15].replace(/&6_6&/gim, q6_arr[5]);
+      //     break;
+      // }
       spaceReplacer(q6_arr);
     } else {
       for(var i = 0; i <=15; i++){
         delete docDefinition.content[8].text[i];
       }
     }
+
+    // docDefinition.content[8].text[17] = docDefinition.content[8].text[17].replace(/&7_1&/gim, get_text('argues/arg7.txt').substr(0, 519));
+    // docDefinition.content[8].text[19] = docDefinition.content[8].text[19].replace(/&7_2&/gim, get_text('argues/arg7.txt').substr(519, 122));
+    // docDefinition.content[8].text[21] = docDefinition.content[8].text[21].replace(/&7_3&/gim, get_text('argues/arg7.txt').substr(641, 561));
+    // docDefinition.content[8].text[23] = docDefinition.content[8].text[23].replace(/&7_4&/gim, get_text('argues/arg7.txt').substr(1202, 223));
+    // docDefinition.content[8].text[23] = docDefinition.content[8].text[23].replace(/&7_4&/gim, get_text('argues/arg7.txt').substr(1425, )); //делал 7 пункт так, но потом стало лень
 
       if(dateArgs[0] !== null){
         docDefinition.content[4].text[1] = docDefinition.content[4].text[1].replace(/&arg1&/gim, dateArgs[0]);
@@ -535,10 +575,6 @@ var ukrCheck = function(id, label){
 
 ukrCheck('carNumber', 'carNumber_label'); ukrCheck('address', 'address_label'); ukrCheck('courtAddress', 'courtAddress_label'); ukrCheck('courtTown', 'courtTown_label'); ukrCheck('courtStreet', 'courtStreet_label'); ukrCheck('pozivFirstName', 'pozivFirstName_label'); ukrCheck('pozivLastName', 'pozivLastName_label'); ukrCheck('pozivSurName', 'pozivSurName_label'); ukrCheck('pozivTown', 'pozivTown_label'); ukrCheck('pozivStreet', 'pozivStreet_label'); ukrCheck('vidpovidOtdelenie', 'vidpovidOtdelenie_label'); ukrCheck('vidpovidach', 'vidpovidach_label'); ukrCheck('vidpovidTown', 'vidpovidTown_label'); ukrCheck('vidpovidStreet', 'vidpovidStreet_label'); 
 
-document.oncontextmenu = function(){  
-  return false; 
-};
-
 (function(){
   var btn1 = document.getElementById('btn1');
   var btn2 = document.getElementById('btn2');
@@ -565,6 +601,10 @@ document.oncontextmenu = function(){
     hider('second_1')
   }
 })()
+
+document.oncontextmenu = function()  {  
+  return false; 
+};
 
 var yesNoQuestionsCheck = function(){
   submit: if(phrases[0] != "null" && 
