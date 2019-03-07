@@ -99,7 +99,7 @@ code {
   border-radius: 50%;
   background: rgb(255,0,127);
   position: fixed;
-  box-shadow: 0 14px 28px rgb(0, 0, 0), 0 5px 5px rgb(0, 0, 0); }
+  box-shadow: 0 1px 1px rgb(0, 0, 0), 0 5px 5px rgb(0, 0, 0); }
 
 .home b {
   font-size: 125%;
