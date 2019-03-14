@@ -77,6 +77,7 @@ function game(){
 }
 
 function keyPush(event){
+  // alert(event.keyCode);
 switch(event.keyCode){
       case 37:
         xVelos=-1; yVelos=0;
@@ -117,4 +118,13 @@ var random = function(){
 
 var el = document.getElementById('canv');
 
-Hammer(el).on("swipeleft", function(event){alert('drags')})
+var hammer = new Hammer(el);
+var hammer2 = new Hammer(el);
+hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+// listen to events...
+hammer.on("swipeup swipedown", function(ev) {
+    alert(ev.type +" gesture detected.");
+});
+hammer2.on("swipeleft swiperight", function(ev) {
+    alert(ev.type +" gesture detected.");
+});
