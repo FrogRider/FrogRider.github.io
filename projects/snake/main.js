@@ -78,26 +78,27 @@ function game(){
 
 function keyPush(event){
   // alert(event.keyCode);
+  console.log(event.keyCode);
 switch(event.keyCode){
-      case 37:
+      case 37: //left
         xVelos=-1; yVelos=0;
         break;
       case 65:
         xVelos=-1; yVelos=0;
         break;
-      case 38:
+      case 38://up
         xVelos=0; yVelos=-1;
         break;
       case 87:
         xVelos=0; yVelos=-1;
         break;
-      case 39:
+      case 39://right
         xVelos=1; yVelos=0;
         break;
       case 68:
         xVelos=1; yVelos=0;
         break;
-      case 40:
+      case 40://down
         xVelos=0; yVelos=1;
         break;
       case 83:
@@ -116,15 +117,24 @@ var random = function(){
   return Math.floor(Math.random()*tileCount);
 }
 
-var el = document.getElementById('canv');
+swipes: (function(){
+  var el = document.getElementById('canv');
 
 var hammer = new Hammer(el);
 var hammer2 = new Hammer(el);
 hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 // listen to events...
-hammer.on("swipeup swipedown", function(ev) {
-    alert(ev.type +" gesture detected.");
+hammer.on("swipeup ", function(ev) {
+    xVelos=0; yVelos=-1;
 });
-hammer2.on("swipeleft swiperight", function(ev) {
-    alert(ev.type +" gesture detected.");
+hammer.on(" swipedown", function(ev) {
+    xVelos=0; yVelos=1;
 });
+hammer2.on("swipeleft ", function(ev) {
+    xVelos=-1; yVelos=0;
+});
+hammer2.on(" swiperight", function(ev) {
+    xVelos=1; yVelos=0;
+});
+}())
+
