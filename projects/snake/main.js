@@ -115,9 +115,6 @@ var random = function(){
   return Math.floor(Math.random()*tileCount);
 }
 
-var el = document.getElementById('body');
+var el = document.getElementById('canv');
 
-var hammertime = new Hammer(el);
-hammertime.on('swipeleft', function() {
-  console.log('fffff');
-});
+Hammer(el).on("swipeleft", function(event){alert('drags')})
