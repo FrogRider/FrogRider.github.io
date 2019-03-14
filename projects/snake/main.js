@@ -119,5 +119,5 @@ var el = document.getElementById('body');
 
 var hammertime = new Hammer(el);
 hammertime.on('swipeleft', function() {
-  console.log();
+  console.log('fffff');
 });
