@@ -1,0 +1,18 @@
+body{
+	background: #8D8D8DFF;
+}
+
+.canvas{
+ 	position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.canvas{
+	top:50%;
+}
+
+.score{
+	color: #2A2232FF;
+		font-size: 1.3vw;
+}
