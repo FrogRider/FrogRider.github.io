@@ -1,5 +1,6 @@
 body{
 	background: #8D8D8DFF;
+	height: 95vh;
 }
 
 .canvas{
@@ -14,5 +15,5 @@ body{
 
 .score{
 	color: #2A2232FF;
-		font-size: 1.3vw;
+		font-size: 1.2vw;
 }

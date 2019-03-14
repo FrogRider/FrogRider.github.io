@@ -118,23 +118,22 @@ var random = function(){
 }
 
 swipes: (function(){
-  var el = document.getElementById('canv');
-
-var hammer = new Hammer(el);
-var hammer2 = new Hammer(el);
-hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
-// listen to events...
-hammer.on("swipeup ", function(ev) {
-    xVelos=0; yVelos=-1;
+  var el = document.getElementById('body');
+  var swipe = function(name, event, x, y){
+    name = new Hammer(el);
+    if(event == "swipeup" || event == "swipedown")
+    name.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+    name.on(event, function(ev) {
+    xVelos=x; yVelos=y;
 });
-hammer.on(" swipedown", function(ev) {
-    xVelos=0; yVelos=1;
-});
-hammer2.on("swipeleft ", function(ev) {
-    xVelos=-1; yVelos=0;
-});
-hammer2.on(" swiperight", function(ev) {
-    xVelos=1; yVelos=0;
-});
+  }
+  var up;
+  swipe(up, "swipeup", 0, -1);
+  var down;
+  swipe(down, "swipedown", 0, 1);
+  var left;
+  swipe(left, "swipeleft", -1, 0);
+  var right;
+  swipe(right, "swiperight", 1, 0);
 }())
 
