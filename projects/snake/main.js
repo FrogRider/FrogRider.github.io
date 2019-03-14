@@ -105,11 +105,6 @@ switch(event.keyCode){
     }
 }
 
-var hammertime = new Hammer(myElement, myOptions);
-hammertime.on('swipeleft', function() {
-  console.log();
-});
-
 var scoreRecorder = function (i){
   ctx.fillStyle = "#AFACB5FF";
   ctx.font = "bold 10pt Arial";
@@ -119,3 +114,10 @@ var scoreRecorder = function (i){
 var random = function(){
   return Math.floor(Math.random()*tileCount);
 }
+
+var el = document.getElementById('body');
+
+var hammertime = new Hammer(el);
+hammertime.on('swipeleft', function() {
+  console.log();
+});
