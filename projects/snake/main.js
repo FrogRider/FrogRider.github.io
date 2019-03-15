@@ -77,8 +77,7 @@ function game(){
 }
 
 function keyPush(event){
-  // alert(event.keyCode);
-  console.log(event.keyCode);
+
 switch(event.keyCode){
       case 37: //left
         xVelos=-1; yVelos=0;
@@ -119,21 +118,20 @@ var random = function(){
 
 swipes: (function(){
   var el = document.getElementById('body');
-  var swipe = function(name, event, x, y){
-    name = new Hammer(el);
-    if(event == "swipeup" || event == "swipedown")
-    name.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
-    name.on(event, function(ev) {
-    xVelos=x; yVelos=y;
-});
+  var swipe = function(event,x,y){
+    var vertical = new Hammer(el);
+    var horizontal = new Hammer(el);
+    vertical.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+
+    if(event == "swipeup" || event == "swipedown"){
+      vertical.on(event, function(ev) {xVelos=x; yVelos=y;});
+    }else{
+      horizontal.on(event, function(ev) {xVelos=x; yVelos=y;});
+    }
   }
-  var up;
-  swipe(up, "swipeup", 0, -1);
-  var down;
-  swipe(down, "swipedown", 0, 1);
-  var left;
-  swipe(left, "swipeleft", -1, 0);
-  var right;
-  swipe(right, "swiperight", 1, 0);
+  swipe("swipeup", 0, -1);
+  swipe("swipedown", 0, 1);
+  swipe("swipeleft", -1, 0);
+  swipe("swiperight", 1, 0);
 }())
 
