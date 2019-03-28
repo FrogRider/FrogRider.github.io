@@ -87,6 +87,10 @@ let month = (month, lang = 'en') => {
     de: ['Januar', 'Februar', 'März', 'April',
       'Mai', 'Juni', 'Juli', 'August',
       'September', 'Oktober', 'November', 'Dezember',
+    ],
+    spa: ['Enero', 'Febrero', 'Marzo', 'Abril',
+      'Mayo', 'Junio', 'Julio', 'Agosto',
+      'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',
     ]
   };
   let foo = (obj, num) => {
