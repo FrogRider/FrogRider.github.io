@@ -16,44 +16,34 @@ let objectParser = (obj, stack, searchFor, changeTo) => {
 }
 
 //checks for quantity of numbers in selected num input field
-let numberValueCheck = (id, amount) => {
+let inputRestriction = (id, amount) => {
   let text = document.getElementById(id);
   text.onkeyup = function testKey() {
     for (i in text.value) {
-      if (i >= amount) {
-        text.value = text.value.slice(0, amount);
-      }
+      i >= amount ?
+        text.value = text.value.slice(0, amount) : true;
     }
   }
 }
 
 //returns current date. day, month and year separated by period by default. can be changed
 let today = (separator = '.') => {
-  let today = new Date();
-  let dd = today.getDate();
-  let mm = today.getMonth() + 1; //january is 0
-  let yyyy = today.getFullYear();
+  let today = new Date(),
+      dd = today.getDate(),
+      mm = today.getMonth() + 1, //january is 0
+      yyyy = today.getFullYear();
 
-  if (dd < 10) {
-    dd = '0' + dd;
-  }
-
-  if (mm < 10) {
-    mm = '0' + mm;
-  }
-
-  today = [dd, mm, yyyy].join(separator);
-  return today;
+  dd < 10 ? dd = '0' + dd : dd;
+  mm < 10 ? mm = '0' + mm : mm;
+  return ([dd, mm, yyyy].join(separator));
 }
 
 //returns diference between two dates
 let dateDiff = (date1, date2) => {
-  let d1 = new Date(date1);
-  let d2 = new Date(date2);
-  let daysLag = Math.ceil(Math.abs(d2.getTime() - d1.getTime()) / (1000 * 3600 * 24));
-  if (d1 > d2) {
-    daysLag = -daysLag;
-  }
+  let d1 = new Date(date1),
+      d2 = new Date(date2),
+      daysLag = Math.ceil(Math.abs(d2.getTime() - d1.getTime()) / (1000 * 3600 * 24));
+  d1 > d2 ? daysLag = -daysLag : daysLag;
   return daysLag;
 }
 
@@ -62,9 +52,8 @@ let ukrCheck = (id) => {
   let text = document.getElementById(id);
   text.onkeyup = function testKey() {
     for (i in text.value) {
-      if (text.value[i].match(/[ыЫъЪэЭa-zA-Z]+/) !== null) {
+      if (text.value[i].match(/[ыЫъЪэЭa-zA-Z]+/) !== null)
         text.value = text.value.replace(/[ыЫъЪэЭa-zA-Z]+/, '');
-      } 
     }
   }
 }
