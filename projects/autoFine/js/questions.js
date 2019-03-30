@@ -116,13 +116,12 @@ function submit() {
     delete docDefinition.content[5].text[0];
     delete docDefinition.content[5].text[1];
   }
-  docDefinition.content[3].text[1] = docDefinition.content[3].text[1].replace(/&mainP1&/gim, get_text('argues/main.txt').substr(0, 287));
-  docDefinition.content[3].text[3] = docDefinition.content[3].text[3].replace(/&mainP2&/gim, get_text('argues/main.txt').substr(287, 190));
-  docDefinition.content[3].text[5] = docDefinition.content[3].text[5].replace(/&mainP3&/gim, get_text('argues/main.txt').substr(477, 439));
-  docDefinition.content[3].text[7] = docDefinition.content[3].text[7].replace(/&mainP4&/gim, get_text('argues/main.txt').substr(916, 389));
-  docDefinition.content[3].text[9] = docDefinition.content[3].text[9].replace(/&mainP5&/gim, get_text('argues/main.txt').substr(1305, 447));
-  docDefinition.content[3].text[11] = docDefinition.content[3].text[11].replace(/&mainP6&/gim, get_text('argues/main.txt').substr(1752, 141)); //згiдно з законом......
-  docDefinition.content[3].text[13] = docDefinition.content[3].text[13].replace(/&mainP7&/gim, get_text('argues/main.txt').substr(1893, 550));
+  let startAt = 0;//starting point in the file
+    let textParts = [287,190,439,389,447,141,550]; //amount of the char in the paragraph
+    for(var i = 1; i <= 7; i++){
+      objectParser(docDefinition, '', '&mainP' + i + '&', get_text('argues/main.txt').substr(startAt, textParts[i-1]));
+      startAt += textParts[i-1]; //mainP1 - mainP7 here
+    }
 
   docDefinition.content[3].text[1] = docDefinition.content[3].text[1].replace(/&date&/gim, userInfo[0].date);
   docDefinition.content[13].table.body[0][0].text = docDefinition.content[13].table.body[0][0].text.replace(/&today&/gim, today().split('/')[1] + ' ' + getMonth(today().split('/')[0]) + ' ' + today().split('/')[2]);
@@ -269,7 +268,6 @@ var checkOnPlace = function() {
     }
     if (dateDiff(dateFromField, today()) > 10) {
       swal('Пройшло бiльше 10 днiв. Шнас на успiшне оскарження малий', 'Продовжити', 'warning');
-      // alert('sssuka')
     }
     userInfo[0].date = getDate('onPlace')[1] + '.' + getDate('onPlace')[2] + '.' + getDate('onPlace')[0];
     console.log(userInfo[0].date);
@@ -290,7 +288,6 @@ var postDate1 = function() {
       return false;
     } else if ((dateDiff(date, today())) > 61) { //two month check
       dateArgs[0] = get_text('argues/arg1.txt').replace(/&date1&/gim, getDate('inPoliceStation')[1] + '.' + getDate('inPoliceStation')[2] + '.' + getDate('inPoliceStation')[0]);
-      // alert(dateArgs[0]);
     } else if ((dateDiff(date, today())) < 61) {
       dateArgs[0] = null;
     }
@@ -406,10 +403,8 @@ var check = function() {
 
           if (prop == 'pozivSurName' || prop == 'pozivFirstName' || prop == 'pozivLastName')
             fullName += obj[prop] + ' ';
-          // alert(document.getElementById(prop).value);
           if (document.getElementById(prop) == null)
-            alert(prop)
-          obj[prop] = document.getElementById(prop).value;
+            obj[prop] = document.getElementById(prop).value;
         }
       }
     }
@@ -437,10 +432,11 @@ var numberValueCheck = function(id, amount) {
     } else document.getElementById(id + '_label').style.display = "none";
   }
 }
+for(let key in userInfo[0])
+  key.includes('Index') ? numberValueCheck(key, 5): true
 
-numberValueCheck('courtIndex', 5);
-numberValueCheck('pozivIndex', 5);
-numberValueCheck('vidpovidIndex', 5), numberValueCheck('speed', 3), numberValueCheck('ipn', 10);
+ numberValueCheck('speed', 3); 
+ numberValueCheck('ipn', 10);
 
 var ukrCheck = function(id) {
   var text = document.getElementById(id);
@@ -454,35 +450,21 @@ var ukrCheck = function(id) {
   }
 }
 
-ukrCheck('carNumber');
-ukrCheck('address');
-ukrCheck('courtAddress');
-ukrCheck('courtTown');
-ukrCheck('courtStreet');
-ukrCheck('pozivFirstName');
-ukrCheck('pozivLastName');
-ukrCheck('pozivSurName');
-ukrCheck('pozivTown');
-ukrCheck('pozivStreet');
-ukrCheck('vidpovidOtdelenie');
-ukrCheck('vidpovidach');
-ukrCheck('vidpovidTown');
-ukrCheck('vidpovidStreet');
+let checkForUkr = (['carNumber','address','courtAddress','courtTown','courtStreet','pozivFirstName','pozivLastName','pozivSurName','pozivTown','pozivStreet','vidpovidOtdelenie','vidpovidach','vidpovidTown','vidpovidStreet']);
+for(one in checkForUkr)
+  ukrCheck(checkForUkr[one]);
+
 
 (function() {
   var btn1 = document.getElementById('btn1');
   var btn2 = document.getElementById('btn2');
   btn1.onclick = function() { //on place
-    docDefinition.content[3].text[15] = docDefinition.content[3].text[15].replace(/&mainP8&/gim, get_text('argues/main.txt').substr(2443, 175)); //pasting 4 part from document
-    docDefinition.content[3].text[17] = docDefinition.content[3].text[17].replace(/&mainP9&/gim, get_text('argues/main.txt').substr(2618, 36));
-    docDefinition.content[3].text[19] = docDefinition.content[3].text[19].replace(/&mainP10&/gim, get_text('argues/main.txt').substr(2654, 58));
-    docDefinition.content[3].text[21] = docDefinition.content[3].text[21].replace(/&mainP11&/gim, get_text('argues/main.txt').substr(2712, 179));
-    docDefinition.content[3].text[23] = docDefinition.content[3].text[23].replace(/&mainP12&/gim, get_text('argues/main.txt').substr(2891, 135));
-    docDefinition.content[3].text[25] = docDefinition.content[3].text[25].replace(/&mainP13&/gim, get_text('argues/main.txt').substr(3026, 111));
-    docDefinition.content[3].text[27] = docDefinition.content[3].text[27].replace(/&mainP14&/gim, get_text('argues/main.txt').substr(3137, 138));
-    docDefinition.content[3].text[29] = docDefinition.content[3].text[29].replace(/&mainP15&/gim, get_text('argues/main.txt').substr(3275, 221));
-    docDefinition.content[3].text[31] = docDefinition.content[3].text[31].replace(/&mainP16&/gim, get_text('argues/main.txt').substr(3496, 202));
-    //заменить перебором объекта с помощбью функции objectParser()
+    let startAt = 2443;
+    let textParts = [175,36,58,179,135,111,138,221,202];
+    for(var i = 8; i <= 16; i++){
+      objectParser(docDefinition, '', '&mainP' + i + '&', get_text('argues/main.txt').substr(startAt, textParts[i-8]));
+      startAt += textParts[i-8]; //mainP8 - mainP16 here
+    }
     hider('first');
     hider('second_2');
   }
