@@ -369,8 +369,8 @@ var postDate4 = function() {
   if (getDate('inPoliceStation') !== null &&
     getDate('watchigDate') !== null &&
     getDate('directingDate') !== null) {
-    hider('second_1');
-    hider('questions');
+      hider('second_1');
+      hider('questions');
   }
 }
 
