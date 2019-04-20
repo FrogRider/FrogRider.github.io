@@ -1,4 +1,4 @@
-//goes thru an object searching for matching piece of text/word
+//goes thru an object searching for matching piece of text/word (stack = ''), than replases it
 let objectParser = (obj, stack, searchFor, changeTo) => {
   for (let property in obj) {
     if (obj.hasOwnProperty(property)) {
