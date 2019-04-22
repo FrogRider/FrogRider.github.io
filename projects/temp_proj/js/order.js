@@ -5,7 +5,7 @@ const name = document.querySelector('#form_name').value,
 var form_id_js = "order_form";
 
 var data_js = {
-  "access_token": "dsgxn0gstugfbbubu7ksfa96"
+  "access_token": "pxe4fuak50dy2q0r4ny06xpj"
 };
 
 function js_onSuccess() {
