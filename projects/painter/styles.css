@@ -36,7 +36,7 @@ canvas {
 
 #draw {
   grid-area: dr;
-  background: red;
+  background: #fd4d82;
   border-radius: 200px !important;
 }
 
