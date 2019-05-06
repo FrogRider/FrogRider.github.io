@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "01973c77668b8e52cfc4d2149eccf1a2",
+    "revision": "55a0797e12b6bc8501e3053ea543cde3",
     "url": "/FrogRider/FrogRider.github.io/index.html"
   },
   {
-    "revision": "7f38a7a0610ac1484ab2",
+    "revision": "da55693a179ef108601f",
     "url": "/FrogRider/FrogRider.github.io/static/css/main.f20a0a69.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FrogRider/FrogRider.github.io/static/js/2.3310f33a.chunk.js"
   },
   {
-    "revision": "7f38a7a0610ac1484ab2",
-    "url": "/FrogRider/FrogRider.github.io/static/js/main.dd3cdb8a.chunk.js"
+    "revision": "da55693a179ef108601f",
+    "url": "/FrogRider/FrogRider.github.io/static/js/main.7a118345.chunk.js"
   },
   {
     "revision": "dbeadcc667acc2048bc9",

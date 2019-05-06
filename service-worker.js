@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/FrogRider/FrogRider.github.io/precache-manifest.436b2531e5a8c937e917ebd38f79ec7b.js"
+  "/FrogRider/FrogRider.github.io/precache-manifest.ba943ba2b2b9f1a403febcf81c5f2e71.js"
 );
 
 self.addEventListener('message', (event) => {
