@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = () => {
   canv = document.getElementById('canv');
   ctx = canv.getContext('2d');
   document.addEventListener("keydown", keyPush);
@@ -6,10 +6,9 @@ window.onload = function(){
 }
   
 controls: (function(){
-  fps = 15;
+  fps = 10;
   keys = [0,0];
   score = 0;
-  var prevMove;
   if(!sessionStorage['hScore'])
     sessionStorage['hScore'] = 0;
   playerX=playerY=10;
@@ -37,7 +36,7 @@ function mainLoop(){
   	playerY = 0;
   }
   ctx.fillStyle='#2A2232FF';//bg
-  ctx.fillRect(0,0, canv.width, canv.height);
+  ctx.fillRect(0,0, canv.width, canv.height); 
   scoreRecorder(score);
     if(dotX==playerX && dotY==playerY){
   		score++;
@@ -47,14 +46,12 @@ function mainLoop(){
   for(var i=0; i<tailParts.length; i++){
     ctx.fillRect(tailParts[i].x*gridSize,tailParts[i].y*gridSize, gridSize-tileGap,gridSize-tileGap);
     if(tailParts[i].x==playerX && tailParts[i].y==playerY && (xVelos + yVelos) != 0){
-      if(!(((keys[0][0] == 1 && keys[0][1] == 0) && (keys[1][0] == -1 && keys[1][1] == 0))||
-      ((keys[0][0] == -1 && keys[0][1] == 0) && (keys[1][0] == 1 && keys[1][1] == 0)))) { //this huge IF is for left-right or up-down situations
-        if(!(((keys[0][0] == 0 && keys[0][1] == 1) && (keys[1][0] == 0 && keys[1][1] == -1))||
-          ((keys[0][0] == 0 && keys[0][1] == -1) && (keys[1][0] == 0 && keys[1][1] == 1))))
-            loose()
-        
+      if(!(keys[0] == "down" && keys[1] == "up") && 
+         !(keys[0] == "up" && keys[1] == "down") &&
+         !(keys[0] == "left" && keys[1] == "right") &&
+         !(keys[0] == "right" && keys[1] == "left")){
+        loose()
       }
-      
     }
   }
   tailParts.push({x:playerX,y:playerY});
@@ -79,7 +76,7 @@ function mainLoop(){
   ctx.fillRect(dotX*gridSize,dotY*gridSize, gridSize-tileGap,gridSize-tileGap);
 }
 
-var loose = function(){
+const loose = () => {
   tail=5;
       if(sessionStorage['hScore'] < score)
         sessionStorage['hScore'] = score;
@@ -91,57 +88,61 @@ var loose = function(){
       console.log('loose');
 }
 
-function keyPush(event){
+const pause = () => {
+  xVelos= yVelos = 0;
+}
+
+const keyPush = event => {
 
 switch(event.keyCode){
       case 37: //left
         xVelos=-1; yVelos=0; 
-        prevKey();
+        pushKey('left');
         break;
       case 65:
         xVelos=-1; yVelos=0;
-        prevKey();
+        pushKey('left');
         break;
       case 38://up
         xVelos=0; yVelos=-1; 
-        prevKey();
+        pushKey('up');
         break;
       case 87:
         xVelos=0; yVelos=-1;
-        prevKey();
+        pushKey('up');
         break;
       case 39://right
-        xVelos=1; yVelos=0;
-        prevKey();
+        xVelos=1; yVelos=0; 
+        pushKey('right');
         break;
       case 68:
         xVelos=1; yVelos=0;
-        prevKey();
+        pushKey('right');
         break;
       case 40://down
         xVelos=0; yVelos=1;
-        prevKey();
+        pushKey('down');
         break;
       case 83:
         xVelos=0; yVelos=1;
-        prevKey();
+        pushKey('down');
         break;
     }
     console.log(keys);
 }
 
-var prevKey = function(){
-  keys.splice(0,1)
-  keys.push([xVelos, yVelos]);
+const pushKey = key => {
+  keys.splice(0,1);
+  keys.push(key);
 }
 
-var scoreRecorder = function (i){
+const scoreRecorder = i => {
   ctx.fillStyle = "#AFACB5FF";
   ctx.font = "bold 10pt Arial";
   ctx.fillText(i, 10, 20);
 }
 
-var random = function(){
+const random = () => {
   return Math.floor(Math.random()*tileCount);
 }
 

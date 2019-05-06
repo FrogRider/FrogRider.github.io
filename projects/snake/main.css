@@ -1,9 +1,13 @@
 body{
 	background: #8D8D8DFF;
 	height: 95vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column
 }
 
-.canvas{
+/* .canvas{
  	position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -11,9 +15,9 @@ body{
 
 .canvas{
 	top:50%;
-}
+} */
 
 .score{
 	color: #2A2232FF;
-		font-size: 1.2vw;
+		font-size: 1.2emwa;
 }
