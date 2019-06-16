@@ -1,0 +1,171 @@
+.box {
+  width: 100%;
+  height: 100%;
+  background: tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1.3vh 0;
+}
+
+#left {
+  display: inline-block;
+  width: 50vw;
+  height: 30px;
+}
+
+#right {
+  display: inline-block;
+  width: 45vw;
+  height: 30px;
+  text-align: right;
+  float: right;
+}
+
+#right > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding-right: 1vw;
+}
+
+#container {
+  width: 98.7%;
+  height: 82%;
+}
+
+.singreRadio {
+  display: inline-block;
+  padding-right: 2vw;
+}
+
+.align {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#dates {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#dates input:first-child {
+  margin-left: 1vw;
+  border-radius: 10px 0 0 10px;
+}
+
+#dates input {
+  outline: none;
+  text-align: center;
+  width: 17vw;
+  height: 5vh;
+  font-size: 1.1em;
+  border: none;
+  margin-right: 3px !important;
+}
+
+input[type=date] {
+  text-align: center;
+}
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  width: 12vw;
+  height: 5vh;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropbtn:first-child {
+  margin-right: 3px;
+}
+
+.dropbtn:last-child {
+  margin-right: 3px;
+  width: 13.5vw;
+  border-radius: 10px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.dropdown .dropbtn {
+  border-radius: 0 10px 10px 0;
+}
+
+.round {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #3498DB;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.counter {
+  display: inline-block;
+  width: 40px;
+  height: 15px;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toLeft {
+  display: inline-block;
+  float: right;
+}
+
+#classVariants {
+  padding-top: 5px;
+}
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1>Hello</h1> -->
+
+    <div class="box">
+        <div id="container">
+            <div id="options_container">
+                <div id="left">
+                    <div class="align">
+                        <div class="singreRadio" style="padding-left: 1vw">
+                            <input type="radio" name='group' onchange="oneWay()"> One way
+                        </div>
+                        <div class="singreRadio">
+                            <input type="radio" name='group' onchange="roundTrip()"> Round trip
+                        </div>
+                        <div class="singreRadio">
+                            <input type="checkbox"> Direct flights only
+                        </div>
+                    </div>
+                </div>
+
+                <div id="right">
+
+                    <div class="">
+                        Find hotels <input type="checkbox">
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="dates">
+                <input type="text" name="team" placeholder="From" list="team_list">
+                <datalist id="team_list">
+                    <option>Шоуду</option>
+                    <option>Каир</option>
+                    <option>Чикаго</option>
+                    <option>Бангкок</option>
+                    <option>Мадрид</option>
+                    <option>Даллас/Форт-Уэрт</option>
+                    <option>Париж</option>
+                    <option>Шанхай</option>
+                    <option>Киев</option>
+                    <option>Денвера</option>
+                    <!-- и т.д. -->
+                </datalist>
+
+                <input type="text" name="team" id='secondCity' placeholder="To" list="team_list">
+                <datalist id="team_list">
+                    <option>Шоуду</option>
+                    <option>Каир</option>
+                    <option>Чикаго</option>
+                    <option>Бангкок</option>
+                    <option>Мадрид</option>
+                    <option>Даллас/Форт-Уэрт</option>
+                    <option>Париж</option>
+                    <option>Шанхай</option>
+                    <option>Киев</option>
+                    <option>Денвера</option>
+                    <!-- и т.д. -->
+                </datalist>
+                <input type="text" name="" id="" placeholder="From date" onfocus="(this.type='date')">
+                <input type="text" name="" id="secondDate" placeholder="To date" onfocus="(this.type='date')">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Options</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <div class="countContainer">
+                            Adults
+                            <div class="toLeft">
+                                <div class="round" onclick="">
+                                    <div class="inner" type="counterBTN" counterSelector="counter1" max='9'>+</div>
+                                </div>
+                                <div class="counter">
+                                    <div class="inner"><label id='counter1'>0</label></div>
+                                </div>
+                                <div class="round" onclick="">
+                                    <div class="inner" type='counterBTN' counterSelector="counter1" min='0'>-</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="countContainer">
+                            Childrens
+                            <div class="toLeft">
+                                <div class="round" onclick="">
+                                    <div class="inner" type="counterBTN" counterSelector="counter2" max='9'>+</div>
+                                </div>
+                                <div class="counter">
+                                    <div class="inner"><label id='counter2'>0</label></div>
+                                </div>
+                                <div class="round" onclick="">
+                                    <div class="inner" type='counterBTN' counterSelector="counter2" min='0'>-</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="countContainer">
+                            Infants
+                            <div class="toLeft">
+                                <div class="round" onclick="">
+                                    <div class="inner" type="counterBTN" counterSelector="counter3" max='9'>+</div>
+                                </div>
+                                <div class="counter">
+                                    <div class="inner"><label id='counter3'>0</label></div>
+                                </div>
+                                <div class="round" onclick="">
+                                    <div class="inner" type='counterBTN' counterSelector="counter3" min='0'>-</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input id='classVariants' type="text" name="team" placeholder="Class" list="list">
+                <datalist id="list">
+                    <option>Economy</option>
+                    <option>Premium economy</option>
+                    <option>Business</option>
+                    <option>First</option>
+                    <!-- и т.д. -->
+                </datalist>
+                    </div>
+                </div>
+                <button class="dropbtn">Search</button>
+            </div>
+        </div>
+    </div>
+    <script src='index.js'></script>
+    <script>
+
+        const myFunction = () => {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+
+
+    </script>
+
+    <script>
+
+        let values = {
+            counter1: 0,
+            counter2: 0,
+            counter3: 0,
+            from: '',
+            to: '',
+            dateFrom: '',
+            dateTo: ''
+        }
+
+
+        window.addEventListener('click', e => {
+
+            if (e.target.getAttribute("type") == 'counterBTN') {
+                let selector = e.target.getAttribute("counterSelector");
+                switch (e.path[0].innerText) {
+                    case '+':
+                        for (elem in values) {
+                            if (elem == selector && elem != 0) {
+                                values[elem]++;
+                                if (values[elem] >= e.target.getAttribute("max")) {
+                                    values[elem] = e.target.getAttribute("max");
+                                }
+                                document.getElementById(e.target.getAttribute("counterSelector")).innerHTML = values[elem]
+                            }
+                        }
+                        break;
+                    case '-':
+                        for (elem in values) {
+                            if (elem == selector) {
+                                values[elem]--;
+                                if (values[elem] <= e.target.getAttribute("min")) {
+                                    values[elem] = e.target.getAttribute("min");
+                                }
+                                document.getElementById(e.target.getAttribute("counterSelector")).innerHTML = values[elem]
+                            }
+                        }
+                        break;
+                }
+            }
+        })
+
+        const oneWay = () => {
+            document.getElementById('secondDate').disabled = true;
+            document.getElementById('secondCity').disabled = true;
+        }
+
+        const roundTrip = () => {
+            document.getElementById('secondDate').disabled = false;
+            document.getElementById('secondCity').disabled = false;
+        }
+
+
+    </script>
+</body>
+
+</html>
