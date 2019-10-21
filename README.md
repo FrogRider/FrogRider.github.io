@@ -8,3 +8,6 @@ Contains:
 
     Weather app project:
         Little react-based weather app powered by openweathermap API
+
+    Recipes app project:
+        Simple react app that parses recipes API and rendes information on the screen
