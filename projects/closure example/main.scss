@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    margin: 10px;
+    border: 1px solid #000;
+    transition: 0.5s;
+    
+    &:first-child {
+    background: red;
+    }
+  }
+  
+  button {
+    height: 10vh;
+    margin: 10px;
+    border: 1px solid #000;
+    width: 15vw;
+    outline: none;
+    border-radius: 5%;
+    margin-left: 10px;
+    background: #3CB371;
+    
+    &:hover{
+      cursor: pointer;
+      color: #fff;
+      background: rgba(60, 179, 113, 0.9);
+    }
+    
+    &:nth-child(even) {
+      float: right;
+    }
+  }
+  
