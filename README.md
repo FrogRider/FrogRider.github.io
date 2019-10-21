@@ -11,3 +11,5 @@ Contains:
 
     Recipes app project:
         Simple react app that parses recipes API and rendes information on the screen
+
+        [I'm an inline-style link](https://www.google.com)
