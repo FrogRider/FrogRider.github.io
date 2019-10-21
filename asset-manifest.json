@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/FrogRider/FrogRider.github.io/react_app/static/css/main.f20a0a69.chunk.css",
-    "main.js": "/FrogRider/FrogRider.github.io/react_app/static/js/main.30efe6c5.chunk.js",
-    "main.js.map": "/FrogRider/FrogRider.github.io/react_app/static/js/main.30efe6c5.chunk.js.map",
-    "runtime~main.js": "/FrogRider/FrogRider.github.io/react_app/static/js/runtime~main.eddb2510.js",
-    "runtime~main.js.map": "/FrogRider/FrogRider.github.io/react_app/static/js/runtime~main.eddb2510.js.map",
-    "static/js/2.3310f33a.chunk.js": "/FrogRider/FrogRider.github.io/react_app/static/js/2.3310f33a.chunk.js",
-    "static/js/2.3310f33a.chunk.js.map": "/FrogRider/FrogRider.github.io/react_app/static/js/2.3310f33a.chunk.js.map",
-    "index.html": "/FrogRider/FrogRider.github.io/react_app/index.html",
-    "precache-manifest.7193c28a81b66eb45c56ee8966de88dc.js": "/FrogRider/FrogRider.github.io/react_app/precache-manifest.7193c28a81b66eb45c56ee8966de88dc.js",
-    "service-worker.js": "/FrogRider/FrogRider.github.io/react_app/service-worker.js",
-    "static/css/main.f20a0a69.chunk.css.map": "/FrogRider/FrogRider.github.io/react_app/static/css/main.f20a0a69.chunk.css.map"
+    "main.css": "/react_app/static/css/main.4c88c3e6.chunk.css",
+    "main.js": "/react_app/static/js/main.825a0ed8.chunk.js",
+    "main.js.map": "/react_app/static/js/main.825a0ed8.chunk.js.map",
+    "runtime~main.js": "/react_app/static/js/runtime~main.cba007e3.js",
+    "runtime~main.js.map": "/react_app/static/js/runtime~main.cba007e3.js.map",
+    "static/js/2.65b9c135.chunk.js": "/react_app/static/js/2.65b9c135.chunk.js",
+    "static/js/2.65b9c135.chunk.js.map": "/react_app/static/js/2.65b9c135.chunk.js.map",
+    "index.html": "/react_app/index.html",
+    "precache-manifest.1bf07cd76e1751aebf060fa7d6b3fd53.js": "/react_app/precache-manifest.1bf07cd76e1751aebf060fa7d6b3fd53.js",
+    "service-worker.js": "/react_app/service-worker.js",
+    "static/css/main.4c88c3e6.chunk.css.map": "/react_app/static/css/main.4c88c3e6.chunk.css.map"
   }
 }
