@@ -12,4 +12,4 @@ Contains:
     Recipes app project:
         Simple react app that parses recipes API and rendes information on the screen
 
-        <a href="https://frogrider.github.io/projects/snake">Test</a>
+        
