@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;   
+  }
+  
+  .one, .two {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  } 
+  
+  .one {
+    background: tomato; 
+        &::after {
+            right: 50%;
+            transform: skew(0, 20deg);
+        }
+
+        &::before {
+            transform: skew(0, -20deg);
+            left: 50%; 
+          }
+  }
+  
+  .two {
+    background: MediumAquaMarine ;
+  }
+  
+  .one::after, .one::before {
+    width: 90px;
+    height: 60px;
+    content: '';
+    background: tomato;
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    /* cursor: pointer; */
+    
+  }
+  
+//   .one::before {
+//     transform: skew(0, -20deg);
+//     left: 50%;
+//   }
+  
+//   .one::after {
+//     right: 50%;
+//     transform: skew(0, 20deg);
+//   } 
