@@ -39,18 +39,7 @@ $bright: #e55658;
       align-items: center;
       color: #f1f1f1;
       border-radius: 5px;
-  }
-
-  @media screen and (max-width:800px) {
-      .contact-info {
-          flex-direction: column;
-      }
-
-      .card {
-          width: 100%;
-          max-width: 300px;
-          margin: 10px 0;
-      }
+      box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.26);
   }
 
   .card-icon {
@@ -81,5 +70,17 @@ $bright: #e55658;
 
   .card:hover p {
       max-height: 40px;
-      opacity: 1;
+      opacity: 1; 
   }
+
+  @media screen and (max-width:800px) {
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+}
