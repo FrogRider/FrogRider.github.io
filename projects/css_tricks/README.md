@@ -1,2 +1,2 @@
-1) arrow-block
-2) cards-1
+1) arrow_block
+2) cards_1
