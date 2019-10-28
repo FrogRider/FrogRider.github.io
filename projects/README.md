@@ -1,6 +1,6 @@
-1) closure_example
-2) css_tricks
-3) disco_box
-4) funcs
-5) movable_block
-6) snake
+- [closure_example](https://frogrider.github.io/projects/closure_example)
+- [css_tricks](https://frogrider.github.io/projects/css_tricks)
+- [disco_box](https://frogrider.github.io/projects/disco_box)
+- [funcs](https://frogrider.github.io/projects/funcs)
+- [movable_block](https://frogrider.github.io/projects/movable_block)
+- [snake](https://frogrider.github.io/projects/snake)
