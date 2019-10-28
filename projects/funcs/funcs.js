@@ -91,7 +91,7 @@ let month = (month, lang = 'en') => {
   return (foo(arr, month))
 }
 
-//returns random lowercase symbol (generates random numer (charcode) in an appropriate for uppercase letters interval, then translates it to the letter)
+//returns random lowercase symbol (generates random number (charcode) in an appropriate for uppercase letters interval, then translates it to the letter)
 let randLC = () => String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 
 //returns random uppercase symbol
