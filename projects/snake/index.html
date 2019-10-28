@@ -3,19 +3,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.9">
 <head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="snake.png" type="image/png">
+	<link rel="shortcut icon" href="./img/snake.png" type="image/png">
 	<title>Snake</title>
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="./style/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 </head>
 <body id = 'body'>
+
+	<!-- back button -->
+    <div class="back">
+			<a href="../">
+				<div class="inner" title="Go back">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+			</a>
+		</div>
+		<!-- ----------- -->
 	<div class="canvas">
 		<canvas width=398 height=398 id='canv'></canvas>
 	</div>
 	<div class="score">
 		<label id='hScore'></label>
 	</div>
-	<script src='hammer.js'></script>
-	<script src='main.js'></script>
+	<script src='./script/hammer.js'></script>
+	<script src='./script/main.js'></script>
 
 </body>
 </html>
