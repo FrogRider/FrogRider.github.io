@@ -58,7 +58,7 @@
   transition: 0.5s;
 }
 
-.box:first-child {
+.box:nth-child(2) {
   background: red;
 }
 
@@ -71,6 +71,9 @@ button {
   border-radius: 5%;
   margin-left: 10px;
   background: #3CB371;
+  font-size: 2em;
+  color: #fff;
+  -webkit-text-stroke: 1px black;
 }
 
 button:hover {

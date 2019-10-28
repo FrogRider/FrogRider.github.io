@@ -14,7 +14,7 @@
     border: 1px solid #000;
     transition: 0.5s;
     
-    &:first-child {
+    &:nth-child(2) {
     background: red;
     }
   }
@@ -28,6 +28,9 @@
     border-radius: 5%;
     margin-left: 10px;
     background: #3CB371;
+    font-size: 2em;
+    color: #fff;
+    -webkit-text-stroke: 1px black;
     
     &:hover{
       cursor: pointer;
