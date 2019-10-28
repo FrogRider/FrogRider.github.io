@@ -58,7 +58,7 @@
   transition: 0.5s;
 }
 
-.box:first-child {
+.box:nth-child(2) {
   background: red;
 }
 
