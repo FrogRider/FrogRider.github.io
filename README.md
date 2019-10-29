@@ -10,5 +10,5 @@ Weather app project:
 - Little react-based weather [app](http:frogrider.github.io/weather_app) powered by openweathermap API.
 
 Recipes app project:
--  Simple react app that parses recipes API and rendes information on the screen. (can't push to github :c )
+-  Simple react [app](http:frogrider.github.io/recipes_app) that parses recipes API and rendes information on the screen.
 
