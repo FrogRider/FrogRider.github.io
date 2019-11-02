@@ -1,0 +1,121 @@
+.back {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 50%;
+  left: 10px;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #1e8bc3;
+  opacity: 0.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5em;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.inner:hover {
+  opacity: 0.7;
+  font-size: 2em;
+}
+
+.back a {
+  text-decoration: none;
+  color: tomato;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bread_crumbs {
+  width: 100%;
+  background: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bread_crumbs .bread_crumb {
+  background: #1e8bc3;
+  margin-left: 53px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 1px;
+}
+
+.bread_crumbs .bread_crumb a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.bread_crumbs .bread_crumb:last-of-type {
+  background: #145d81;
+}
+
+.bread_crumbs .bread_crumb:last-of-type a {
+  color: tomato;
+}
+
+.bread_crumbs .bread_crumb:last-of-type:before {
+  color: #145d81;
+  background: #145d81;
+}
+
+.bread_crumbs .bread_crumb:last-of-type:after {
+  -webkit-clip-path: none;
+          clip-path: none;
+  background: #145d81;
+  color: #145d81;
+}
+
+.bread_crumbs .bread_crumb:first-of-type:before {
+  -webkit-clip-path: none;
+          clip-path: none;
+}
+
+.bread_crumb:after, .bread_crumb:before {
+  content: '.';
+  color: #1e8bc3;
+  background: #1e8bc3;
+  width: 10px;
+  -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  padding: 10px;
+  position: absolute;
+  margin-right: 10px;
+  -webkit-transform: translateY(-26.6%);
+          transform: translateY(-26.6%);
+}
+
+.bread_crumb:before {
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%, 25% 50%);
+          clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%, 25% 50%);
+  margin-right: -10px;
+  margin-left: -30px;
+}

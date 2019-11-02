@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Montserrat;
+  color: #fff;
+}
+
+.container {
+  width: 30vw;
+  background-color: #43AA8B;
+  padding: 20px;
+}
+
+.name {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.result {
+  background: #177E89;
+  padding: 16px 0;
+}
+
+.result label {
+  padding-left: 16px;
+}
+
+.copy_btn {
+  height: 100%;
+  width: height;
+  margin-right: 16px;
+  cursor: pointer;
+}
