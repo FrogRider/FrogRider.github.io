@@ -38,8 +38,6 @@
 
 body {
   background-image: url("./../img/grass.jpg");
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
 }
 
 #ball {
