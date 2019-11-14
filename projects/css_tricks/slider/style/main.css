@@ -1,15 +1,10 @@
-html {
-  height: 100%;
+.slider_name {
+  color: #2f2f2f;
 }
 
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
+a {
+  color: tomato;
+  text-decoration: none;
 }
 
 .slider_container {
@@ -179,11 +174,16 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.slider_name {
-  color: #2f2f2f;
+html {
+  height: 100%;
 }
 
-a {
-  color: tomato;
-  text-decoration: none;
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
 }
