@@ -98,4 +98,20 @@ let randLC = () => String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 let randUC = () => String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 
 //returns random numer (0-9)
-let randNum = () => +String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+let randNum = () => +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+
+//transpiles string between two layouts
+let keybordLayoutSwapper = (str, dir = 0) => {
+  //dir 0 - eng => ru
+  //dir 1 - ru => eng
+  dir = [0, 1].indexOf(dir) === -1 ? 0 : dir;
+  const a = [..."йцукенгшщзхъфывапролджэячсмитьбю"];
+  const b = [...`qwertyuiop[]asdfghjkl;'zxcvbnm,.`];
+
+  let split = [...str];
+  split.forEach(
+    e => (split[split.indexOf(e)] = (!dir ? a : b)[(!dir ? b : a).indexOf(e)])
+  );
+
+  return split.join("");
+};

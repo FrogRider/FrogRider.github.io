@@ -1,0 +1,67 @@
+@import '_colors';
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $bg;
+}
+
+.row p {
+  display: inline-block;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  // background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  height: 100% !important;
+  width: 100%;
+  background: $mainDark;
+}
+
+.row {
+  background: $main;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+
+  label {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  
+
+  & p{
+    margin: 0;
+    padding: 10px 5px;
+
+  }
+}
+
+.output {
+  color: $bg;
+  text-align: center;
+  font-size: 1.2em;
+  letter-spacing: 1.5px;
+  // padding: 10px 5px;
+}

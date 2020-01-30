@@ -1,9 +1,11 @@
+const symbols = '!@#$%^&*(){}[]=<>/,.';
+
 //returns random character from string
-const randSymbol = () => {
-    const symbols = "!@#$%^&*(){}[]=<>/,.";
-    return symbols[Math.floor(Math.random() * symbols.length)];
-};
-// const randSymbolShortVersion = () => "!@#$%^&*(){}[]=<>/,." [Math.floor(Math.random() * "!@#$%^&*(){}[]=<>/,.".length)]
+// const randSymbol = () => {
+//     const symbols = "!@#$%^&*(){}[]=<>/,.";
+//     return symbols[Math.floor(Math.random() * symbols.length)];
+// };
+const randSymbolShortVersion = () => symbols [Math.floor(Math.random() * symbols.length)]
   
 //returns random lowercase symbol
 const randLC = () => String.fromCharCode(Math.floor(Math.random() * 26) + 97);
