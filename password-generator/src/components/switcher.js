@@ -3,7 +3,7 @@ import React from "react";
 
 let Switcher = props => {
   return (
-    <div className="row">
+    <div className="row checkbox">
       <input
         type="checkbox"
         onChange={e => {
