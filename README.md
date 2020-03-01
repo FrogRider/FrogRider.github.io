@@ -12,3 +12,6 @@ Weather app project:
 Recipes app project:
 -  Simple react [app](http:frogrider.github.io/recipes_app) that parses recipes API and rendes information on the screen.
 
+Food delivery React project [app](https://github.com/FrogRider/fe_final)
+
+
