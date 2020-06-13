@@ -1,6 +1,7 @@
 - [arrow_block](https://frogrider.github.io/projects/css_tricks/arrow_block)
 - [bread_crumbs](https://frogrider.github.io/projects/css_tricks/bread_crumbs)
-- [cards_1](https://frogrider.github.io/projects/css_tricks/cards_1)
+- [cards](https://frogrider.github.io/projects/css_tricks/cards_1)
+- [cards_with_flags](https://frogrider.github.io/projects/css_tricks/cards_2)
 - [color_swithiching_scss_function](https://frogrider.github.io/projects/css_tricks/color_swithiching_scss_function)
 - [flag](https://frogrider.github.io/projects/css_tricks/flag)
 - [product_card](https://frogrider.github.io/projects/css_tricks/product_card)
