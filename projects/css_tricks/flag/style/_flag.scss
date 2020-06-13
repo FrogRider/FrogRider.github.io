@@ -1,0 +1,43 @@
+$width: 50px;
+$height: 120px;
+$border-width: 2px;
+$border-color: tomato;
+$border-radius: 3px;
+$angle: 20deg;
+
+.flag {
+  width: $width;
+  height: $height;
+  border: $border-width solid $border-color;
+  margin: 100px auto;
+  position: relative;
+  border-bottom-color: transparent;
+  border-radius: $border-radius;
+  
+  &::before, 
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    width: 50%;
+    height: 100%;
+    border: $border-width solid $border-color;
+    border-top-color: transparent;
+  }
+  
+  &::after {
+    left: -2px;
+    transform: skewY(-$angle);
+    transform-origin: 100% 100%;
+    border-right-color: transparent;
+    border-bottom-left-radius: 3px;
+  }
+  
+   &::before {
+    right: -2px;
+    transform: skewY($angle);
+    transform-origin: 0 100%;
+    border-left-color: transparent;
+    border-bottom-right-radius: 3px;
+  }
+}
