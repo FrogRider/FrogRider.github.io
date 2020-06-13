@@ -1,0 +1,158 @@
+@import 'button';
+
+$order-cards--primary-accent-color: #649ac7;
+
+.order-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-left: -18px;
+  margin-right: -18px;
+  flex-wrap: wrap;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+
+  &__card {
+    flex-basis: 300px;
+    border: 3px solid $order-cards--primary-accent-color;
+    border-radius: 5px;
+    margin: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__header {
+    text-align: center;
+    margin: 0;
+    background-color: $order-cards--primary-accent-color;
+    padding: 15px 15px 30px;
+    position: relative;
+    z-index: 4;
+
+    span {
+      font-size: 20px;
+      font-weight: 400;
+      color: #fff;
+      text-transform: uppercase;
+      z-index: 2;
+      position: relative;
+      background: inherit;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      left: 50%;
+      bottom: -20px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      z-index: 1;
+      background-color: $order-cards--primary-accent-color;
+      background-position: center 70%;
+      background-repeat: no-repeat;
+      background-image: url(data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%22512px%22%20viewBox%3D%220%200%20480%20480%22%20width%3D%22512px%22%3E%3Cg%3E%3Cpath%20d%3D%22m240%200c-132.546875%200-240%20107.453125-240%20240s107.453125%20240%20240%20240c7.230469%200%2014.433594-.324219%2021.601562-.96875%206.664063-.597656%2013.269532-1.511719%2019.824219-2.65625l2.519531-.445312c121.863282-22.742188%20206.359376-134.550782%20194.960938-257.996094-11.398438-123.445313-114.9375-217.8945315-238.90625-217.933594zm-19.28125%20463.152344h-.566406c-6.222656-.550782-12.398438-1.382813-18.519532-2.449219-.351562-.0625-.703124-.101563-1.046874-.167969-5.984376-1.070312-11.90625-2.398437-17.769532-3.949218l-1.417968-.363282c-5.71875-1.550781-11.375-3.351562-16.949219-5.351562-.578125-.207032-1.160157-.390625-1.738281-.605469-5.464844-2.007813-10.832032-4.257813-16.117188-6.691406-.65625-.292969-1.3125-.574219-1.96875-.886719-5.183594-2.398438-10.265625-5.101562-15.25-7.945312-.703125-.398438-1.414062-.796876-2.117188-1.191407-4.90625-2.863281-9.699218-5.933593-14.402343-9.175781-.710938-.496094-1.429688-.976562-2.136719-1.472656-4.621094-3.277344-9.125-6.757813-13.511719-10.398438l-1.207031-1.054687v-67.449219c.058594-48.578125%2039.421875-87.941406%2088-88h112c48.578125.058594%2087.941406%2039.421875%2088%2088v67.457031l-1.0625.886719c-4.472656%203.734375-9.0625%207.265625-13.777344%2010.601562-.625.4375-1.257812.855469-1.878906%201.285157-4.757812%203.304687-9.632812%206.414062-14.625%209.335937-.625.363282-1.265625.707032-1.886719%201.066406-5.058593%202.878907-10.203125%205.597657-15.449219%208.046876-.601562.28125-1.207031.542968-1.816406.800781-5.328125%202.457031-10.742187%204.71875-16.246094%206.742187-.546874.203125-1.097656.378906-1.601562.570313-5.601562%202.007812-11.28125%203.824219-17.03125%205.382812l-1.378906.34375c-5.871094%201.550781-11.796875%202.886719-17.789063%203.960938-.34375.0625-.6875.105469-1.03125.160156-6.128906%201.070313-12.3125%201.902344-18.539062%202.457031h-.566407c-6.398437.550782-12.800781.847656-19.28125.847656-6.480468%200-12.933593-.242187-19.320312-.792968zm179.28125-66.527344v-52.625c-.066406-57.410156-46.589844-103.933594-104-104h-112c-57.410156.066406-103.933594%2046.589844-104%20104v52.617188c-86.164062-87.941407-85.203125-228.9375%202.148438-315.699219%2087.351562-86.757813%20228.351562-86.757813%20315.703124%200%2087.351563%2086.761719%2088.3125%20227.757812%202.148438%20315.699219zm0%200%22%20data-original%3D%22%23000000%22%20class%3D%22active-path%22%20data-old_color%3D%22%23000000%22%20fill%3D%22%23FFFFFF%22/%3E%3Cpath%20d%3D%22m240%2064c-44.183594%200-80%2035.816406-80%2080s35.816406%2080%2080%2080%2080-35.816406%2080-80c-.046875-44.164062-35.835938-79.953125-80-80zm0%20144c-35.347656%200-64-28.652344-64-64s28.652344-64%2064-64%2064%2028.652344%2064%2064c-.039062%2035.328125-28.671875%2063.960938-64%2064zm0%200%22%20data-original%3D%22%23000000%22%20class%3D%22active-path%22%20data-old_color%3D%22%23000000%22%20fill%3D%22%23FFFFFF%22/%3E%3C/g%3E%20%3C/svg%3E%0A);
+      background-position: center 65%;
+      background-size: 40%;
+    }
+  }
+
+  &__content {
+    padding: 32px 12px 24px;
+  }
+
+  &__info {
+    font-size: 17px;
+    line-height: 1.76;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__buy {
+    color: #898a8a;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.8;
+    margin: 15px 0 30px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  &__price-flag {
+    position: absolute;
+    height: 100%;
+    right: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: lowercase;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 2;
+    border: 3px solid #eee;
+    background-color: #fafafa;
+    color: $order-cards--primary-accent-color;
+    border-radius: 3px;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      right: 0;
+      box-sizing: content-box;
+      border: 3px solid #eee;
+      background: #fafafa;
+    }
+
+    &::before {
+      top: -3px;
+      transform-origin: 0 100%;
+      transform: skew(40deg);
+      border-width: 3px 0 0 4px;
+      border-top-left-radius: 3px;
+    }
+
+    &::after {
+      bottom: -3px;
+      transform-origin: 0 0;
+      transform: skew(-40deg);
+      border-width: 0 0 3px 4px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+
+  &__price {
+    position: relative;
+    z-index: 10;
+    padding: 0 12px;
+    line-height: 1;
+  }
+
+  &__price-number {
+    font-size: 25px;
+  }
+
+  &__button {
+    text-align: center;
+  }
+
+  &__button-inner {
+      padding: 10px 15px;
+      background-color: $order-cards--primary-accent-color;
+      border-radius: 5px;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: linear .2s;
+
+      &:hover {
+          background-color: transparent;
+          border: 3px solid $order-cards--primary-accent-color;
+          color: $order-cards--primary-accent-color;
+      }
+  }
+}
