@@ -83,7 +83,7 @@
       content: '';
       position: absolute;
       top: -10%;
-      background-image: url('/img/boy-bg-l.png');
+      background-image: url('../img/boy-bg-l.png');
       background-size: contain;
       background-repeat: no-repeat;
       width: 100%;
@@ -103,7 +103,7 @@
     &__side-pic {
       width: 100%;
       height: 232px;
-      background-image: url('/img/face.png');
+      background-image: url('../img/face.png');
       background-position: center;
       background-repeat: no-repeat;
       margin-bottom: 50px;
@@ -146,7 +146,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('/img/face.png');
+    background-image: url('../img/face.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
