@@ -1,36 +1,70 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
+import "./style/main.scss";
 import generator from "./components/generatorClass";
 import Switcher from "./components/switcher";
 import Length from "./components/length";
 
-import './style/main.scss'
+class App extends Component {
+  state = {
+    lower: true,
+    uper: false,
+    symbol: false,
+    number: false,
+    length: 10,
+    pwd: "Default password"
+  };
 
-function App() {
-  const [lower, setLower] = useState(false);
-  const [uper, setUper] = useState(false);
-  const [symb, setSymb] = useState(false);
-  const [num, setNum] = useState(false);
-  const [length, setLength] = useState("20");
-  const updateLower = () => setLower(!lower);
-  const updateUper = () => setUper(!uper);
-  const updateSymb = () => setSymb(!symb);
-  const updateNum = () => setNum(!num);
-  const updateLength = l => setLength(l);
-  const newPwd = new generator(length, lower, uper, symb, num);
-  const [pwd, setPwd] = useState("Your password");
+  onChange = key => () =>
+    this.setState(state => ({ ...state, [key]: !state[key] }));
 
-  return (
-    <div className="wrapper">
-      <p className="output">{pwd}</p>
-      <button onClick={() => setPwd(newPwd.generate)}>Generate</button>
-      <Switcher update={updateLower} id={"l"} label={"Lower"} />
-      <Switcher update={updateUper} id={"u"} label={"Uper"} />
-      <Switcher update={updateSymb} id={"s"} label={"Symbol"} />
-      <Switcher update={updateNum} id={"n"} label={"Number"} />
-      <Length update={updateLength} />
-    </div>
-  );
+  render() {
+    const { length, lower, uper, symbol, number, pwd } = this.state;
+
+    const newPwd = () =>
+      new generator(length, lower, uper, symbol, number).generate;
+
+    const switchers = Object.entries({
+      lower: "Lower",
+      uper: "Uper",
+      symbol: "Symbol",
+      number: "Number"
+    }).map(([key, label], index) => (
+      <Switcher
+        key={`${index}-${this.state[key]}`}
+        checked={this.state[key]}
+        update={this.onChange(key)}
+        label={label}
+      />
+    ));
+    return (
+      <div className="wrapper">
+        <div className="pwd-generator">
+        <p className="pwd-generator__pwd">{pwd}</p>
+        <div
+          onClick={() => {
+            this.setState({
+              pwd: newPwd()
+            });
+          }}
+        >
+          Generate
+        </div>
+
+        <div className="pwd-generator__switchers">
+          {switchers}
+        </div>
+
+        <Length
+          update={i => {
+            this.setState({ length: i });
+          }}
+        />
+      </div>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,19 +1,11 @@
 import React from "react";
-// import "../style/switcher.scss";
 
-let Switcher = props => {
-  return (
-    <div className="row checkbox">
-      <input
-        type="checkbox"
-        onChange={e => {
-          props.update();
-        }}
-        id={props.id}
-      />
-      <label htmlFor={props.id}>{props.label}</label>
-    </div>
-  );
-};
+const Switcher = props => (
+  <label className="pwd-generator__row">
+    <input className="pwd-generator__default-checkbox" type="checkbox" onChange={props.update} checked={props.checked} />
+    {props.label}
+    <span className="pwd-generator__custom-checkbox"></span>
+  </label>
+);
 
 export default Switcher;

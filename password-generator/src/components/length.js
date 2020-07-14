@@ -2,7 +2,7 @@ import React from "react";
 
 function Length(props) {
   return (
-    <div className="row">
+    <div className="pwd-generator__row pwd-generator__row_length">
       <input
         type="number"
         id="length"

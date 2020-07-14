@@ -44,7 +44,7 @@ class generator {
       return "The length must be greater then 0";
     } else {
       if (!this.lower && !this.upper && !this.number && !this.symbol === true) {
-        return "At least one of the parameters must be true";
+        return "At least one of the parameters must be selected";
       } else {
         while (result.length < this.length) {
           let curentFunc = funcs[+Math.floor(Math.random() * 4)];
