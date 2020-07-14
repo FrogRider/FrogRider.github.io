@@ -1,0 +1,209 @@
+@mixin card-shadow($color) {
+  background-color: rgba($color, .9);
+  box-shadow: 0px 0px 4px 4px #000, 0px 0px 4px 11px $color;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+
+  &__item {
+    width: 30%;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__item-image {
+    width: 242px;
+    height: 242px;
+    background-image: url(../img/tshirt.png);
+    background-position: center;
+    background-size: 100%;
+
+    &_red {
+      @include card-shadow(#EC1F23);
+    }
+
+    &_white {
+      @include card-shadow(#fff);
+    }
+
+    &_orange {
+      @include card-shadow(#EC4A23);
+    }
+
+    &_green {
+      @include card-shadow(#44B549);
+    }
+
+    &_rose {
+      @include card-shadow(#CA2B90);
+    }
+  }
+
+  &__item-name {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__item {
+      width: 45%;
+      margin: 10px;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    &__item {
+      width: 95%;
+      margin: 20px auto;
+    }
+  }
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30px;
+
+  &__side-pic {
+    min-width: 160px;
+    height: 587px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -10%;
+      background-image: url('/img/boy-bg-l.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      // height:;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    margin-left: 100px;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+
+    &__side-pic {
+      width: 100%;
+      height: 232px;
+      background-image: url('/img/face.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 50px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &__content {
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+}
+
+.contact-content {
+  position: relative;
+
+  &__row {
+    text-align: center;
+    font-size: 30px;
+    max-width: 878px;
+    margin: 0 auto;
+
+    & + & {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__font-s {
+    font-size: 20px;
+  }
+
+  &::before, &::after {
+    content: '';
+    width: 160px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('/img/face.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    left: calc(100% - 160px);
+  }
+
+  @media screen and (max-width: 870px) {
+    &::before, &::after {
+      content: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &__row {
+      text-align: center;
+      font-size: 15px;
+      max-width: 878px;
+      margin: 0 auto;
+  
+      & + & {
+        padding-bottom: 30px;
+      }
+    }
+  
+    &__font-s {
+      font-size: 8px;
+    }
+  }
+}
+
+.size-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: -100px 0 30px;
+  }
+}
+
+.shipping-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: -130px 0 30px;
+  }
+
+  &__mob {
+    margin-top: 100px;
+  }
+}

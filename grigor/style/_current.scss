@@ -1,0 +1,26 @@
+.current-page {
+  text-align: center;
+  margin: 20px 0 40px;
+  
+  &__inner {
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 10px;
+    // margin-bottom: 20px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute; 
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      box-shadow: 1px 0px 1.5px 1px #40AA44;
+    }
+
+    &::before {
+      left: 100%;
+    }
+  }
+}

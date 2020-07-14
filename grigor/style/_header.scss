@@ -1,0 +1,113 @@
+$colors_list: #fff #fff #44B549 #CA2B90 #EC1F23 #EC4A23 #fff; 
+
+@mixin underline() {
+  box-shadow: 1px 0px 1.5px 1px #ca2b90;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  text-transform: uppercase;
+
+  &__item {
+    list-style-type: none;
+    margin-top: 20px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 25px ;
+      left: 0;
+      width: 100%;
+      height: 0px;
+      background-color: #ca2b90;
+      @include underline();
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    &_logo {
+      margin-top: 0;
+      text-align: center;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &__logo-part {
+    font-size: 40px;
+
+    @for $i from 0 through 5 {
+      &_#{$i} {
+        color: nth($colors_list, $i + 1);
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 25px ;
+      left: 0;
+      width: 100%;
+      height: 0px;
+      background-color: #ca2b90;
+      @include underline();
+    }
+  }
+
+  &__mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px 20px 0;
+  }
+
+  &__mobile-nav-item {
+    list-style: none;
+    text-align: center;
+    
+    a {
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 25px ;
+        left: 0;
+        width: 100%;
+        height: 0px;
+        background-color: #ca2b90;
+        @include underline();
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 500px) {
+    &__mobile-nav, &__title {
+      font-size: 10px;
+    }
+
+    &__logo span {
+      font-size: 20px;
+    }
+
+    &__mobile-nav-item a::after, &__title::after {
+      top: 20px;
+    }
+  }
+}
