@@ -1,0 +1,99 @@
+.order {
+
+  &__number {
+    margin-bottom: 11px;
+    padding-left: 5px;
+
+    span {
+      color: $second-color-dark;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #000;
+  }
+
+  &__item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__item-info {
+  }
+
+  &__item-name {
+    margin-bottom: 5px;
+  }
+
+  &__item-code {
+    @include fsz (12px);
+    color: $second-color-dark;
+    margin-bottom: 20px;
+  }
+
+  &__item-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+  }
+
+  &__item-prices {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &_discount {
+      .order__item-price-discount {
+        display: block;
+      }
+
+      .order__item-price {
+        @include fsz (15px);
+        font-family: RobotoLight;
+        text-decoration: line-through;
+        color: $second-color-dark;
+      }
+    }
+  }
+
+  &__item-price {
+    @include fsz (20px);
+    color: $accent-color;
+  }
+
+  &__item-price-discount {
+    @include fsz (20px);
+    color: $decline-color;
+    display: none;
+  }
+
+  &__item-specs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__item-size {
+    text-align: right;
+  }
+
+  &__item-amount {
+    text-align: right;
+    margin-top: 5px;
+  }
+
+  &__total {
+    text-align: right;
+    padding: 10px 5px;
+    color: $accent-color;
+  }
+}

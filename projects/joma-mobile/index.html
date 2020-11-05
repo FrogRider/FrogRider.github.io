@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <title>JOMA</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <div class="wrapper" id="app">
+
+    <joma-header 
+      @menu-btn-clicked="togleMenu"
+      @cart-clicked="togleCart"
+      @search-clicked="togleSearch"
+    > 
+    </joma-header>
+
+    <joma-side-menu 
+      :class="{'side-menu_open': this.sideMenu}"
+    >
+    </joma-side-menu>
+
+    <div class="cart"
+      :class="{'cart_opened': this.cart}"
+    >
+
+      <div class="cart__row">
+        <div class="cart__title">
+          Cart
+        </div>
+
+        <div class="cart__close" @click="togleCart()"></div>
+      </div>
+
+      <div class="cart-items">
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :amount=2
+          :sale=true
+          old-price=100
+          image='Rectangle10.png'
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+      </div>
+
+      <div class="cart__promo">
+        <input type="text">
+        <div class="cart__promo-buttons">
+          <div class="cart__promo-discard"> </div>
+          <div class="cart__promo-confirm"></div>
+        </div>
+        <div class="over">
+          Знижка за сертифікатом?
+        </div>
+      </div>
+
+      <div class="cart__price cart__price_discount">
+        <div class="cart__price-old">2090 грн</div>
+        <div class="cart__price-new">1990 грн</div>
+      </div>
+
+      <!-- <div class="cart__empty">
+        <img src="/assets/img/cart.png" alt="">
+        <p>Кошик порожній</p>
+      </div> -->
+
+      <div class="cart__confirm">
+        Оформити замовлення
+      </div>
+    </div>
+
+    <div class="search"
+      :class="{'search_opened': this.search}"
+    >
+      <div class="search__row">
+        <input type="text" placeholder="Пошук...">
+        <div class="search__close" @click="togleSearch()"></div>
+      </div>
+
+      <div class="search__items">
+
+        <joma-search-item 
+          name="Name" 
+          code="Code" 
+          image="Rectangle10.png"
+          price="100" 
+        >
+        </joma-search-item>
+
+        <joma-search-item 
+          name="Ігрова футболка збірної України з футболу" 
+          code="FFU101011.17" 
+          price="1180 грн"
+          new-price="960 грн"
+        >
+        </joma-search-item>
+
+        <div class="empty">
+          Нічого не знайдено
+        </div>
+
+      </div>
+    </div>
+    
+    <main class="content" :class="{'content_shifted': this.sideMenu}">
+
+      <div class="content__section content__section_ua-team">
+        <div class="content__section-title">
+          Збірна України
+        </div>
+      </div>
+
+      <div class="content__section content__section_ua-team ">
+        <div class="content__section-title content__section-title_reverse">
+          Взуття
+        </div>
+      </div>
+
+      <div class="content__section content__section_ua-team">
+        <div class="content__section-title">
+          Текстиль
+        </div>
+      </div>
+
+      <div class="content__three-in-row">
+        <div class="content__three-in-row-title">
+          Топ продажу
+        </div>
+        
+        <div class="content__three-in-row-items">
+          <div class="content__three-in-row-item">
+            <div class="content__three-in-row-item-pic">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+            <div class="content__three-in-row-item-name">
+              Взуття зальне <br> SREGS.511.PS
+            </div>
+            <div class="content__three-in-row-item-price-old">
+              1650 грн
+            </div>
+            <div class="content__three-in-row-item-price-new">
+              1130 грн
+            </div>
+          </div>
+          <div class="content__three-in-row-item">
+            <div class="content__three-in-row-item-pic">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+            <div class="content__three-in-row-item-name">
+              Взуття зальне <br> SUPES.503.PS
+            </div>
+            <div class="content__three-in-row-item-price-old">
+              1527 грн
+            </div>
+            <div class="content__three-in-row-item-price-new">
+              1030 грн
+            </div>
+          </div>
+          <div class="content__three-in-row-item">
+            <div class="content__three-in-row-item-pic">
+              <img src="/assets/img/Rectangle13.png" alt="">
+            </div>
+            <div class="content__three-in-row-item-name">
+              Футболка PREMIER <br> 1148.98.005
+            </div>
+            <div class="content__three-in-row-item-price-old">
+              490 грн
+            </div>
+            <div class="content__three-in-row-item-price-new">
+              265 грн
+            </div>
+          </div>
+        </div>
+        <div class="content__three-in-row-controls">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="active"></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="content__three-in-row content__three-in-row_sale">
+        <div class="content__three-in-row-title">
+          Топ продажу
+        </div>
+        
+        <div class="content__three-in-row-items">
+          <div class="content__three-in-row-item">
+            <div class="content__three-in-row-item-pic">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+            <div class="content__three-in-row-item-name">
+              Взуття зальне <br> SREGS.511.PS
+            </div>
+            <div class="content__three-in-row-item-price-old">
+              1650 грн
+            </div>
+            <div class="content__three-in-row-item-price-new">
+              1130 грн
+            </div>
+          </div>
+          <div class="content__three-in-row-item">
+            <div class="content__three-in-row-item-pic">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+            <div class="content__three-in-row-item-name">
+              Взуття зальне <br> SUPES.503.PS
+            </div>
+            <div class="content__three-in-row-item-price-old">
+              1527 грн
+            </div>
+            <div class="content__three-in-row-item-price-new">
+              1030 грн
+            </div>
+          </div>
+          <div class="content__three-in-row-item">
+            <div class="content__three-in-row-item-pic">
+              <img src="/assets/img/Rectangle13.png" alt="">
+            </div>
+            <div class="content__three-in-row-item-name">
+              Футболка PREMIER <br> 1148.98.005
+            </div>
+            <div class="content__three-in-row-item-price-old">
+              490 грн
+            </div>
+            <div class="content__three-in-row-item-price-new">
+              265 грн
+            </div>
+          </div>
+        </div>
+        <div class="content__three-in-row-controls">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    </main>
+    
+
+  </div>
+
+  <script src="./assets/lib/vue.min.js"></script>
+  <script type="module" src='./js/Components.js'></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+.content {
+  transform: translateX(0);
+  transition: $side-menu-speed transform;
+
+  &_shifted {
+    transform: translateX(80%);
+  }
+
+	&__section {
+    width: 100%;
+    height: $section-height;
+    background: $section-gradient;
+    position: relative;
+    overflow: hidden;
+
+    & + & {
+      margin-top: 15px;
+    }
+
+    &::after {
+      @include pseudo(200px);
+      @include absolute (right, 0, top, -10px);
+      // background-color: red;
+    }
+
+    // &_ua-team::after {
+    // }
+
+    // &_shoes {
+
+    // }
+
+    // &_textile {
+
+    // }
+	}
+
+	&__section-title {
+    @include absolute(left, 15px, bottom, 10px);
+    font-size: 2rem;
+    color: #fff;
+    font-family: RobotoMedium;
+    z-index: 2;
+
+    &_reverse {
+      text-align: right;
+      right: 15px;
+    }
+  }
+  
+  
+  &__three-in-row {
+    padding-top: 20px;
+    border-top: 1px solid #000;
+    margin-top: 15px;
+
+    &_sale {
+      .content__three-in-row-title, 
+      .content__three-in-row-item-price-new {
+        color: $decline-color;
+      }
+
+      .content__three-in-row-item-price-old {
+        display: block;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 51px;
+    }
+  }
+
+  &__three-in-row-title {
+    font-size: 2rem;
+    color: $accent-color;
+    padding: 0 14px 10px;
+    font-family: RobotoMedium;
+  }
+
+  &__three-in-row-items {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 5px;
+  }
+
+  &__three-in-row-item {
+  }
+
+  &__three-in-row-item-pic {
+    min-height: 120px;
+    width: 100%;
+    position: relative;
+
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__three-in-row-item-name {
+    text-align: center;
+    font-size: .8rem;
+    padding: 5px;
+  }
+
+  &__three-in-row-item-price-old {
+    text-align: center;
+    font-size: .8rem;
+    font-family: RobotoLight;
+    text-decoration: line-through;
+    display: none;
+  }
+
+  &__three-in-row-item-price-new {
+    text-align: center;
+    color: $accent-color;
+  }
+
+  &__three-in-row-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    span {
+      width: 10px;
+      height: 2px;
+      background-color: $second-color-light;
+      margin: 0 3px;
+
+      &.active {
+        background-color: #c4c4c4;
+      }
+    }
+  }
+
+
+}

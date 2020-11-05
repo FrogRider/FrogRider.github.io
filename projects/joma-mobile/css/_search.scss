@@ -1,0 +1,130 @@
+.search {
+  @include absolute (right, 0, top, 0);
+  height: 100%;
+  width: 90%;
+  background-color: #fff;
+  z-index: 100;
+  transform: translateX(100%);
+  transition: $side-menu-speed transform, $side-menu-speed box-shadow;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  overflow-y: scroll;
+  padding-top: 50px;
+  padding-bottom: 400px;
+  overflow-y: scroll;
+
+  &_opened {
+    transform: translateX(0);
+    box-shadow: -10vw 0px 0px 0px rgba(0, 0, 0, .43);
+    // overflow: visible;
+  }
+
+  &__row {
+    padding: 0 10px;
+    position: relative;
+    margin-bottom: 30px;
+
+    input {
+      width: calc(100% - 30px);
+      @include fsz (20px);
+      padding: 5px;
+    }
+  }
+
+  &__close {
+    @include wh (30px);
+    margin-right: 10px;
+    @include bgi ($gray-cross-icon);
+    @include absolute (right, 0, top, 50%);
+    transform: translateY(-50%);
+  }
+
+  &__items {
+    border-top: 1px solid #000;
+
+    &:last-child {
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  &__item {
+    padding: 10px;
+
+    & + & {
+      // margin-top: 25px;
+      border-top: 1px solid #C4C4C4;
+    }
+
+    & + .empty {
+      display: none;
+    }
+  }
+
+  &__item-inner {
+    display: flex;
+  }
+
+  &__item-img {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__item-info {
+    position: relative;
+    width: 100%;
+  }
+
+  &__item-name {
+    margin-bottom: 5px;
+  }
+
+  &__item-code {
+    @include fsz (12px);
+    color: $second-color-dark;
+    margin-bottom: 1.2rem;
+  }
+
+  &__item-price {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    div + div{
+      margin-left: 10px;
+    }
+
+    &_discount {
+      .search__item-price-new {
+        display: block;
+      }
+
+      .search__item-price-old {
+        font-family: RobotoLight;
+        text-decoration: line-through;
+        color: $second-color-dark;
+      }
+    }
+  }
+
+  &__item-price-new {
+    color: $decline-color;
+    font-family: RobotoMedium;
+    display: none;
+  }
+
+  &__item-price-old {
+    color: $accent-color;
+    font-family: RobotoMedium;
+  }
+}
+
+.empty {
+  padding: 20px 0;
+  text-align: center;
+}

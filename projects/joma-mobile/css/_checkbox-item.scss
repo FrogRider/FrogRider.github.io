@@ -1,0 +1,28 @@
+.checkbox-item {
+  position: relative;
+
+  &__title {
+    margin-left: 25px;
+    // position: relative;
+    @include fsz(14px);
+
+    .icon {
+      @include absolute(left, 4px, top, 50%);
+      @include pseudo (11px);
+      transform: translateY(-50%);
+      border: 1px solid $main-color-dark;
+      border-radius: 2px;
+      @include bgi ($white-checkmark-icon)
+    }
+
+    input {
+      display: none;
+
+      &:checked + .icon {
+        background-color: $main-color-dark;
+      }
+      
+    }
+  }
+  
+}

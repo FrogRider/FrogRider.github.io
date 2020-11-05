@@ -1,0 +1,67 @@
+@import './colors';
+@import './config';
+@import './fonts';
+@import './icons';
+@import './mixins';
+@import './wrapper';
+@import './header';
+@import './side-menu';
+@import './content';
+@import './catalog';
+@import './dropdown';
+@import './items-grid';
+@import './items-grid-bordered';
+@import './sort';
+@import './filters';
+@import './checkbox-item';
+@import './cart';
+@import './cart-item';
+@import './search';
+@import './item';
+@import './breadcrumbs';
+@import './sign';
+@import './radio-dropdown';
+@import './construct';
+@import './checkout';
+@import './authorization';
+@import './titled-input';
+@import './cabinet';
+@import './order';
+@import './modal';
+@import './info';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  font-size: $primary-font-size;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $main-color-dark;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.overflow-dots {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.fixed {
+  position: fixed;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <title>JOMA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper" id="app">
+
+    <joma-header 
+      @menu-btn-clicked="togleMenu"
+      @cart-clicked="togleCart"
+      @search-clicked="togleSearch"
+      lable="Оплата / Доставка"
+    > 
+    </joma-header>
+
+    <joma-side-menu 
+      :class="{'side-menu_open': this.sideMenu}"
+    >
+    </joma-side-menu>
+
+    <div class="cart"
+      :class="{'cart_opened': this.cart}"
+    >
+
+      <div class="cart__row">
+        <div class="cart__title">
+          Cart
+        </div>
+
+        <div class="cart__close" @click="togleCart()"></div>
+      </div>
+
+      <div class="cart-items">
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :amount=2
+          :sale=true
+          old-price=100
+          image='Rectangle10.png'
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+      </div>
+
+      <div class="cart__promo">
+        <input type="text">
+        <div class="cart__promo-buttons">
+          <div class="cart__promo-discard"> </div>
+          <div class="cart__promo-confirm"></div>
+        </div>
+        <div class="over">
+          Знижка за сертифікатом?
+        </div>
+      </div>
+
+      <div class="cart__price cart__price_discount">
+        <div class="cart__price-old">2090 грн</div>
+        <div class="cart__price-new">1990 грн</div>
+      </div>
+
+      <!-- <div class="cart__empty">
+        <img src="/assets/img/cart.png" alt="">
+        <p>Кошик порожній</p>
+      </div> -->
+
+      <div class="cart__confirm">
+        Оформити замовлення
+      </div>
+    </div>
+
+    <div class="search"
+      :class="{'search_opened': this.search}"
+    >
+      <div class="search__row">
+        <input type="text" placeholder="Пошук...">
+        <div class="search__close" @click="togleSearch()"></div>
+      </div>
+
+      <div class="search__items">
+
+        <joma-search-item 
+          name="Name" 
+          code="Code" 
+          image="Rectangle10.png"
+          price="100" 
+        >
+        </joma-search-item>
+
+        <joma-search-item 
+          name="Ігрова футболка збірної України з футболу" 
+          code="FFU101011.17" 
+          price="1180 грн"
+          new-price="960 грн"
+        >
+        </joma-search-item>
+
+        <div class="empty">
+          Нічого не знайдено
+        </div>
+
+      </div>
+    </div>
+    
+    <main class="content" :class="{'content_shifted': this.sideMenu}">
+
+      <div class="info">
+        <div class="info__title info__title_pb-20">
+          Роздріб
+        </div>
+
+        <div class="info__subtitle">
+          Способи доставки:
+        </div>
+
+        <div class="info__text info__text_fs-20 info__text_pv-20-10">
+          – Доставка «Новою Поштою»
+        </div>
+
+        <div class="info__text info__text_p-0">
+          Терміни доставки: 1-2 робочі дні з моменту оформлення замовлення.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Вартість: відповідно до тарифів перевізника.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Якщо загальна сума замовлення становить 1500 грн. і більше – доставка по Україні безкоштовна!
+        </div>
+
+        <div class="info__text info__text_attention info__text_pt-10">
+          Увага! Товар автоматично повертається після 5 днів зберігання у відділенні.
+        </div>
+
+        <div class="info__text info__text_fs-20 info__text_pv-20-10">
+          – Адресна кур'єрська доставка по Україні
+        </div>
+
+        <div class="info__text info__text_attention info__text_p-0">
+          Увага! Доставка можлива тільки кур'єром «Нової Пошти».
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Терміни доставки: 2-3 робочі дні з моменту оформлення замовлення.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Вартість: відповідно до тарифів перевізника.
+        </div>
+
+        <div class="info__text info__text_fs-20 info__text_pv-20-10">
+          – Самовивіз
+        </div>
+  
+        <div class="info__text info__text_p-0">
+          Наш офіс розташований за адресою: м. Київ, вул. Петра Вершигори, 9.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Чекаємо на вас з 10:00 до 18:00 у будні.
+        </div>
+
+        <div class="info__subtitle info__subtitle_pv-30-20">
+          Способи оплати:
+        </div>
+
+        <div class="info__text info__text_fs-20 info__text_p-0">
+          – Готівковий розрахунок
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          – під час самовивозу з офіса.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          – під час отримання замовлення на Новій Пошті (якщо ви вибрали накладений платіж).
+        </div>
+
+        <div class="info__text info__text_fs-20 info__text_pv-20-10">
+          – Безготівковий розрахунок
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Зробити передплату на картку ПриватБанку. Ви отримаєте реквізити від наших менеджерів після оформлення замовлення.
+        </div>
+
+        <div class="info__subtitle info__subtitle_pv-30-20">
+          Додаткова інформація
+        </div>
+
+        <div class="info__text info__text_fs-20 info__text_p-0">
+          – Доставка по Україні
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          З повним списком відділень «Нової Пошти», їх адресами й графіками роботи можна ознайомитися за цим посиланням.
+        </div>
+
+        <div class="info__text info__text_fs-20 info__text_pv-20-10">
+          – Доставка за кордон
+        </div>
+
+        <div class="info__text info__text_p-0">
+          Ми можемо надіслати ваше замовлення в більшість країн світу. Щоб дізнатися подробиці, пишіть нам на адресу support@joma.ua.
+        </div>
+
+        <div class="info__title info__title_pt-30">
+          Корпоративні замовлення
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Ми розробили особливо вигідну пропозицію для корпоративних клієнтів. Щоб дізнатись докладніше, пишіть нам на Sales@joma.ua, або за телефоном +38 (066) 205 55 35.
+        </div>
+      </div>
+
+    </main>
+    
+
+  </div>
+
+  <script src="/assets/lib/vue.min.js"></script>
+  <script type="module" src='./js/Components.js'></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <title>JOMA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper" id="app">
+
+    <joma-header 
+      @menu-btn-clicked="togleMenu"
+      @cart-clicked="togleCart"
+      @search-clicked="togleSearch"
+      lable="Дисконтна програма"
+    > 
+    </joma-header>
+
+    <joma-side-menu 
+      :class="{'side-menu_open': this.sideMenu}"
+    >
+    </joma-side-menu>
+
+    <div class="cart"
+      :class="{'cart_opened': this.cart}"
+    >
+
+      <div class="cart__row">
+        <div class="cart__title">
+          Cart
+        </div>
+
+        <div class="cart__close" @click="togleCart()"></div>
+      </div>
+
+      <div class="cart-items">
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :amount=2
+          :sale=true
+          old-price=100
+          image='Rectangle10.png'
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+      </div>
+
+      <div class="cart__promo">
+        <input type="text">
+        <div class="cart__promo-buttons">
+          <div class="cart__promo-discard"> </div>
+          <div class="cart__promo-confirm"></div>
+        </div>
+        <div class="over">
+          Знижка за сертифікатом?
+        </div>
+      </div>
+
+      <div class="cart__price cart__price_discount">
+        <div class="cart__price-old">2090 грн</div>
+        <div class="cart__price-new">1990 грн</div>
+      </div>
+
+      <!-- <div class="cart__empty">
+        <img src="/assets/img/cart.png" alt="">
+        <p>Кошик порожній</p>
+      </div> -->
+
+      <div class="cart__confirm">
+        Оформити замовлення
+      </div>
+    </div>
+
+    <div class="search"
+      :class="{'search_opened': this.search}"
+    >
+      <div class="search__row">
+        <input type="text" placeholder="Пошук...">
+        <div class="search__close" @click="togleSearch()"></div>
+      </div>
+
+      <div class="search__items">
+
+        <joma-search-item 
+          name="Name" 
+          code="Code" 
+          image="Rectangle10.png"
+          price="100" 
+        >
+        </joma-search-item>
+
+        <joma-search-item 
+          name="Ігрова футболка збірної України з футболу" 
+          code="FFU101011.17" 
+          price="1180 грн"
+          new-price="960 грн"
+        >
+        </joma-search-item>
+
+        <div class="empty">
+          Нічого не знайдено
+        </div>
+
+      </div>
+    </div>
+    
+    <main class="content" :class="{'content_shifted': this.sideMenu}">
+
+      <div class="info">
+        <div class="info__subtitle info__subtitle_pb-20">
+          Знижки та партнерські програми
+        </div>
+
+        <div class="info__title">
+          Роздріб
+        </div>
+
+        <p class="info__text">
+          В розділі “Акції” постійно оновлюються та доповнюються товари зі знижками. Також ви можете отримати додаткову знижку таким чином:
+        </p>
+
+        <div class="info__subtitle">
+          1. За реєстрацію на сайті
+        </div>
+
+        <p class="info__text">
+          Щоб отримати 3%* знижки на весь асортимент магазину, вам достатньо зареєструватися та купувати товари зі свого акаунта.
+        </p>
+
+        <div class="info__subtitle">
+          2. Одноразові сертифікати
+        </div>
+
+        <p class="info__text">
+          Одноразові сертифікати можно придбати на сайті. Дають знижку вказану на них на весь асортимент магазину*.
+        </p>
+
+        <div class="info__subtitle">
+          3. Дисконтна програма
+        </div>
+
+        <p class="info__text">
+          Власники зареєстрованого акаунта мають можливість збільшити її аж до 12%*. Чим більше ви купуєте, тим більше заощаджуєте.
+        </p>
+
+        <div class="info__subtitle">
+          4. “Українці разом”
+        </div>
+
+        <p class="info__text">
+          Власники карток “Українці разом” мають знижку 10%*.
+        </p>
+
+        <p class="info__text info__text_p-0">
+          * - Якщо ви використовуюєте одноразовий сертифікат, його значення сумується з вашою дисконтною програмою, але загальне значення знижки не може перевищувати 20%.
+        </p>
+
+        <p class="info__text info__text_pt-10">
+          На акційний товар знижка не розповсюджується
+        </p>
+
+        <div class="info__title  info__title_pt-30">
+          Корпоративні замовлення
+        </div>
+
+        <div class="info__text info__text_pb-0">
+          Ми розробили особливо вигідну пропозицію для корпоративних клієнтів. Щоб дізнатись докладніше, пишіть нам на Sales@joma.ua, або за телефоном +38 (066) 205 55 35.
+        </div>
+      </div>
+
+    </main>
+    
+
+  </div>
+
+  <script src="/assets/lib/vue.min.js"></script>
+  <script type="module" src='./js/Components.js'></script>
+</body>
+</html>

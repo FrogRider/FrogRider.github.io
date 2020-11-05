@@ -1,0 +1,82 @@
+.modal {
+  position: fixed;
+  height: 100vmax;
+  width: 100vmin;
+  top: -119px;
+  background-color: rgba(0,0,0, .7);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 95%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 74px 9px 50px;
+    position: relative;
+
+    & .close {
+      @include absolute (right, 10px, top, 10px);
+      @include wh (30px);
+      @include bgi ($gray-cross-icon);
+    }
+
+    &_success {
+      padding: 138px 9px;
+
+      & .modal__title {
+        text-align: center;
+        color: $second-color-dark;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include fsz (20px);
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    padding-bottom: 40px;
+    position: relative;
+
+    input {
+      width: 100%;
+      border: 1px solid  #000;
+      @include fsz (18px);
+      padding: 9px;
+    }
+
+    .error {
+      color: $decline-color;
+      position: absolute;
+      bottom: 17px;
+      display: none;
+    }
+
+    &_error {
+      input {
+        border-color: $decline-color;
+      }
+
+      .error {
+        display: block;
+      }
+    }
+  }
+
+  &__input-title {
+    @include fsz (20px);
+  }
+
+  &__btn {
+    width: 100%;
+    text-align: center;
+    padding: 9px;
+    color: $accent-color;
+    background-color: $second-color-light;
+    @include fsz (20px);
+  }
+}

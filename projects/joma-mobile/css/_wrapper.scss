@@ -1,0 +1,17 @@
+.wrapper {
+  max-width: $max-width;
+  min-width: $min-width;
+  width: 100%;
+  overflow: hidden;
+
+  min-height: 100vh;
+  margin: 0 auto;
+  // overflow: hidden;
+  position: relative;
+
+  &_logo::after {
+    @include pseudo(100%, 100%, #fff);
+    @include absolute(left, 0, top, 0);
+    @include bgi ($big-logo, 95%, center 40%);
+  }
+}

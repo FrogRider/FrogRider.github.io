@@ -1,0 +1,36 @@
+@mixin absolute ($x-shift, $x-shift-val, $y-shift, $y-shift-val) {
+  position: absolute;
+
+  @if $x-shift-val != none {
+    #{$x-shift}: $x-shift-val;
+  }
+
+  @if $y-shift-val != none {
+    #{$y-shift}: $y-shift-val;
+  }
+  
+}
+
+@mixin pseudo ($width, $height: $width, $bg: transparent) {
+  content: '' ;
+  width: $width;
+  height: $height;
+  background-color: $bg;
+}
+
+@mixin bgi ($url, $size: contain, $position: center,
+$repeat: no-repeat,) {
+  background-image: $url;
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+@mixin wh ($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin fsz ($size) {
+  font-size: #{$size / $primary-font-size}rem;
+}

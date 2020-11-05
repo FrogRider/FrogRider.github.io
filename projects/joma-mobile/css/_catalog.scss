@@ -1,0 +1,30 @@
+.catalogs {
+  border-top: 1px solid #000;
+  padding: 17px 20px 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-height: calc(100vmax - 119px);
+  grid-row-gap: 10px;
+
+  &__catalog {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    @include fsz (20px);
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+    transform: translateX(50%);
+    text-transform: uppercase;
+    color: #fff;
+  }
+}

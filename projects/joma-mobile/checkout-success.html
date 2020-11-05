@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <title>JOMA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper" id="app">
+
+    <joma-header 
+      @menu-btn-clicked="togleMenu"
+      @cart-clicked="togleCart"
+      @search-clicked="togleSearch"
+      lable="Оформлення"
+    > 
+    </joma-header>
+
+    <joma-side-menu 
+      :class="{'side-menu_open': this.sideMenu}"
+    >
+    </joma-side-menu>
+
+    <div class="cart"
+      :class="{'cart_opened': this.cart}"
+    >
+
+      <div class="cart__row">
+        <div class="cart__title">
+          Cart
+        </div>
+
+        <div class="cart__close" @click="togleCart()"></div>
+      </div>
+
+      <div class="cart-items">
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :amount=2
+          :sale=true
+          old-price=100
+          image='Rectangle10.png'
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+      </div>
+
+      <div class="cart__promo">
+        <input type="text">
+        <div class="cart__promo-buttons">
+          <div class="cart__promo-discard"> </div>
+          <div class="cart__promo-confirm"></div>
+        </div>
+        <div class="over">
+          Знижка за сертифікатом?
+        </div>
+      </div>
+
+      <div class="cart__price cart__price_discount">
+        <div class="cart__price-old">2090 грн</div>
+        <div class="cart__price-new">1990 грн</div>
+      </div>
+
+      <!-- <div class="cart__empty">
+        <img src="/assets/img/cart.png" alt="">
+        <p>Кошик порожній</p>
+      </div> -->
+
+      <div class="cart__confirm">
+        Оформити замовлення
+      </div>
+    </div>
+
+    <div class="search"
+      :class="{'search_opened': this.search}"
+    >
+      <div class="search__row">
+        <input type="text" placeholder="Пошук...">
+        <div class="search__close" @click="togleSearch()"></div>
+      </div>
+
+      <div class="search__items">
+
+        <joma-search-item 
+          name="Name" 
+          code="Code" 
+          image="Rectangle10.png"
+          price="100" 
+        >
+        </joma-search-item>
+
+        <joma-search-item 
+          name="Ігрова футболка збірної України з футболу" 
+          code="FFU101011.17" 
+          price="1180 грн"
+          new-price="960 грн"
+        >
+        </joma-search-item>
+
+        <div class="empty">
+          Нічого не знайдено
+        </div>
+
+      </div>
+    </div>
+    
+    <main class="content" :class="{'content_shifted': this.sideMenu}">
+
+      <div class="checkout-success">
+        <div class="checkout-success__main">
+          <div class="checkout-success__title">
+            Дякуємо за замовлення!
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            Ваше замовлення прийняте оператором. Менеджер зв'яжеться з Вами найближчим часом. Повідомлення про підтвердження замовлення буде вислано на залишений e-mail.
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            № замовлення: <span>0567226</span>
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            Рудницький Олександр Миколайович
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            Yourmail@gmail.com <br>
+            +38 (095) 111 22 33
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            Доставка: <br>
+            Службою Нова Пошта <br>
+            Киев, №253, вул. Щербаківського Данила 59
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            Оплата: <br>
+            Службою Нова Пошта
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            До cплати: <b>2090 грн</b>
+          </div>
+  
+          <div class="checkout-success__text checkout-success__text_mb-30">
+            Статус замовлення можна буде перевірити в 
+            <a href="#">особистому кабінеті</a>
+          </div>
+        </div>
+
+        <div class="checkout-success__btn">
+          Продовжити покупки
+        </div>
+      </div>
+
+    </main>
+    
+
+  </div>
+
+  <script src="/assets/lib/vue.min.js"></script>
+  <script type="module" src='./js/Components.js'></script>
+</body>
+</html>

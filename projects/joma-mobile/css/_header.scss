@@ -1,0 +1,116 @@
+.header {
+  width: 100%;
+  margin: $header-margin-top 0 $header-margin-bottom;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 20px;
+
+  &__menu {
+    display: flex;
+    justify-content: flex-start;
+    // align-items: center;
+  }
+
+  &__burger-button {
+    @include wh($burger-button-size);
+    position: relative;
+
+    &::before, &::after {
+      @include pseudo($burger-button-strip-width, $burger-button-strip-height, $main-color-dark);
+      transform: translateX(-50%);
+    }
+    
+    &::before {
+      @include absolute(left, 50%, top, 8px);
+    }
+
+    &::after {
+      @include absolute(left, 50%, bottom, 8px);
+    }
+
+    span {
+      width: $burger-button-strip-width;
+      height: $burger-button-strip-height;
+      @include absolute(left, 50%, top, 50%);
+      transform: translate(-50%, -50%);
+      background-color: $main-color-dark;
+    }
+  }
+
+  &__logo {
+    width: 70%;
+    @include bgi($header-logo);
+    background-position: 20px 0;
+    min-width: 168px;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__icon {
+    @include wh(25px);
+    position: relative;
+
+    & + & {
+      margin-left: 15px;
+    }
+
+    &_phone {
+      @include bgi($phone-icon, 80%)
+    }
+
+    &_search {
+      @include bgi($search-icon, 80%)
+    }
+
+    &_cart {
+      @include wh(30px);
+      @include bgi($cart-icon, 80%);
+
+      .itemsAmount {
+        @include wh (17px);
+        @include absolute (right, 0, bottom, 0);
+        @include fsz(11px);
+        background-color: $confirm-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $main-color-light;
+      }
+    }
+  }
+
+  &_labled {
+    grid-template-columns: 1fr 100px;
+
+    .header__menu {
+      justify-content: flex-start;
+      align-items: center;
+      text-overflow: ellipsis;
+      overflow: hidden; 
+      white-space: nowrap;
+    }
+
+    .header__logo {
+      background-image: none;
+      // background-color: red;
+      max-width: 90%;
+      width: 90%;
+      padding: 5px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      @include fsz(25px);
+      color: $accent-color;
+      font-family: RobotoMedium;
+    }
+
+    .header__burger-button {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,231 @@
+.item {
+  padding: 0 20px;
+
+  &__title {
+    @include fsz (20px);
+    // font-family: Roboto;
+    padding-right: 45px;
+    position: relative;
+    margin: 10px 0 5px;
+  }
+
+  &__title-icon {
+    @include wh(35px);
+    @include absolute (right, 0, top, 0);
+    @include bgi ($dress-icon-black, 90%);
+
+    &_active {
+      @include bgi ($dress-icon-green, 90%);
+    }
+  }
+
+  &__code {
+    @include fsz (14px);
+    color: $second-color-dark;
+    margin-bottom: 5px;
+  }
+
+  &__image {
+    width: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__image-controls {
+    text-align: center;
+    @include fsz (14px);
+  }
+
+  &__image-icon {
+    @include wh (60px);
+    @include absolute (right, 0, top, 0);
+    @include bgi($ios-style-square-icon);
+    z-index: 10;
+
+    &::after {
+      content: '';
+      position: absolute;
+      @include wh (100%);
+      @include bgi ($pyramids-icon, 80%);
+
+    }
+
+    &_360::after {
+      background-image: none;
+      content: '360˚';
+      @include fsz (20px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__description {
+    @include fsz (16px);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &__columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0 10px;
+  }
+
+  &__buy {
+    padding: 5px 29px;
+    color: $main-color-light;
+    background-color: $accent-color;
+  }
+
+  &__prices {
+    display: flex;
+
+    &_discount {
+      .item__price {
+        font-family: RobotoLight;
+        text-decoration: line-through;
+      }
+
+      .item__price-new {
+        display: block;
+      }
+    }
+  }
+
+  &__price {
+    @include fsz (20px);
+    color: $accent-color;
+  }
+
+  &__price-new {
+    @include fsz (20px);
+    font-family: RobotoMedium;
+    color: $decline-color;
+    display: none;
+    margin-left: 5px;
+  }
+
+  &__specs {
+    position: relative;
+    padding-top: 15px;
+
+    &::before {
+      @include pseudo (calc(100% + 40px), 1px,  #D4D4D4);
+      @include absolute (left, -20px, top, 0);
+    }
+
+    &::after {
+      @include pseudo (calc(100% + 40px), 1px,  #D4D4D4);
+      @include absolute (left, -20px, bottom, 0);
+    }
+  }
+  
+  &__specs-title {
+    @include fsz (20px);
+    margin-bottom: 10px;
+  }
+
+  &__spec-name {
+    @include fsz (16px);
+    color: $second-color-dark;
+    margin-bottom: 10px;
+  }
+
+  &__spec-body {
+    @include fsz (16px);
+    margin-bottom: 10px;
+  }
+  
+  &__availability {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  &__availability-title {
+    @include fsz (16px);
+    color: $second-color-dark;
+  }
+
+  &__availability-status {
+    @include fsz (16px);
+    color: $confirm-color;
+
+    &_unavailable {
+      color: $decline-color;
+    }
+  }
+
+  &__colors-title {
+    padding: 15px 0;
+  }
+
+  &__colors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    padding-bottom: 20px;
+
+    &::after {
+      @include pseudo (calc(100% + 40px), 1px,  #D4D4D4);
+      @include absolute (left, -20px, bottom, 0);
+    }
+  }
+
+  &__color-picture {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__color-name {
+    @include fsz(12px);
+    text-align: center;
+  }
+
+  &__color-code {
+    @include fsz(12px);
+    text-align: center;
+    color: $second-color-dark;
+  }
+
+  &__sizes {
+    padding-top: 15px;
+  }
+
+  &__sizes-title {
+    @include fsz (16px);
+    padding-bottom: 10px;
+  }
+
+  &__sizes-table {
+    padding-bottom: 20px;
+  }
+
+  &__sizes-row {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: center;
+    padding: 8px 0;
+
+    div {
+      text-transform: uppercase;
+    }
+
+    &:nth-child(odd) {
+      background-color: $second-color-light;
+    }
+
+    &:first-of-type {
+      background-color: $accent-color;
+      color: $second-color-light;
+    }
+  }
+}

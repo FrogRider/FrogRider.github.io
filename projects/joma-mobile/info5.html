@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <title>JOMA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper" id="app">
+
+    <joma-header 
+      @menu-btn-clicked="togleMenu"
+      @cart-clicked="togleCart"
+      @search-clicked="togleSearch"
+      lable="Нанесення"
+    > 
+    </joma-header>
+
+    <joma-side-menu 
+      :class="{'side-menu_open': this.sideMenu}"
+    >
+    </joma-side-menu>
+
+    <div class="cart"
+      :class="{'cart_opened': this.cart}"
+    >
+
+      <div class="cart__row">
+        <div class="cart__title">
+          Cart
+        </div>
+
+        <div class="cart__close" @click="togleCart()"></div>
+      </div>
+
+      <div class="cart-items">
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :amount=2
+          :sale=true
+          old-price=100
+          image='Rectangle10.png'
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+      </div>
+
+      <div class="cart__promo">
+        <input type="text">
+        <div class="cart__promo-buttons">
+          <div class="cart__promo-discard"> </div>
+          <div class="cart__promo-confirm"></div>
+        </div>
+        <div class="over">
+          Знижка за сертифікатом?
+        </div>
+      </div>
+
+      <div class="cart__price cart__price_discount">
+        <div class="cart__price-old">2090 грн</div>
+        <div class="cart__price-new">1990 грн</div>
+      </div>
+
+      <!-- <div class="cart__empty">
+        <img src="/assets/img/cart.png" alt="">
+        <p>Кошик порожній</p>
+      </div> -->
+
+      <div class="cart__confirm">
+        Оформити замовлення
+      </div>
+    </div>
+
+    <div class="search"
+      :class="{'search_opened': this.search}"
+    >
+      <div class="search__row">
+        <input type="text" placeholder="Пошук...">
+        <div class="search__close" @click="togleSearch()"></div>
+      </div>
+
+      <div class="search__items">
+
+        <joma-search-item 
+          name="Name" 
+          code="Code" 
+          image="Rectangle10.png"
+          price="100" 
+        >
+        </joma-search-item>
+
+        <joma-search-item 
+          name="Ігрова футболка збірної України з футболу" 
+          code="FFU101011.17" 
+          price="1180 грн"
+          new-price="960 грн"
+        >
+        </joma-search-item>
+
+        <div class="empty">
+          Нічого не знайдено
+        </div>
+
+      </div>
+    </div>
+    
+    <main class="content" :class="{'content_shifted': this.sideMenu}">
+
+      <div class="info">
+        <div class="info__subtitle">
+          Нанесення номерів, прізвищ та логотипів на спортивний одяг
+        </div>
+
+        <div class="info__text">
+          З 2007 року наше підприємство виконує нанесення на форму і спортивний одяг номерів, прізвищ та логотипів. Нанесення проводиться через термотрансфер з вирізом зображення з плівки та подальшим впресуванням в ​​тканину. Для нанесення використовується якісна європейська плівка, що витримує достатню кількість прань. 
+          <br><br>
+          Наша перевага - оперативне та якісне нанесення на спортивну форму за найдоступнішими цінами!
+        </div>
+
+        <div class="info__accent">
+          Терміни
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Стандартний термін нанесення на форму для команди (до 100 одиниць) номерів, прізвищ та логотипів - два робочих дня (не рахуючи дня прийому і видачі замовлення).
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Вишивка і сублімація - три робочих дня.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Виготовити нанесення на форму номера і т.д. можна в терміновому порядку, проте це призведе до збільшення ціни.
+        </div>
+
+        <div class="info__text info__text_pt-10 info__text_attention">
+          Вартість друку розраховується індивідуально.
+        </div>
+
+        <div class="info__accent info__accent_pt-20">
+          Футбольна форма з прізвищем та номером
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          Нанесення номера та прізвища на футбольну форму можуть мати обведення, бути двох - або багатобарвним, на цифри можуть бути нанесені емблеми або написи.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          При замовленні на нанесення номерів Ви можете використовувати стандартні шрифти, а також вибрати будь-який колір.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          У нас ви можете замовити нанесення навіть на один виріб. Навіть одну цифру.
+        </div>
+
+        <div class="info__text info__text_pt-10">
+          При необхідності наші дизайнери надають допомогу в розробці макетів для друку на спортивному одязі. Індивідуально можна підібрати будь-який шрифт.
+        </div>
+
+        <div class="info__subtitle info__subtitle_pv-20-15">
+          Для замовлення:
+        </div>
+
+        <div class="info__contacts info__contacts_p-0">
+          <div class="info__contact info__contact_phone">
+            <a href="tel: +380662055535">+38 (066) 205 55 35</a>
+          </div>
+
+          <div class="info__contact info__contact_email">
+            <a href="mailto: sales@joma.ua">sales@joma.ua</a>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+    
+
+  </div>
+
+  <script src="/assets/lib/vue.min.js"></script>
+  <script type="module" src='./js/Components.js'></script>
+</body>
+</html>

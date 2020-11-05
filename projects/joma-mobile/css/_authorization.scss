@@ -1,0 +1,138 @@
+.authorization {
+  min-height: calc(100vh - 119px - 42px);
+  margin-bottom: 42px;
+
+  &__controls {
+    display: flex;
+    border-top: 1px solid #000;
+  }
+
+  &__control {
+    width: 50%;
+    text-align: center;
+    padding: 11px 0;
+    color: $second-color-dark;
+    border-bottom: 1px solid #D4D4D4;
+
+    &_active {
+      color: $accent-color;
+      border-bottom: 1px solid $accent-color;
+    }
+  }
+
+  &__body {
+    padding: 60px 38px 140px;
+
+    &_register {
+      padding: 60px 38px 80px;
+    }
+  }
+
+  &__input {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #D4D4D4;
+
+    input {
+      width: 100%;
+      line-height: 24px;
+
+      &::placeholder {
+        color: #C4C4C4;
+      }
+    }
+
+    &_mb-77 {
+      margin-bottom: 77px;
+    }
+
+    &_mb-57 {
+      margin-bottom: 57px;
+    }
+  }
+
+  &__inputs {
+    position: relative;
+
+    & .error {
+      position: absolute;
+      bottom: 0;
+      transform: translateY(120%);
+      color: $decline-color;
+      display: none;
+    }
+
+    &_error {
+      & .error {
+        display: block;
+      }
+    }
+  }
+
+  &__btn {
+    background-color: $second-color-light;
+    color: $second-color-dark;
+    text-align: center;
+    padding: 11px 0;
+    margin: 0 38px ;
+  }
+
+  &__forget-pwd {
+    color: $accent-color;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-top: 15px;
+    border-top: 1px solid #000;
+
+    & div {
+      color: $second-color-dark;
+    }
+
+    & div:last-of-type {
+      margin-left: 23px;
+      color: $accent-color;
+    }
+  }
+}
+
+.password-input {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #D4D4D4;
+  position: relative;
+
+  input {
+    width: 100%;
+    padding-right: 28px;
+    line-height: 24px;
+
+    &[type='password'] {
+      @include fsz (20px);
+
+      &::placeholder {
+        @include fsz (15px);
+      }
+    }
+
+    &::placeholder {
+      color: #C4C4C4;
+    }
+  }
+
+  span {
+    @include absolute (right, 0, top, 0);
+    @include wh (24px);
+    @include bgi ($eye-icon);
+    transition: .2s opacity;
+    
+    &.transparent {
+      opacity: .5;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+
+.side-menu {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  max-width: 612px;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: $side-menu-speed transform, $side-menu-speed box-shadow;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  border-top: 1px solid $main-color-dark;
+  overflow-y: scroll;
+  z-index: 100;
+
+  &_open {
+    transform: translateX(0);
+    box-shadow: 20vw 0px 0px 0px rgba(0, 0, 0, .43);
+  }
+
+  &__part {
+    position: relative;
+    padding: 10px 20px;
+    border-bottom: 1px solid #000;
+  }
+
+  &__item {
+    padding-left: 50px;
+    position: relative;
+    display: block;
+
+    & + & {
+      margin-top: 20px;
+    }
+
+    &::before {
+      @include pseudo (25px);
+      @include absolute (left, 0, top, 50%);
+      transform: translateY(-50%);
+    }
+
+    &_home::before {
+      @include bgi ($home-icon, 100%)
+    }
+
+    &_catalog::before {
+      @include bgi ($catalog-icon, 100%)
+    }
+
+    &_sale::before {
+      @include bgi ($sale-icon, 100%)
+    }
+
+    &_cart::before {
+      @include bgi ($cart-icon, 100%)
+    }
+
+    &_cabinet::before {
+      @include bgi ($user-icon, 100%)
+    }
+
+    &_construct::before {
+      @include bgi ($construct-icon, 100%)
+    }
+
+    &_size::before {
+      @include bgi ($question-icon, 100%)
+    }
+
+    &_contacts::before {
+      @include bgi ($arrows-icon, 100%)
+    }
+
+    &_delivery::before {
+      @include bgi ($delivery-icon, 100%)
+    }
+
+    &_about::before {
+      @include bgi ($small-logo-icon, 100%)
+    }
+
+    &_catalogs::before {
+      @include bgi ($book-icon, 100%)
+    }
+
+    &_prints::before {
+      @include bgi ($paint-roller-icon, 100%)
+    }
+  }
+
+  &__subtitle {
+    color: $accent-color;
+    margin-bottom: 20px;
+    font-family: RobotoLight;
+  }
+
+  &__lang {
+    padding: 10px 20px;
+    position: relative;
+    border-bottom: 1px solid #000;
+  }
+
+  &__lang-title {
+    padding-left: 50px;
+    position: relative;
+
+    &::before {
+      @include pseudo (25px);
+      @include absolute (left, 0, top, 50%);
+      transform: translateY(-50%);
+      @include bgi ($lang-icon, 100%)
+    }
+  }
+
+  &__lang-switch {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+
+    input {
+      display: none;
+
+      &:checked + label{
+        background-color: #C4C4C4;
+        color: #fff;
+      }
+    }
+
+    label {
+      padding: 0 8px;
+      border: 1px solid #C4C4C4;
+    }
+  }
+
+  // .close {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   height: 100%;
+  //   width: 30%;
+  //   background-color: red;
+  //   // transform: translateX(100%);
+  //   z-index: 100;
+  //   // opacity: 0;
+  // }
+}

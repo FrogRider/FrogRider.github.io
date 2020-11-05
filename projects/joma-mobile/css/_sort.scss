@@ -1,0 +1,46 @@
+.sort {
+  min-height: 100%;
+  
+  &__row {
+    background: $accent-gradient-lr;
+    position: relative;
+  }
+
+  &__btn {
+    @include pseudo(24px);
+    @include absolute(right, 20px, top, 50%);
+    background-image: $filters-icon;
+    transform: translateY(-50%);
+  }
+
+  &__row-title {
+    display: inline-block;
+    padding: 10px 0 10px 20px;
+    color: #fff;
+    @include fsz(16px);
+    position: relative;
+
+    &::after {
+      @include pseudo(24px);
+      @include absolute(right, 0, top, 50%);
+      background-image: $arrow-down-white;
+      transform: translate(100%, -50%);
+    }
+  }
+
+  .close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background-color: red;
+    transform: translateX(-100%);
+    z-index: 100;
+    opacity: 0;
+  }
+
+  &__items {
+    padding: 10px 20px;
+  }
+}

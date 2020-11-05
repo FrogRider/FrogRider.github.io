@@ -1,0 +1,21 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    position: relative;
+    color: $second-color-dark;
+    @include fsz (12px);
+
+    & + & {
+      padding-left: 10px;
+
+      &::before {
+        @include pseudo (5px, 1rem);
+        content: '/';
+        @include absolute (left, 3px, top, -2px);
+        // transform:  translateY(-50%);
+      }
+    }
+  }
+}

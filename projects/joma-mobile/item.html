@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <title>JOMA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper" id="app">
+
+    <joma-header 
+      @menu-btn-clicked="togleMenu"
+      @cart-clicked="togleCart"
+      @search-clicked="togleSearch"
+    > 
+    </joma-header>
+
+    <joma-side-menu 
+      :class="{'side-menu_open': this.sideMenu}"
+    >
+    </joma-side-menu>
+
+    <div class="cart"
+      :class="{'cart_opened': this.cart}"
+    >
+
+      <div class="cart__row">
+        <div class="cart__title">
+          Cart
+        </div>
+
+        <div class="cart__close" @click="togleCart()"></div>
+      </div>
+
+      <div class="cart-items">
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :amount=2
+          :sale=true
+          old-price=100
+          image='Rectangle10.png'
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+      </div>
+
+      <div class="cart__promo">
+        <input type="text">
+        <div class="cart__promo-buttons">
+          <div class="cart__promo-discard"> </div>
+          <div class="cart__promo-confirm"></div>
+        </div>
+        <div class="over">
+          Знижка за сертифікатом?
+        </div>
+      </div>
+
+      <div class="cart__price cart__price_discount">
+        <div class="cart__price-old">2090 грн</div>
+        <div class="cart__price-new">1990 грн</div>
+      </div>
+
+      <!-- <div class="cart__empty">
+        <img src="/assets/img/cart.png" alt="">
+        <p>Кошик порожній</p>
+      </div> -->
+
+      <div class="cart__confirm">
+        Оформити замовлення
+      </div>
+    </div>
+
+    <div class="search"
+      :class="{'search_opened': this.search}"
+    >
+      <div class="search__row">
+        <input type="text" placeholder="Пошук...">
+        <div class="search__close" @click="togleSearch()"></div>
+      </div>
+
+      <div class="search__items">
+
+        <joma-search-item 
+          name="Name" 
+          code="Code" 
+          image="Rectangle10.png"
+          price="100" 
+        >
+        </joma-search-item>
+
+        <joma-search-item 
+          name="Ігрова футболка збірної України з футболу" 
+          code="FFU101011.17" 
+          price="1180 грн"
+          new-price="960 грн"
+        >
+        </joma-search-item>
+
+        <div class="empty">
+          Нічого не знайдено
+        </div>
+
+      </div>
+    </div>
+    
+    <main class="content" :class="{'content_shifted': this.sideMenu}">
+      
+      <div class="item">
+        <div class="breadcrumbs">
+          <a href="#" class="breadcrumbs__item">Головна</a>
+          <a href="#" class="breadcrumbs__item">Каталог</a>
+          <a href="#" class="breadcrumbs__item">Збірна України</a>
+        </div>
+
+        <div class="item__title">
+          Ігрова футболка збірної України з футболу
+
+          <div class="item__title-icon">
+
+          </div>
+        </div>
+        <div class="item__code">
+          Артикул: FFU101011.18
+        </div>
+        <div class="item__image">
+          <img src="/assets/img/Rectangle10.png" alt="">
+          <div class="item__image-icon">
+
+          </div>
+          <div class="item__image-controls">
+            360
+          </div>
+        </div>
+        <div class="item__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dignissimos pariatur autem dolore labore animi?
+        </div>
+
+        <div class="item__columns">
+          <div class="item__prices item__prices_discount">
+            <div class="item__price">100 grn</div>
+            <div class="item__price-new">100 grn</div>
+          </div>
+          <a href="#" class="item__buy">Купити</a>
+        </div>
+
+        <div class="sign_gray sign_fs-12 sign_mb-10">
+          Для уточнення подробиць зв’яжіться з менеджером
+        </div>
+
+        <div class="item__specs">
+          <div class="item__specs-title">Характеристики</div>
+
+          <div class="item__spec">
+            <div class="item__spec-name">Матеріал</div>
+            <div class="item__spec-body">100% Поліестр інтерлок</div>
+          </div>
+
+          <div class="item__spec">
+            <div class="item__spec-name">Вага</div>
+            <div class="item__spec-body">130 г</div>
+          </div>
+
+          <div class="item__spec">
+            <div class="item__spec-name">Розміри</div>
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Оберіть розмір</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  XS
+                </label>
+
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  S
+                </label>
+
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  M
+                </label>
+
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  L
+                </label>
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  ХL
+                </label>
+              </div>
+            </div> <br>
+          </div>
+
+          <div class="item__spec">
+            <div class="item__spec-name">Розмір на іспанському складі</div>
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Оберіть розмір</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  XS
+                </label>
+
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  S
+                </label>
+
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  M
+                </label>
+
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  L
+                </label>
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  ХL
+                </label>
+              </div>
+            </div> <br>
+          </div>
+
+          <div class="item__spec">
+            <div class="item__spec-name">
+              При замовлені з іспанського складу доставка складає від 14 до 21 днів
+            </div>
+          </div>
+
+          <div class="item__availability">
+            <div class="item__availability-title">
+              Наявніть
+            </div>
+            <div 
+              class="item__availability-status item__availability-status_available"
+            >
+              Є в наявності
+            </div>
+          </div>
+
+        </div>
+
+        <div class="item__colors-title">Інші кольори</div>
+
+        <div class="item__colors">
+          <div class="item__color">
+            <div class="item__color-picture">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+            <div class="item__color-name">
+              Ігрова футболка збірної Україні з футболу
+            </div>
+            <div class="item__color-code">
+              FFU101011.18
+            </div>
+          </div>
+        </div>
+
+        <div class="item__sizes">
+          <div class="item__sizes-title">
+            Кількість товару в наявності в Україні:
+          </div>
+          
+          <div class="item__sizes-table">
+            <div class="item__sizes-row">
+              <div>Розмір</div>
+              <div>Кількість</div>
+            </div>
+            <div class="item__sizes-row">
+              <div>XS</div>
+              <div>4</div>
+            </div>
+            <div class="item__sizes-row">
+              <div>S</div>
+              <div>52</div>
+            </div>
+            <div class="item__sizes-row">
+              <div>M</div>
+              <div>28</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    
+
+  </div>
+
+  <script src="/assets/lib/vue.min.js"></script>
+  <script type="module" src='./js/Components.js'></script>
+</body>
+</html>

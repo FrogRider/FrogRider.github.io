@@ -1,0 +1,11 @@
+$accent-color: #2a176e;
+$main-color-dark: #000;
+$main-color-light: #fff;
+$second-color-light: #eaeaea;
+$second-color-dark: #505050;
+$confirm-color: #176E20;
+$decline-color: #C21616;
+
+// --- GRADIENTS ---
+$accent-gradient-lr: linear-gradient(90deg, $accent-color 0%, rgba($accent-color, 0.5) 69.79%, rgba($accent-color, 0.15) 100%);
+$accent-gradient-rl: linear-gradient(270deg, $accent-color 0%, rgba($accent-color, 0.5) 63.02%, rgba($accent-color, 0.15) 100%)

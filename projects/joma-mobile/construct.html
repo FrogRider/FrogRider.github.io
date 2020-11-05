@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+  <title>JOMA</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper" id="app">
+
+    <joma-header 
+      @menu-btn-clicked="togleMenu"
+      @cart-clicked="togleCart"
+      @search-clicked="togleSearch"
+      lable="Конструктор"
+    > 
+    </joma-header>
+
+    <joma-side-menu 
+      :class="{'side-menu_open': this.sideMenu}"
+    >
+    </joma-side-menu>
+
+    <div class="cart"
+      :class="{'cart_opened': this.cart}"
+    >
+
+      <div class="cart__row">
+        <div class="cart__title">
+          Cart
+        </div>
+
+        <div class="cart__close" @click="togleCart()"></div>
+      </div>
+
+      <div class="cart-items">
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :amount=2
+          :sale=true
+          old-price=100
+          image='Rectangle10.png'
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+
+        <joma-cart-item 
+          name="Ігрова футболка збірної Україні з футболу"
+          code="FFU101011.18"
+          price=100
+          size='S'
+          :spain=true
+          :amount=1
+        >
+          <div class="delete-item"></div>
+        </joma-cart-item>
+      </div>
+
+      <div class="cart__promo">
+        <input type="text">
+        <div class="cart__promo-buttons">
+          <div class="cart__promo-discard"> </div>
+          <div class="cart__promo-confirm"></div>
+        </div>
+        <div class="over">
+          Знижка за сертифікатом?
+        </div>
+      </div>
+
+      <div class="cart__price cart__price_discount">
+        <div class="cart__price-old">2090 грн</div>
+        <div class="cart__price-new">1990 грн</div>
+      </div>
+
+      <!-- <div class="cart__empty">
+        <img src="/assets/img/cart.png" alt="">
+        <p>Кошик порожній</p>
+      </div> -->
+
+      <div class="cart__confirm">
+        Оформити замовлення
+      </div>
+    </div>
+
+    <div class="search"
+      :class="{'search_opened': this.search}"
+    >
+      <div class="search__row">
+        <input type="text" placeholder="Пошук...">
+        <div class="search__close" @click="togleSearch()"></div>
+      </div>
+
+      <div class="search__items">
+
+        <joma-search-item 
+          name="Name" 
+          code="Code" 
+          image="Rectangle10.png"
+          price="100" 
+        >
+        </joma-search-item>
+
+        <joma-search-item 
+          name="Ігрова футболка збірної України з футболу" 
+          code="FFU101011.17" 
+          price="1180 грн"
+          new-price="960 грн"
+        >
+        </joma-search-item>
+
+        <div class="empty">
+          Нічого не знайдено
+        </div>
+
+      </div>
+    </div>
+    
+    <main class="content" :class="{'content_shifted': this.sideMenu}">
+      <div class="construct">
+        <div class="radio-dropdown radio-dropdown_green radio-dropdown_fsz-18">
+          <div class="radio-dropdown__title">Конструктор футбольной форми</div> <br>
+          <div class="radio-dropdown__variants">
+            <label class="radio-dropdown__variant">
+              <input type="radio" name='size'>
+              <span></span>
+              XS
+            </label>
+
+            <label class="radio-dropdown__variant">
+              <input type="radio" name='size'>
+              <span></span>
+              S
+            </label>
+
+            <label class="radio-dropdown__variant">
+              <input type="radio" name='size'>
+              <span></span>
+              M
+            </label>
+
+            <label class="radio-dropdown__variant">
+              <input type="radio" name='size'>
+              <span></span>
+              L
+            </label>
+            <label class="radio-dropdown__variant">
+              <input type="radio" name='size'>
+              <span></span>
+              ХL
+            </label>
+          </div>
+        </div> 
+
+        <div class="construct__item">
+          <div class="construct__item-title">Title</div>
+          <div class="construct__columns">
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem1</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem2</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+          </div>
+
+          <div class="construct__single">
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+          </div>
+
+          <div class="construct__images">
+            <div class="construct__image construct__image_active">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle13.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle13.png" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="construct__item">
+          <div class="construct__item-title">Title</div>
+          <div class="construct__columns">
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem1</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem2</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+          </div>
+
+          <div class="construct__single">
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+          </div>
+
+          <div class="construct__images">
+            <div class="construct__image construct__image_active">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle10.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="construct__item">
+          <div class="construct__item-title">Title</div>
+          <div class="construct__columns">
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem1</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem2</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+          </div>
+
+          <div class="construct__single">
+            <div class="radio-dropdown">
+              <div class="radio-dropdown__title">Lorem</div> <br>
+              <div class="radio-dropdown__variants">
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Ipsum
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Dolor
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Sit
+                </label>
+    
+                <label class="radio-dropdown__variant">
+                  <input type="radio" name='size'>
+                  <span></span>
+                  Amet
+                </label>
+              </div>
+            </div> 
+          </div>
+
+          <div class="construct__images">
+            <div class="construct__image construct__image_active">
+              <img src="/assets/img/Rectangle13.png" alt="">
+            </div>
+
+            <div class="construct__image">
+              <img src="/assets/img/Rectangle12.png" alt="">
+            </div>
+          </div>
+        </div>
+
+        <joma-construct-previews></joma-construct-previews>
+        
+        <div class="construct__containsof">
+          <div class="construct__containsof-title">
+            Цей набор складається з:
+          </div>
+          
+          <div class="construct__containsof-items">
+
+            <div class="construct__containsof-item">
+              SUPERNOVA II 101476.331
+            </div> <br>
+  
+            <div class="construct__containsof-item">
+              NOBEL LONG 100053.200
+            </div> <br>
+  
+            <div class="construct__containsof-item">
+              PROFESSIONAL II 400054.200
+            </div> <br>
+
+          </div>
+
+          <div class="construct__copy-set">
+            Скопиювати посилання на цей набор
+          </div>
+        </div>
+      </div>
+    </main>
+    
+
+  </div>
+
+  <script src="/assets/lib/vue.min.js"></script>
+  <script type="module" src='./js/Components.js'></script>
+</body>
+</html>

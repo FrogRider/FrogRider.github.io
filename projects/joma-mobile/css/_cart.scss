@@ -1,0 +1,182 @@
+.cart {
+  @include absolute (right, 0, top, 0);
+  height: 100%;
+  width: 90%;
+  background-color: #fff;
+  z-index: 100;
+  transform: translateX(100%);
+  transition: $side-menu-speed transform, $side-menu-speed box-shadow;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  overflow-y: scroll;
+  padding-top: 50px;
+  padding-bottom: 400px;
+  overflow-y: scroll;
+
+  &_opened {
+    transform: translateX(0);
+    box-shadow: -10vw 0px 0px 0px rgba(0, 0, 0, .43);
+    // overflow: visible;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  &__title {
+    color: $accent-color;
+    @include fsz (25px);
+    font-family: RobotoMedium;
+  }
+
+  &__close {
+    @include wh (30px);
+    margin-right: 10px;
+    @include bgi ($gray-cross-icon);
+  }
+
+  &__promo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0 15px 10px;
+    border-bottom: 1px solid #C4C4C4;
+
+    &:hover {
+      & .over {
+        display: none;
+      }
+    }
+
+    & .over {
+      @include absolute (left, 0, top, 0);
+      @include wh (100%);
+      @include fsz (20px);
+      background-color: #fff;
+      color: $second-color-dark;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & input {
+      @include fsz (20px);
+      width: calc(100% - 66px);
+      padding: 5px;
+    }
+  }
+
+  &__promo-buttons {
+    @include absolute (right, 10px, top, 50%);
+    transform: translateY(-50%);
+    display: flex;
+
+    div + div{
+      margin-left: 10px;
+    }
+  }
+
+  &__promo-confirm {
+    @include wh (23px);
+    @include bgi ($white-checkmark-icon, 70%);
+    background-color: $accent-color;
+
+    &_hide {
+      display: none;
+    }
+
+    &_success {
+      background-color: $confirm-color;
+    }
+  }
+
+  &__promo-discard {
+    @include wh (23px);
+    @include bgi ($black-cross-icon);
+    background-color: $main-color-light;
+
+    &_danger {
+      background-color: $decline-color;
+      @include bgi ($white-cross-icon);
+    }
+  }
+
+  &__price {
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &_discount {
+      & .cart__price-old {
+        font-family: RobotoLight;
+        text-decoration: line-through;
+      }
+
+      & .cart__price-new {
+        display: block;
+      }
+    }
+    
+  }
+
+  &__price-old {
+    @include fsz(20px);
+    font-family: RobotoMedium;
+  }
+
+  &__price-new {
+    @include fsz(20px);
+    color: $decline-color;
+    display: none;
+  }
+
+  &__confirm {
+    padding: 9px;
+    color: $accent-color;
+    text-align: center;
+    background-color: #EAEAEA;
+    @include fsz(20px);
+    font-family: RobotoLight;
+  }
+
+  &__empty {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 60px;
+    margin-top: 30px;
+    position: relative;
+
+    img {
+      @include wh(150px);
+      margin-bottom: 30px;
+    }
+
+    p {
+      @include fsz(15px);
+      color: $second-color-dark;
+    }
+
+    &::before {
+      @include pseudo(100%, 1px, #000);
+      @include absolute(left, 50%, top, 0);
+      transform: translateX(-50%);
+    }
+  }
+
+  .close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    // background-color: red;
+    transform: translateX(-100%);
+    z-index: 100;
+    opacity: 0;
+  }
+}

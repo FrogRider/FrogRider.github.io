@@ -1,0 +1,146 @@
+.info {
+  padding: 20px 20px 50px;
+  border-top: 1px solid #000;
+
+  &__subtitle {
+    color: $confirm-color;
+    @include fsz (20px);
+
+    &_pb-20 {
+      margin-bottom: 20px;
+    }
+
+    &_pv-30-20 {
+      padding: 30px 0 20px;
+    }
+
+    &_pv-20-10 {
+      padding: 20px 0 10px;
+    }
+
+    &_pv-20-15 {
+      padding: 20px 0 15px;
+    }
+
+    &_pt-15 {
+      padding-top: 15px;
+    }
+  }
+
+  &__title {
+    color: $accent-color;
+    @include fsz (20px);
+    text-decoration: underline;
+    font-family: RobotoMedium;
+
+    &_pb-20 {
+      padding-bottom: 20px;
+    }
+
+    &_pt-30 {
+      padding-top: 30px;
+    }
+
+    &_pt-20 {
+      padding-top: 20px;
+    }
+  }
+
+  &__text {
+    @include fsz (16px);
+    padding: 10px 0 20px;
+
+    & span {
+      color: $accent-color;
+      font-family: RobotoMedium;
+    }
+
+    &_pv-10 {
+      padding: 10px 0;
+    }
+
+    &_pb-0 {
+      padding-bottom: 0;
+    }
+
+    &_fs-20 {
+      @include fsz (20px);
+    }
+
+    &_pt-10 {
+      padding: 10px 0 0;
+    }
+
+    &_attention {
+      color: $decline-color;
+    }
+
+    &_p-0 {
+      padding: 0;
+    }
+
+    &_pv-20-10 {
+      padding: 20px 0 10px;
+    }
+
+    &_pb-15 {
+      padding: 0 0 15px;
+    }
+  }
+
+  &__contacts {
+    padding: 20px 0;
+
+    &_p-0 {
+      padding: 0;
+    }
+  }
+
+  &__contact {
+    padding-left: 40px;
+    position: relative;
+    @include fsz (20px);
+
+    a {
+      font-size: inherit;
+    }
+
+    &::before {
+      @include pseudo (25px);
+      @include absolute (left, 0, top, 50%);
+      transform: translateY(-50%);
+    }
+
+    & + & {
+      margin-top: 15px;
+    }
+
+    &_phone::before {
+      @include bgi ($vodafone-icon);
+    }
+
+    &_telegram::before {
+      @include bgi ($telegram-icon);
+    }
+
+    &_email::before {
+      @include bgi ($email-icon);
+    }
+  }
+
+  &__years {
+    padding: 10px 0;
+    color: $accent-color;
+    font-family: RobotoMedium;
+    @include fsz (16px);
+  }
+
+  &__accent {
+    color: $accent-color;
+    @include fsz (16px);
+
+    &_pt-20 {
+      padding-top: 20px;
+    }
+  }
+}

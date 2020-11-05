@@ -1,0 +1,130 @@
+.checkout {
+  &__main {
+    padding: 17px 20px 47px;
+    position: relative;
+
+    &::before, &::after {
+      @include pseudo (calc(100% + 40px), 1px, #000)
+    }
+
+    &::before {
+      @include absolute (left, -20px, top, 0);
+    }
+
+    &::after {
+      @include absolute (left, -20px, bottom, 0);
+    }
+  }
+
+  &__textarea {
+    min-height: 100px;
+    width: 100%;
+    resize: none;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 3px;
+  }
+
+  &__title {
+    @include fsz (20px);
+    margin: 25px 0 15px;
+  }
+
+  &__checkbox {
+    padding-left: 20px;
+    position: relative;
+    display: block;
+
+    input {
+      display: none;
+
+      &:checked + span {
+        background-color: #000;
+      }
+    }
+
+    span {
+      @include absolute (left, 0, top, 50%);
+      transform: translateY(-50%);
+      @include wh (15px);
+      @include bgi($white-checkmark-icon);
+      border: 2px solid #000;
+      border-radius: 2px;
+    }
+
+    & + & {
+      margin-top: 18px;
+    }
+    
+    &:last-of-type {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__final {
+    margin: 10px 0 50px;
+  }
+
+  &__columns {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 0 20px;
+  }
+
+  &__column {
+    width: 50%;
+    color: $second-color-dark;
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+
+  &__final-button {
+    padding: 9px 0;
+    background-color: $second-color-light;
+    color: $accent-color;
+    @include fsz (20px);
+    text-align: center;
+  }
+}
+
+.checkout-success {
+  border-top: 1px solid #000;
+
+  &__main {
+    margin: 10px 20px 100px;
+  }
+
+  &__title {
+    @include fsz (25px);
+    color: $confirm-color;
+    margin-bottom: 10px;
+    font-family: RobotoMedium;
+  }
+
+  &__text {
+    &_mb-30 {
+      margin-bottom: 30px;
+    }
+
+    span {
+      color: #D18A00;
+    }
+
+    a {
+      color: $accent-color;
+      text-decoration: underline;
+    }
+  }
+
+  &__btn {
+    color: $accent-color;
+    background-color: $second-color-light;
+    padding: 9px 0;
+    text-align: center;
+    @include fsz (20px);
+    margin-bottom: 50px;
+  }
+}
