@@ -6,6 +6,7 @@
 - [flag](https://frogrider.github.io/projects/css_tricks/flag)
 - [product_card](https://frogrider.github.io/projects/css_tricks/product_card)
 - [slider](https://frogrider.github.io/projects/css_tricks/slider)
+- [rounded_progress_bar](https://frogrider.github.io/projects/css_tricks/rounded_progress_bar)
 
 _______________
 

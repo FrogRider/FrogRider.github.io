@@ -1,0 +1,39 @@
+@import '_button';
+
+$main-bg: #bbbbbb;
+$dark: #2f3542;
+$bright: #e55658;
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "monserrat", sans-serif;
+    box-sizing: border-box;  
+  }
+
+  body {
+      background: $main-bg;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+  }
+
+  .progressBar {
+    --percentage: var(--value);
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(closest-side, $main-bg 80%, transparent 0 99.9%, $main-bg 0),
+      conic-gradient($bright calc(var(--percentage) * 1%), rgba(47, 53, 66, .5) 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(12rem / 5);
+    color: $dark;
+
+    &::before {
+        counter-reset: percentage var(--value);
+        content: counter(percentage) '%';
+      }
+  }
